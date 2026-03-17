@@ -20,6 +20,7 @@
     vesktop
     pkgs-unstable.ashell
     alejandra # nix formatter
+    tree
   ];
 
   xdg.configFile."fuzzel/fuzzel.ini".text = ''

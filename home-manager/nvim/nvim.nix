@@ -29,6 +29,7 @@
       texliveMedium
       zathura
       luarocks
+      statix
     ];
 
     # Your lua config files, same structure as before
