@@ -12,10 +12,10 @@
 
     lazyvim.url = "github:pfassina/lazyvim-nix";
 
-    hyprland.url = "github:hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland/v0.54.2?submodules=1";
 
     hy3 = {
-      url = "github:outfoxxed/hy3";
+      url = "github:outfoxxed/hy3?ref=hl0.54.2";
       inputs.hyprland.follows = "hyprland";
     };
   };
