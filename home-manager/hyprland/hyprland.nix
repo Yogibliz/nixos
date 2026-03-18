@@ -11,7 +11,7 @@
     package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     plugins = [
-      hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3 # NOT pkgs.hyprlandPlugins.hy3
+      hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3
     ];
 
     settings = {
@@ -24,9 +24,9 @@
       ];
 
       # Window Rules
-      windowrulev2 = [
-        "float, class:^(steam)$"
-        "tile, class:^(steam)$, title:^(Steam)$"
+      windowrule = [
+        "match:class steam, float 1"
+        "match:class steam, match:title Steam, tile 1"
       ];
 
       # App rounding
