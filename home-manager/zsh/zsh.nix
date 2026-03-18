@@ -11,6 +11,7 @@
       la = "eza -a";
       cat = "bat";
       hms = "home-manager switch";
+      nixos-rebuild-switch = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
     };
 
     oh-my-zsh = {

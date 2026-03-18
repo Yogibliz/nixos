@@ -1,9 +1,19 @@
 # ── Hyprland ──────────────────────────────────────────────
-{ pkgs, ... }:
-
 {
+  pkgs,
+  hyprland,
+  hy3,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     enable = true;
+
+    package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+
+    plugins = [
+      hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3 # NOT pkgs.hyprlandPlugins.hy3
+    ];
+
     settings = {
       # Monitor config
       monitor = [
@@ -19,12 +29,6 @@
         "tile, class:^(steam)$, title:^(Steam)$"
       ];
 
-      # Environment variables
-      env = [
-        "GTK_THEME,Adwaita:dark"
-        "QT_QPA_PLATFORMTHEME,gtk3"
-      ];
-
       # App rounding
       decoration = {
         rounding = 12;
@@ -35,17 +39,31 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
+        layout = "hy3";
       };
+
+      plugin.hy3 = {
+        tabs = {
+          height = 4;
+          padding = 6;
+          rounding = 3;
+        };
+        autotile = {
+          enable = true;
+          ephemeral_groups = true;
+        };
+      };
+
+      # Leader Button
+      "$leader" = "SUPER";
 
       # Basic apps to set
       "$terminal" = "ghostty";
       "$menu" = "pkill fuzzel || fuzzel";
       "$browser" = "firefox";
-      "$explorer" = "nautilus";
       "$hyprshot" = "hyprshot -m region --clipboard-only -s";
 
       exec-once = [
-	"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DISPLAY"
         "ashell"
       ];
 
@@ -58,59 +76,59 @@
 
       # Basic keybinds
       bind = [
-        "SUPER, T, exec, $terminal"
-        "SUPER, Q, killactive"
-        "SUPER, B, exec, $browser"
-        "SUPER, E, exec, $explorer"
-        "SUPER, F, fullscreen"
-        "SUPER, V, togglefloating"
-        "SUPER SHIFT, S, exec, $hyprshot"
-
-        # Move windows
-        "SUPER SHIFT, H, movewindow, l"
-        "SUPER SHIFT, L, movewindow, r"
-        "SUPER SHIFT, K, movewindow, u"
-        "SUPER SHIFT, J, movewindow, d"
+        "$leader, L, exec, hyprlock"
+        "$leader, T, exec, $terminal"
+        "$leader, Q, killactive"
+        "$leader, B, exec, $browser"
+        "$leader, F, fullscreen"
+        "$leader, V, togglefloating"
+        "$leader SHIFT, S, exec, $hyprshot"
 
         # Move focus
-        "SUPER, H, movefocus, l"
-        "SUPER, L, movefocus, r"
-        "SUPER, K, movefocus, u"
-        "SUPER, J, movefocus, d"
+        "$leader, H, hy3:movefocus, l"
+        "$leader, L, hy3:movefocus, r"
+        "$leader, K, hy3:movefocus, u"
+        "$leader, J, hy3:movefocus, d"
+
+        # Move windows
+        "$leader SHIFT, H, hy3:movewindow, l"
+        "$leader SHIFT, L, hy3:movewindow, r"
+        "$leader SHIFT, K, hy3:movewindow, u"
+        "$leader SHIFT, J, hy3:movewindow, d"
+
+        # Group windows — h = horizontal split, v = vertical split, tab = tabbed
+        "$leader, G, hy3:makegroup, h"
+        "$leader SHIFT, G, hy3:makegroup, v"
+        "$leader, W, hy3:makegroup, tab"
+
+        # Move focus in/out of groups
+        "$leader, A, hy3:changefocus, raise"
+        "$leader SHIFT, A, hy3:changefocus, lower"
 
         # Workspaces
-        "SUPER, 1, workspace, 1"
-        "SUPER, 2, workspace, 2"
-        "SUPER, 3, workspace, 3"
-        "SUPER, 4, workspace, 4"
-        "SUPER, 5, workspace, 5"
+        "$leader, 1, workspace, 1"
+        "$leader, 2, workspace, 2"
+        "$leader, 3, workspace, 3"
+        "$leader, 4, workspace, 4"
+        "$leader, 5, workspace, 5"
 
         # Move window to workspace
-        "SUPER SHIFT, 1, movetoworkspace, 1"
-        "SUPER SHIFT, 2, movetoworkspace, 2"
-        "SUPER SHIFT, 3, movetoworkspace, 3"
-        "SUPER SHIFT, 4, movetoworkspace, 4"
-        "SUPER SHIFT, 5, movetoworkspace, 5"
+        "$leader SHIFT, 1, movetoworkspace, 1"
+        "$leader SHIFT, 2, movetoworkspace, 2"
+        "$leader SHIFT, 3, movetoworkspace, 3"
+        "$leader SHIFT, 4, movetoworkspace, 4"
+        "$leader SHIFT, 5, movetoworkspace, 5"
       ];
 
       bindr = [
-        "SUPER, Super_L, exec, $menu"
+        "$leader, $leader_L, exec, $menu"
       ];
 
       bindm = [
-        "SUPER, mouse:272, movewindow"
-        "SUPER, mouse:273, resizewindow"
+        "$leader, mouse:272, movewindow"
+        "$leader, mouse:273, resizewindow"
       ];
     };
-  };
-
-  # Dark mode
-  dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita:dark";
-    QT_QPA_PLATFORMTHEME = "gtk3";
-    QT_STYLE_OVERRIDE = "adwaita-dark";
   };
 
   # Useful companion packages
@@ -120,6 +138,33 @@
     wl-clipboard # clipboard
     hyprpaper # wallpaper
     hyprlock # screen lock
+    hypridle # idle manager
     hyprshot # screenshot tool
   ];
+
+  # Idle management
+  services.hypridle = {
+    enable = true;
+
+    settings = {
+      general = {
+        lock_cmd = "pidof hyprlock || hyprlock"; # Prevent duplicate hyprlock instances
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        ignore_dbus_inhibit = false;
+      };
+
+      listener = [
+        {
+          timeout = 300; # 5 minutes — lock screen
+          on-timeout = "hyprlock";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+        {
+          timeout = 360; # 6 minutes — turn off displays
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+      ];
+    };
+  };
 }

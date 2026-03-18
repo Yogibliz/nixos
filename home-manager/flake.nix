@@ -11,6 +11,13 @@
     };
 
     lazyvim.url = "github:pfassina/lazyvim-nix";
+
+    hyprland.url = "github:hyprwm/Hyprland?submodules=1";
+
+    hy3 = {
+      url = "github:outfoxxed/hy3";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = {
@@ -19,6 +26,8 @@
     nixpkgs-unstable,
     home-manager,
     lazyvim,
+    hyprland,
+    hy3,
     ...
   }: let
     system = "x86_64-linux";
@@ -27,7 +36,7 @@
   in {
     homeConfigurations."iris" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = {inherit pkgs-unstable lazyvim;};
+      extraSpecialArgs = {inherit pkgs-unstable lazyvim hyprland hy3;};
       modules = [./home.nix];
     };
   };

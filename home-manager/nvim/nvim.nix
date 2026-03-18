@@ -15,21 +15,32 @@
     };
 
     extraPackages = with pkgs; [
+      # Nix
       nixd
       alejandra
+
+      # Lua
+      lua
+      luarocks
       lua-language-server
       stylua
-      ripgrep
-      ast-grep
-      fzf
-      lua
+
+      # C/C++
       gcc
+
+      # Rust
       rustc
       cargo
+
+      # LaTeX
       texliveMedium
       zathura
-      luarocks
+
+      # Others
+      fzf
       statix
+      ripgrep
+      ast-grep
     ];
 
     # Your lua config files, same structure as before
