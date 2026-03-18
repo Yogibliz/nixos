@@ -2,12 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
+  ];
+
+  # Configure allowed uris, since /etc/nixos/configuration.nix is a symlink.
+  nix.settings.trusted-users = [ "root" "iris" ];
+  nix.settings.allowed-uris = [
+    "path:/home/iris/dotfiles"
   ];
 
   # Nix specific settings
@@ -53,7 +59,9 @@
 
   programs.hyprland = {
     enable = true;
-    xwayland.enable = true; # for apps that don't support Wayland natively
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    xwayland.enable = true;
   };
 
   # Recommended alongside Hyprland
@@ -161,7 +169,7 @@
     neovim
     wget
     ghostty
-    nautilus
+    yazi
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
