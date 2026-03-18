@@ -43,13 +43,7 @@
       ast-grep
     ];
 
-    # Your lua config files, same structure as before
+    # Lua config files
     configFiles = ./lua;
-
-    # Or inline if you prefer:
-    # config = {
-    #   options = builtins.readFile ./lua/config/options.lua;
-    #   keymaps = builtins.readFile ./lua/config/keymaps.lua;
-    # };
   };
 }

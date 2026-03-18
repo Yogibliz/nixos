@@ -47,5 +47,6 @@
     ./zsh/zsh.nix
     ./git/git.nix
     ./hyprland/hyprland.nix
+    ./ghostty/ghostty.nix
   ];
 }
