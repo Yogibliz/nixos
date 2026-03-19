@@ -59,7 +59,6 @@
 
       # Basic apps to set
       "$terminal" = "ghostty";
-      "$menu" = "pkill fuzzel || fuzzel";
       "$browser" = "firefox";
       "$hyprshot" = "hyprshot -m region --clipboard-only -s";
 
@@ -121,7 +120,6 @@
       ];
 
       bindr = [
-        "$leader, $leader_L, exec, $menu"
       ];
 
       bindm = [
@@ -133,7 +131,6 @@
 
   # Useful companion packages
   home.packages = with pkgs; [
-    fuzzel # app launcher
     ghostty # terminal
     wl-clipboard # clipboard
     hyprpaper # wallpaper
@@ -141,6 +138,45 @@
     hypridle # idle manager
     hyprshot # screenshot tool
   ];
+
+  # Alt-tabbing & Launcher
+  programs.hyprshell = {
+    enable = true;
+    settings = {
+      windows = {
+        enable = true;
+        scale = 8.0;
+
+        overview = {
+          enable = true;
+          key = "Super_L";
+          modifier = "super";
+          launcher = {
+            max_items = 6;
+            default_terminal = "ghostty";
+            plugins = {
+              applications.enable = true;
+              calc.enable = true;
+              terminal.enable = true;
+            };
+          };
+        };
+        switch = {
+          enable = true;
+          key = "Tab";
+          modifier = "alt";
+          filter_by = ["current_monitor"];
+        };
+
+        switch_2 = {
+          enable = true;
+          key = "Tab";
+          modifier = "alt"; # hyprshell detects shift automatically for reverse
+          filter_by = ["current_monitor"];
+        };
+      };
+    };
+  };
 
   # Idle management
   services.hypridle = {

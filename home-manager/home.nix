@@ -2,6 +2,7 @@
   config,
   pkgs,
   pkgs-unstable,
+  hyprshell,
   ...
 }: {
   home.username = "iris";
@@ -20,29 +21,14 @@
     fzf
     pkgs-unstable.ashell
     tree
+    python3
+    adwaita-icon-theme
     #spotify
   ];
 
-  xdg.configFile."fuzzel/fuzzel.ini".text = ''
-    [main]
-    font=monospace:size=13
-    terminal=ghostty -e
-
-    [colors]
-    background=1e1e2edd
-    text=cdd6f4ff
-    match=89b4faff
-    selection=313244ff
-    selection-text=cdd6f4ff
-    border=89b4faff
-
-    [border]
-    width=2
-    radius=12
-  '';
-
   # ── Imports ───────────────────────────────────────────────
   imports = [
+    hyprshell.homeModules.hyprshell
     ./nvim/nvim.nix
     ./zsh/zsh.nix
     ./git/git.nix

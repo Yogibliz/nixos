@@ -18,6 +18,11 @@
       url = "github:outfoxxed/hy3?ref=hl0.54.2";
       inputs.hyprland.follows = "hyprland";
     };
+
+    hyprshell = {
+      url = "github:H3rmt/hyprshell?ref=hyprshell-release";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = {
@@ -28,6 +33,7 @@
     lazyvim,
     hyprland,
     hy3,
+    hyprshell,
     ...
   }: let
     system = "x86_64-linux";
@@ -36,7 +42,7 @@
   in {
     homeConfigurations."iris" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = {inherit pkgs-unstable lazyvim hyprland hy3;};
+      extraSpecialArgs = {inherit pkgs-unstable lazyvim hyprland hy3 hyprshell;};
       modules = [./home.nix];
     };
   };
