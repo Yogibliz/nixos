@@ -1,6 +1,11 @@
-{config, ...}: {
+{
+  config,
+  pkgs-unstable,
+  ...
+}: {
   programs.ashell = {
     enable = true;
+    package = pkgs-unstable.ashell;
     settings = {
       modules = {
         left = [
@@ -8,7 +13,7 @@
           "MediaPlayer"
         ];
         center = [
-          "Window Title"
+          "WindowTitle"
         ];
         right = [
           "KeyboardLayout"

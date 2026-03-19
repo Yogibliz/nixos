@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   hyprshell,
   ...
 }: {
@@ -19,11 +18,10 @@
     eza
     vesktop
     fzf
-    pkgs-unstable.ashell
     tree
     python3
     adwaita-icon-theme
-    #spotify
+    spotify
   ];
 
   # ── Imports ───────────────────────────────────────────────
