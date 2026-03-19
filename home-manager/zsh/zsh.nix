@@ -11,7 +11,7 @@
       la = "eza -a";
       cat = "bat";
       hms = "home-manager switch --flake ~/.config/home-manager#iris";
-      nrs = "sudo nixos-rebuild switch --flake /etc/nixos#nixos --impure";
+      nrs = "sudo nixos-rebuild switch --flake ~/dotfiles/nixos#nixos --impure";
     };
 
     oh-my-zsh = {
