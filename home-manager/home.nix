@@ -15,12 +15,12 @@
   home.packages = with pkgs; [
     fd
     bat
-    fzf
     eza
     vesktop
+    fzf
     pkgs-unstable.ashell
-    alejandra # nix formatter
     tree
+    #spotify
   ];
 
   xdg.configFile."fuzzel/fuzzel.ini".text = ''

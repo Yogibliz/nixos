@@ -76,7 +76,7 @@
 
       # Basic keybinds
       bind = [
-        "$leader, L, exec, hyprlock"
+        "$leader, escape, exec, hyprlock"
         "$leader, T, exec, $terminal"
         "$leader, Q, killactive"
         "$leader, B, exec, $browser"
