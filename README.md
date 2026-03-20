@@ -16,8 +16,18 @@ mv ~/.config/home-manager ~/.config/home-manager.bak # If you have another home-
 
 3. Symlink the dotfiles to their original placement
 ```bash
+sudo mkdir -p /etc/nixos
+sudo nixos-generate-config # Generates a hardware-config matching current system.
 sudo ln -s ~/dotfiles/nixos/* /etc/nixos/
 ln -s ~/dotfiles/home-manager/ ~/.config/
 ```
 
-4. Enjoy!
+4. Run home-manager and nixos-rebuild:
+```bash
+home-manager switch --flake .#iris # Build home-manager to get aliases, then restart terminal
+nrs # Then rebuild nixos and flake with alias
+```
+
+### If there are any hyprland errors, relog to make sure plugins are loaded. `hyprctl dispatch exit`
+
+## Enjoy!
