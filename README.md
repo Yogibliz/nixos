@@ -16,9 +16,8 @@ mv ~/.config/home-manager ~/.config/home-manager.bak # If you have another home-
 
 3. Symlink the dotfiles to their original placement
 ```bash
-sudo mkdir -p /etc/nixos
+sudo ln -s ~/dotfiles/nixos/ /etc/
 sudo nixos-generate-config # Generates a hardware-config matching current system.
-sudo ln -s ~/dotfiles/nixos/* /etc/nixos/
 ln -s ~/dotfiles/home-manager/ ~/.config/
 ```
 
