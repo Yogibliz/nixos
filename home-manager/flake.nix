@@ -14,6 +14,11 @@
 
     hyprland.url = "github:hyprwm/Hyprland/v0.54.2?submodules=1";
 
+    ashell = {
+      url = "github:MalpenZibo/ashell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hy3 = {
       url = "github:outfoxxed/hy3?ref=hl0.54.2";
       inputs.hyprland.follows = "hyprland";
@@ -34,6 +39,7 @@
     hyprland,
     hy3,
     hyprshell,
+    ashell,
     ...
   }: let
     system = "x86_64-linux";
@@ -48,7 +54,16 @@
   in {
     homeConfigurations."iris" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = {inherit pkgs-unstable lazyvim hyprland hy3 hyprshell;};
+      extraSpecialArgs = {
+        inherit pkgs-unstable lazyvim hyprland hy3 hyprshell;
+        ashell-pkg = ashell.packages.${system}.default;
+        # .overrideAttrs (old: {
+        #     postPatch = ''
+        #       substituteInPlace src/outputs.rs \
+        #         --replace "config::Layer::Bottom => Layer::Bottom" "config::Layer::Bottom => Layer::Overlay"
+        #     '';
+        #   });
+      };
       modules = [./home.nix];
     };
   };

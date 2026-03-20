@@ -22,6 +22,10 @@
     python3
     adwaita-icon-theme
     spotify
+    protonvpn-gui
+    networkmanagerapplet
+    pavucontrol
+    btop
   ];
 
   # ── Imports ───────────────────────────────────────────────
