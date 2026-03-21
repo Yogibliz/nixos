@@ -1,29 +1,22 @@
 {
-  config,
-  ashell-pkg,
+  inputs,
+  pkgs,
   ...
-}: {
+}: let
+  ashell-pkg = inputs.ashell.packages.${pkgs.stdenv.hostPlatform.system}.default;
+in {
   programs.ashell = {
     enable = true;
     package = ashell-pkg;
     settings = {
       layer = "Top";
       modules = {
-        left = [
-          "Tray"
-          "MediaPlayer"
-        ];
-        center = [
-          "WindowTitle"
-        ];
+        left = ["Tray" "MediaPlayer"];
+        center = ["WindowTitle"];
         right = [
           "KeyboardLayout"
           "SystemInfo"
-          [
-            "Tempo"
-            "Privacy"
-            "Settings"
-          ]
+          ["Tempo" "Privacy" "Settings"]
         ];
       };
       settings = {
@@ -33,7 +26,6 @@
         audio_sinks_more_cmd = "pavucontrol";
         bluetooth_more_cmd = "blueman-manager";
       };
-
       system_info = {
         indicators = ["Cpu" "Memory" "Temperature"];
         temperature = {
@@ -42,7 +34,6 @@
           alert_threshold = 85;
         };
       };
-
       appearance = {
         scale_factor = 1.2;
         opacity = 0.8;

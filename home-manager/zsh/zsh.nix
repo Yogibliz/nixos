@@ -1,5 +1,5 @@
 # ── Zsh ───────────────────────────────────────────────────
-{pkgs, ...}: {
+{...}: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -10,8 +10,7 @@
       ll = "eza -la";
       la = "eza -a";
       cat = "bat";
-      hms = "home-manager switch --flake ~/.config/home-manager#iris";
-      nrs = "sudo nixos-rebuild switch --flake ~/dotfiles/nixos#nixos --impure";
+      nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname)";
     };
 
     oh-my-zsh = {
@@ -19,11 +18,5 @@
       theme = "robbyrussell";
       plugins = ["git" "fzf"];
     };
-
-    loginExtra = ''
-      if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland
-      fi
-    '';
   };
 }

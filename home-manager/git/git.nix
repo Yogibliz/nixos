@@ -1,16 +1,14 @@
 # ── Git ───────────────────────────────────────────────────
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.git = {
-    enable    = true;
-    settings  = {
+    enable = true;
+    settings = {
       user = {
-        name  = "Iris";
+        name = "Iris";
         email = "irisphere@pm.me";
       };
       init.defaultBranch = "main";
-      pull.rebase        = true;
+      pull.rebase = true;
     };
   };
 }

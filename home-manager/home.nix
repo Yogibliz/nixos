@@ -1,36 +1,35 @@
 {
-  config,
+  inputs,
   pkgs,
-  hyprshell,
   ...
 }: {
-  home.username = "iris";
-  home.homeDirectory = "/home/iris";
-  home.stateVersion = "25.11";
-
-  # Let Home Manager manage itself
+  home = {
+    username = "iris";
+    homeDirectory = "/home/iris";
+    stateVersion = "25.11";
+  };
   programs.home-manager.enable = true;
 
-  # ── Packages ──────────────────────────────────────────────
   home.packages = with pkgs; [
     fd
     bat
     eza
-    vesktop
     fzf
     tree
     python3
-    adwaita-icon-theme
+    firefox
+    yazi
+    vesktop
     spotify
     protonvpn-gui
+    adwaita-icon-theme
     networkmanagerapplet
     pavucontrol
     btop
   ];
 
-  # ── Imports ───────────────────────────────────────────────
   imports = [
-    hyprshell.homeModules.hyprshell
+    inputs.hyprshell.homeModules.hyprshell
     ./nvim/nvim.nix
     ./zsh/zsh.nix
     ./git/git.nix

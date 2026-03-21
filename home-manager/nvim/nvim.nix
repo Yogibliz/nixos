@@ -1,12 +1,10 @@
 # ── Neovim ────────────────────────────────────────────────
 {
-  config,
-  lib,
+  inputs,
   pkgs,
-  lazyvim,
   ...
 }: {
-  imports = [lazyvim.homeManagerModules.default];
+  imports = [inputs.lazyvim.homeManagerModules.default];
   programs.lazyvim = {
     enable = true;
 
@@ -18,6 +16,7 @@
       # Nix
       nixd
       alejandra
+      statix
 
       # Lua
       lua
@@ -37,8 +36,6 @@
       zathura
 
       # Others
-      fzf
-      statix
       ripgrep
       ast-grep
     ];
