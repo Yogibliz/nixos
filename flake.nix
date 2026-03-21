@@ -44,6 +44,7 @@
           home-manager.nixosModules.home-manager
           ./nixos/modules/common.nix
           ./nixos/hosts/${hostname}/configuration.nix
+          ./nixos/hosts/${hostname}/hardware-configuration.nix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
