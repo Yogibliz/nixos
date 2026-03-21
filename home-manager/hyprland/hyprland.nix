@@ -200,12 +200,12 @@
 
       listener = [
         {
-          timeout = 300; # 5 minutes — lock screen
+          timeout = 1800; # 5 minutes — lock screen
           on-timeout = "hyprlock";
           on-resume = "hyprctl dispatch dpms on";
         }
         {
-          timeout = 360; # 6 minutes — turn off displays
+          timeout = 1860; # 6 minutes — turn off displays
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }

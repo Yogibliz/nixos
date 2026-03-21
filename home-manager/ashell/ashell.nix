@@ -44,7 +44,7 @@
       };
 
       appearance = {
-        scale_factor = 1.5;
+        scale_factor = 1.2;
         opacity = 0.8;
       };
     };
