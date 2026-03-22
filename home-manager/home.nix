@@ -26,6 +26,7 @@
     networkmanagerapplet
     pavucontrol
     btop
+    statix
   ];
 
   imports = [

@@ -46,14 +46,16 @@
           ./nixos/hosts/${hostname}/configuration.nix
           ./nixos/hosts/${hostname}/hardware-configuration.nix
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.users.iris = {
-              imports = [
-                ./home-manager/home.nix
-                ./home-manager/hosts/${hostname}.nix
-              ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {inherit inputs;};
+              users.iris = {
+                imports = [
+                  ./home-manager/home.nix
+                  ./home-manager/hosts/${hostname}.nix
+                ];
+              };
             };
           }
         ];

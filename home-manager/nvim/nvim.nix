@@ -16,7 +16,6 @@
       # Nix
       nixd
       alejandra
-      statix
 
       # Lua
       lua

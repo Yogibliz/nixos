@@ -8,8 +8,18 @@
     trusted-users = ["iris"];
   };
 
-  programs.zsh.enable = true;
+  # Global programs
+  programs = {
+    zsh.enable = true;
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      xwayland.enable = true;
+    };
+  };
 
+  # User settings
   users.users.iris = {
     isNormalUser = true;
     description = "Iris";
@@ -17,67 +27,82 @@
     extraGroups = ["networkmanager" "wheel" "gamemode" "video"];
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  networking.networkmanager.enable = true;
-  networking.firewall.checkReversePath = "loose";
-
-  services.resolved = {
-    enable = true;
-    dnssec = "false";
+  # Boot settings
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
+  # Networking settings
+  networking = {
+    networkmanager.enable = true;
+    firewall.checkReversePath = "loose";
+  };
 
-  services.upower.enable = true;
-  services.power-profiles-daemon.enable = true;
+  # Services
+  services = {
+    # DNS resolver
+    resolved = {
+      enable = true;
+      dnssec = "false";
+    };
+
+    # Bluetooth service
+    blueman.enable = true;
+
+    # Power profiles
+    upower.enable = true;
+    power-profiles-daemon.enable = true;
+
+    # XServer
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+
+    # Pipewire Audio
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+
+    # Display Manager
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+  };
+
+  # Hardware
+  hardware = {
+    bluetooth.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
 
   time.timeZone = "Europe/Stockholm";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "sv_SE.UTF-8";
-    LC_IDENTIFICATION = "sv_SE.UTF-8";
-    LC_MEASUREMENT = "sv_SE.UTF-8";
-    LC_MONETARY = "sv_SE.UTF-8";
-    LC_NAME = "sv_SE.UTF-8";
-    LC_NUMERIC = "sv_SE.UTF-8";
-    LC_PAPER = "sv_SE.UTF-8";
-    LC_TELEPHONE = "sv_SE.UTF-8";
-    LC_TIME = "sv_SE.UTF-8";
-  };
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "sv_SE.UTF-8";
+      LC_IDENTIFICATION = "sv_SE.UTF-8";
+      LC_MEASUREMENT = "sv_SE.UTF-8";
+      LC_MONETARY = "sv_SE.UTF-8";
+      LC_NAME = "sv_SE.UTF-8";
+      LC_NUMERIC = "sv_SE.UTF-8";
+      LC_PAPER = "sv_SE.UTF-8";
+      LC_TELEPHONE = "sv_SE.UTF-8";
+      LC_TIME = "sv_SE.UTF-8";
+    };
   };
 
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    xwayland.enable = true;
-  };
-
+  # Allow Unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -85,5 +110,6 @@
     wget
   ];
 
-  system.stateVersion = "25.11";
+  # No touchy!
+  system.stateVersion = "25.11"; # Bad girl, no touching!!!
 }
