@@ -1,4 +1,4 @@
-{_}: {
+{...}: {
   wayland.windowManager.hyprland.settings.monitor = [
     "DP-2, 1920x1080@60, 0x0, 1, transform, 3"
     "DP-1, 3440x1440@175, 1080x0, 1"
