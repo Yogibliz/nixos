@@ -27,6 +27,8 @@
     pavucontrol
     btop
     statix
+    mpv
+    ani-cli
   ];
 
   imports = [

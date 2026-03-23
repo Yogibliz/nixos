@@ -108,6 +108,9 @@
   environment.systemPackages = with pkgs; [
     mesa
     wget
+    wireplumber
+    playerctl
+    brightnessctl
   ];
 
   # No touchy!
