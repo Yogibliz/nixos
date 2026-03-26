@@ -105,7 +105,13 @@
   # Allow Unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Make sure spotify cache is cleared to resolve the opening issue
+  system.activationScripts.clearSpotifyCache.text = ''
+    rm -rf /home/iris/.cache/spotify || true
+  '';
+
   environment.systemPackages = with pkgs; [
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     mesa
     wget
     wireplumber

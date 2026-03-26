@@ -41,7 +41,7 @@
 
       "$leader" = "SUPER";
       "$terminal" = "ghostty";
-      "$browser" = "firefox";
+      "$browser" = "zen";
       "$hyprshot" = "hyprshot -m region --clipboard-only -s";
 
       exec-once = [

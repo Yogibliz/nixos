@@ -24,7 +24,6 @@
     fzf
     tree
     python3
-    firefox
     yazi
     vesktop
     spotify
