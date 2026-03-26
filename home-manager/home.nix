@@ -35,6 +35,7 @@
     statix
     mpv
     ani-cli
+    time
   ];
 
   imports = [
