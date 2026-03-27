@@ -37,6 +37,8 @@ vim.keymap.set("n", "<C-j>", "<C-d>zz")
 vim.keymap.set("n", "<C-k>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", ";", "^")
+vim.keymap.set("n", "'", "$")
 
 -- Diagnostic navigation
 vim.keymap.set("n", "[d", function()
