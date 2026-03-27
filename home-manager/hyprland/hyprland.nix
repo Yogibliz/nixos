@@ -51,7 +51,7 @@
 
       input = {
         kb_layout = "us,se";
-        kb_options = "grp:win_space_toggle";
+        kb_options = "grp:win_space_toggle, caps:escape";
         follow_mouse = 1;
         touchpad.natural_scroll = true;
       };
