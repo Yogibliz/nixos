@@ -23,17 +23,6 @@
       lua-language-server
       stylua
 
-      # C/C++
-      gcc
-
-      # Rust
-      rustc
-      cargo
-
-      # LaTeX
-      texliveMedium
-      zathura
-
       # Others
       ripgrep
       ast-grep

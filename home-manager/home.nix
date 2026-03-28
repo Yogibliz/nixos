@@ -22,24 +22,41 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    # CLI utilities
     fd
     bat
     eza
     fzf
     tree
+    time
+    ripgrep
+
+    # Development
+    gcc
+    rustc
+    cargo
+    statix
     python3
+
+    # LaTeX
+    texliveFull
+
+    # Media
+    mpv
+    ani-cli
+
+    # Desktop apps
     yazi
     vesktop
     spotify
     protonvpn-gui
+    pavucontrol
+    zathura
+
+    # System / UI
     adwaita-icon-theme
     networkmanagerapplet
-    pavucontrol
     btop
-    statix
-    mpv
-    ani-cli
-    time
   ];
 
   imports = [

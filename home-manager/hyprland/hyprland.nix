@@ -41,6 +41,7 @@
 
       "$leader" = "SUPER";
       "$terminal" = "ghostty";
+      "$explorer" = "yazi";
       "$browser" = "zen";
       "$hyprshot" = "hyprshot -m region --clipboard-only -s";
 
@@ -77,6 +78,7 @@
           "$leader, F, fullscreen"
           "$leader, V, togglefloating"
           "$leader SHIFT, S, exec, $hyprshot"
+          "$leader, E, exec, $explorer"
 
           "$leader, H, hy3:movefocus, l"
           "$leader, L, hy3:movefocus, r"
