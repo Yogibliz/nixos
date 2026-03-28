@@ -24,7 +24,6 @@ sudo nixos-rebuild switch --flake ~/dotfiles#<host>
 nrs
 ```
 
-```
 ### If there are any hyprland errors, relog to make sure plugins are loaded. `hyprctl dispatch exit`
 
 ## Enjoy!
