@@ -13,6 +13,10 @@
       name = "Bibata-Modern-Ice";
       size = 24;
     };
+    sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
   };
 
   programs.home-manager.enable = true;
