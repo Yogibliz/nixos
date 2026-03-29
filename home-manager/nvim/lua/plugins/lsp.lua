@@ -1,17 +1,17 @@
 return {
-  "neovim/nvim-lspconfig",
-  opts = {
-    servers = {
-      lua_ls = {
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" },
-            },
-          },
-        },
-      },
-      nixd = {},
-    },
-  },
+	"neovim/nvim-lspconfig",
+	opts = {
+		servers = {
+			lua_ls = {
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" },
+						},
+					},
+				},
+			},
+			nixd = {},
+		},
+	},
 }

@@ -23,6 +23,9 @@
       lua-language-server
       stylua
 
+      # LaTeX
+      texlab
+
       # Others
       ripgrep
       ast-grep
