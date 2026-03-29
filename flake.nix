@@ -39,6 +39,8 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    hosts = ["desktop" "laptop" "school"];
 
     mkHost = hostname:
       nixpkgs.lib.nixosSystem {
@@ -65,11 +67,18 @@
           }
         ];
       };
+
+    mkHome = hostname:
+      home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {inherit inputs;};
+        modules = [
+          ./home-manager/home.nix
+          ./home-manager/hosts/${hostname}.nix
+        ];
+      };
   in {
-    nixosConfigurations = {
-      desktop = mkHost "desktop";
-      laptop = mkHost "laptop";
-      school = mkHost "school";
-    };
+    nixosConfigurations = nixpkgs.lib.genAttrs hosts mkHost;
+    homeConfigurations = nixpkgs.lib.genAttrs hosts mkHome;
   };
 }

@@ -23,6 +23,7 @@
 
   home.packages = with pkgs; [
     # CLI utilities
+    home-manager
     fd
     bat
     eza

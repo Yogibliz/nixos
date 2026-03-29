@@ -29,9 +29,19 @@
 
   # Boot settings
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      systemd-boot.configurationLimit = 3;
+    };
     kernelPackages = pkgs.linuxPackages_latest;
+  };
+
+  # Auto garbage collect weekly, keeping only recent generations
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
   };
 
   # Networking settings
