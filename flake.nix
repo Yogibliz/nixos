@@ -76,6 +76,7 @@
         inherit pkgs;
         extraSpecialArgs = {inherit inputs;};
         modules = [
+          {nixpkgs.config.allowUnfree = true;}
           ./home-manager/home.nix
           ./home-manager/hosts/${hostname}.nix
         ];

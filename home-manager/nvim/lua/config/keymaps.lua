@@ -3,15 +3,15 @@
 
 -- LaTeX engine swap between pdfLaTeX and XeLaTeX
 vim.api.nvim_create_user_command("ToggleLatexEngine", function()
-	local current_opts = vim.g.vimtex_compiler_latexmk or {}
-	local current_engine = current_opts.engine or "-pdf"
-	if current_engine == "-pdf" then
-		vim.g.vimtex_compiler_latexmk = { engine = "-xelatex" }
+	local current_opts = vim.tbl_deep_extend("force", {}, vim.g.vimtex_compiler_latexmk or {})
+	if (current_opts.engine or "-pdf") == "-pdf" then
+		current_opts.engine = "-xelatex"
 		print("VimTeX: Switched to XeLaTeX. Restart compiler (\\lk then \\ll) to apply.")
 	else
-		vim.g.vimtex_compiler_latexmk = { engine = "-pdf" }
+		current_opts.engine = "-pdf"
 		print("VimTeX: Switched to pdfLaTeX. Restart compiler (\\lk then \\ll) to apply.")
 	end
+	vim.g.vimtex_compiler_latexmk = current_opts
 end, { desc = "Toggle between pdflatex and xelatex in VimTeX" })
 
 vim.keymap.set(
