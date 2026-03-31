@@ -47,7 +47,9 @@
 
     # Desktop apps
     yazi
+    nautilus
     vesktop
+    element-desktop
     spotify
     protonvpn-gui
     pavucontrol
