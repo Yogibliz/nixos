@@ -118,7 +118,7 @@
     hyprshell
   ];
 
-  programs.hyprshell = {
+  services.hyprshell = {
     enable = true;
     settings.windows = {
       enable = true;
