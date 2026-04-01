@@ -2,7 +2,7 @@
   services.hyprshell = {
     enable = true;
     settings = {
-      version = 3;
+      version = 4;
       windows = {
         scale = 8.0;
         overview = {
