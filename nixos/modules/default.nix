@@ -3,6 +3,7 @@
     ./boot.nix
     ./environment.nix
     ./hardware.nix
+    ./hyprland.nix
     ./i18n.nix
     ./networking.nix
     ./nix.nix
@@ -12,9 +13,4 @@
     ./time.nix
     ./users.nix
   ];
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 }

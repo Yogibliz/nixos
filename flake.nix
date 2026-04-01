@@ -29,7 +29,7 @@
         inherit system;
         specialArgs = {inherit inputs;};
         modules = [
-          ./nixos/modules/common.nix
+          ./nixos/modules/default.nix
           ./nixos/hosts/${hostname}/configuration.nix
           ./nixos/hosts/${hostname}/hardware-configuration.nix
 

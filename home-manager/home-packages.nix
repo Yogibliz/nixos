@@ -20,6 +20,7 @@
     python3
 
     # Desktop apps
+    ghostty
     nautilus
     proton-vpn
     pavucontrol
@@ -38,6 +39,12 @@
     # System / UI
     adwaita-icon-theme
     btop
+    hyprpaper
+    hyprlock
+    hypridle
+    hyprshot
+    hyprshell
     networkmanagerapplet
+    wl-clipboard
   ];
 }
