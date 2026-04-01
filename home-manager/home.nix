@@ -61,11 +61,9 @@
     btop
   ];
 
-  gtk.enbale = true;
   programs.home-manager.enable = true;
 
   imports = [
-    inputs.hyprshell.homeModules.hyprshell
     ./nvim/nvim.nix
     ./zsh/zsh.nix
     ./git/git.nix
