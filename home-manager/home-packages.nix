@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  nixpkgs.config.allowUnfree = true;
-
   # Packages stored alphabetiacally within categories
   home.packages = with pkgs; [
     # CLI utilities
