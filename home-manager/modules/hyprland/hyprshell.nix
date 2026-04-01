@@ -2,6 +2,7 @@
   services.hyprshell = {
     enable = true;
     settings = {
+      version = 1;
       windows = {
         scale = 8.0;
         overview = {
@@ -11,15 +12,9 @@
             max_items = 6;
             default_terminal = "ghostty";
             plugins = {
-              applications = {
-                enable = true;
-              };
-              calc = {
-                enable = true;
-              };
-              terminal = {
-                enable = true;
-              };
+              applications = {};
+              calc = {};
+              terminal = {};
             };
           };
         };
