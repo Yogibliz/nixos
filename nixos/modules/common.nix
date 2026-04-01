@@ -127,6 +127,8 @@
     wireplumber
     playerctl
     brightnessctl
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
   ];
 
   # No touchy!
