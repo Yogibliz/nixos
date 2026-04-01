@@ -51,7 +51,7 @@
     vesktop
     element-desktop
     spotify
-    protonvpn-gui
+    proton-vpn
     pavucontrol
     zathura
 
