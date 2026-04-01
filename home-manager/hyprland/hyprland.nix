@@ -5,14 +5,9 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    plugins = [
-      inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3
-    ];
+    plugins = [pkgs.hyprlandPlugins.hy3];
 
     settings = {
-      # Monitors are set per host in home-manager/hosts/*.nix
-
       windowrule = [
         "match:class steam, float 1"
         "match:class steam, match:title Steam, tile 1"
@@ -120,6 +115,7 @@
     hyprlock
     hypridle
     hyprshot
+    hyprshell
   ];
 
   programs.hyprshell = {
@@ -166,12 +162,12 @@
       };
       listener = [
         {
-          timeout = 1800;
+          timeout = 300;
           on-timeout = "hyprlock";
           on-resume = "hyprctl dispatch dpms on";
         }
         {
-          timeout = 1860;
+          timeout = 480;
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }

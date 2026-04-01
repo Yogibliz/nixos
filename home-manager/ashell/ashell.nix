@@ -1,13 +1,7 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: let
-  ashell-pkg = inputs.ashell.packages.${pkgs.stdenv.hostPlatform.system}.default;
-in {
+{pkgs, ...}: {
   programs.ashell = {
     enable = true;
-    package = ashell-pkg;
+    package = pkgs.ashell;
     settings = {
       layer = "Top";
       modules = {
