@@ -19,10 +19,10 @@
       enable = true;
       wayland.enable = true;
     };
-  };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
+    resolved = {
+      enable = true;
+      dnssec = "false";
+    };
   };
 }

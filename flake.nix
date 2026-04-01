@@ -22,10 +22,6 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
     hosts = ["desktop" "laptop" "school"];
 
     mkHost = hostname:
@@ -33,10 +29,12 @@
         inherit system;
         specialArgs = {inherit inputs;};
         modules = [
-          home-manager.nixosModules.home-manager
           ./nixos/modules/common.nix
           ./nixos/hosts/${hostname}/configuration.nix
           ./nixos/hosts/${hostname}/hardware-configuration.nix
+
+          # Home Manager integrated as a NixOS module
+          home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -52,19 +50,7 @@
           }
         ];
       };
-
-    mkHome = hostname:
-      home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {inherit inputs;};
-        modules = [
-          {nixpkgs.config.allowUnfree = true;}
-          ./home-manager/home.nix
-          ./home-manager/hosts/${hostname}.nix
-        ];
-      };
   in {
     nixosConfigurations = nixpkgs.lib.genAttrs hosts mkHost;
-    homeConfigurations = nixpkgs.lib.genAttrs hosts mkHome;
   };
 }

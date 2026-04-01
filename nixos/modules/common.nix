@@ -12,4 +12,9 @@
     ./time.nix
     ./users.nix
   ];
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 }
