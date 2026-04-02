@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   services = {
     blueman.enable = true;
     upower.enable = true;
@@ -18,6 +18,13 @@
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
+      theme = "sddm-astronaut-theme";
+      extraPackages = [
+        (pkgs.sddm-astronaut.override
+          {
+            embeddedTheme = "Pixel-sakura";
+          })
+      ];
     };
 
     resolved = {
