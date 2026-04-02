@@ -1,7 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.ashell = {
     enable = true;
-    package = pkgs.ashell;
+    # Follow source instead through flake, keeps it up-to-date with config page
+    package = inputs.ashell.packages.${pkgs.system}.default;
     settings = {
       layer = "Top";
 
