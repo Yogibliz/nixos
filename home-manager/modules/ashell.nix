@@ -42,9 +42,9 @@
 
       # Apperance
       appearance = {
-        font_name = "JetBrains Mono NF";
+        font_name = "JetBrainsMonoNL Nerd Font Mono";
         scale_factor = 1.2;
-        opacity = 0.8;
+        opacity = 0.5;
       };
     };
   };
