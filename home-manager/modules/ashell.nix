@@ -4,15 +4,19 @@
     package = pkgs.ashell;
     settings = {
       layer = "Top";
+
+      # Which Modules? Where?
       modules = {
         left = ["Tray" "MediaPlayer"];
         center = ["WindowTitle"];
         right = [
           "KeyboardLayout"
           "SystemInfo"
-          ["Tempo" "Privacy" "Settings"]
+          ["Tempo" "Settings"]
         ];
       };
+
+      # Module settings (settings is a module)
       settings = {
         lock_cmd = "hyprlock";
         vpn_more_cmd = "nm-connection-editor";
@@ -20,6 +24,7 @@
         audio_sinks_more_cmd = "pavucontrol";
         bluetooth_more_cmd = "blueman-manager";
       };
+
       system_info = {
         indicators = ["Cpu" "Memory" "Temperature"];
         temperature = {
@@ -28,7 +33,16 @@
           alert_threshold = 85;
         };
       };
+
+      tempo = {
+        weather_location = {
+          City = "Linköping";
+        };
+      };
+
+      # Apperance
       appearance = {
+        font_name = "JetBrains Mono NF";
         scale_factor = 1.2;
         opacity = 0.8;
       };
