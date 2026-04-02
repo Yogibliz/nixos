@@ -49,7 +49,10 @@
       appearance = {
         font_name = "JetBrainsMonoNL Nerd Font Mono";
         scale_factor = 1.2;
-        opacity = 0.5;
+        opacity = 0.7;
+        menu = {
+          opacity = 0.7;
+        };
       };
     };
   };
