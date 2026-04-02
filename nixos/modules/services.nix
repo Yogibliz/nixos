@@ -19,10 +19,13 @@
       enable = true;
       wayland.enable = true;
       theme = "sddm-astronaut-theme";
+
+      package = pkgs.kdePackages.sddm;
+
       extraPackages = [
         (pkgs.sddm-astronaut.override
           {
-            embeddedTheme = "Pixel-sakura";
+            embeddedTheme = "pixel_sakura";
           })
       ];
     };

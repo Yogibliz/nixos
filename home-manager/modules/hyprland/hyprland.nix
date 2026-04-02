@@ -32,6 +32,7 @@
 
       exec-once = [
         "ashell"
+        "hyprshell run"
       ];
 
       input = {
