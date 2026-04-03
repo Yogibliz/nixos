@@ -22,12 +22,13 @@
 
       package = pkgs.kdePackages.sddm;
 
-      extraPackages = [
-        (pkgs.sddm-astronaut.override
-          {
-            embeddedTheme = "pixel_sakura";
-          })
-      ];
+      # Can't get it to work...
+      # extraPackages = [
+      #   (pkgs.sddm-astronaut.override
+      #     {
+      #       embeddedTheme = "pixel_sakura";
+      #     })
+      # ];
     };
 
     resolved = {
