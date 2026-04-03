@@ -26,6 +26,7 @@
     vesktop
     yazi
     zathura
+    zotero
 
     # LaTeX
     texliveFull
