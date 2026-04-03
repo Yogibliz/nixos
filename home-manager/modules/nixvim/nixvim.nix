@@ -5,7 +5,7 @@
 }: {
   programs.nixvim = {
     enable = true;
-    package = inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = inputs.nixvim.homeModules.default;
 
     opts = {
       number = true;
