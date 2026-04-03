@@ -6,7 +6,7 @@
   programs.ashell = {
     enable = true;
     # Follow source instead through flake, keeps it up-to-date with config page
-    package = inputs.ashell.packages.${pkgs.system}.default;
+    package = inputs.ashell.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
       layer = "Top";
 
