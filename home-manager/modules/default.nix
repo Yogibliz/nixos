@@ -4,7 +4,8 @@
     ./ghostty.nix
     ./git.nix
     ./hyprland
-    ./nvim
+    # ./nvim
+    ./nixvim/nixvim.nix
     ./zsh.nix
   ];
 }
