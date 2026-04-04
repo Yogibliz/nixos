@@ -5,7 +5,6 @@
       enable = true;
       settings = {
         dark_variant = "moon";
-        dim_inactive_windows = true;
         extend_background_behind_borders = true;
         styles = {
           bold = true;

@@ -7,6 +7,7 @@
     ./lazygit.nix
     ./lualine.nix
     ./lsp.nix
+    ./noice.nix
     ./telescope.nix
     ./icons.nix
     ./treesitter.nix

@@ -26,11 +26,7 @@
     spotify
     vesktop
     yazi
-    zathura
     zotero
-
-    # LaTeX
-    texliveFull
 
     # Media
     ani-cli
