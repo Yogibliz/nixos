@@ -4,6 +4,7 @@
     ./nixvim.nix
     ./clipboard.nix
     ./colorscheme.nix
+    ./keymaps.nix
     ./plugins/blink.nix
     ./plugins/conform.nix
     ./plugins/fzf-lua.nix

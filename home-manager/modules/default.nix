@@ -5,7 +5,7 @@
     ./git.nix
     ./hyprland
     # ./nvim
-    ./nixvim/nixvim.nix
+    ./nixvim
     ./zsh.nix
   ];
 }
