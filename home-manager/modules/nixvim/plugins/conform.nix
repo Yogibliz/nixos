@@ -8,7 +8,7 @@
         lsp_format = "fallback";
       };
       formatters_by_ft = {
-        nix = [ "alejandra" ];
+        nix = [ "nixfmt" ];
         lua = [ "stylua" ];
         rust = [ "rustfmt" ];
         python = [ "black" ];
@@ -18,7 +18,7 @@
   };
 
   programs.nixvim.extraPackages = with pkgs; [
-    alejandra
+    nixfmt
     stylua
     rustfmt
   ];
