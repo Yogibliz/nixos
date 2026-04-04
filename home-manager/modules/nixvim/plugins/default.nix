@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./autopairs.nix
     ./blink.nix
     ./conform.nix
     ./lazygit.nix

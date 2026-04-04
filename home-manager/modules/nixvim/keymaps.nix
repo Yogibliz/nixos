@@ -137,10 +137,11 @@
       ];
       key = "<C-s>";
       action.__raw = ''
-        function()
-          vim.lsp.buf.format({ async = false })
-          vim.cmd("write")
-        end
+        	function()
+        	  vim.cmd("stopinsert")
+        	  vim.lsp.buf.format({ async = false })
+        	  vim.cmd("write")
+        	end
       '';
       options = {
         desc = "Save and format";
