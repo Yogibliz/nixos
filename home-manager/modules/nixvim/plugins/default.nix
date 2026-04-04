@@ -4,6 +4,7 @@
     ./blink.nix
     ./conform.nix
     ./lazygit.nix
+    ./lualine.nix
     ./lsp.nix
     ./telescope.nix
     ./icons.nix
