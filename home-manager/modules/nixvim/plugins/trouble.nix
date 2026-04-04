@@ -1,8 +1,9 @@
-{...}: {
-   programs.nixvim.plugins.trouble = {
-      enable = true;
-      settings = {
-	
-      };
-   };
+{ ... }:
+{
+  programs.nixvim.plugins.trouble = {
+    enable = true;
+    settings = {
+
+    };
+  };
 }

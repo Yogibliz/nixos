@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   programs.ashell = {
     enable = true;
     # Follow source instead through flake, keeps it up-to-date with config page
@@ -12,12 +13,18 @@
 
       # Which Modules? Where?
       modules = {
-        left = ["Tray" "MediaPlayer"];
-        center = ["WindowTitle"];
+        left = [
+          "Tray"
+          "MediaPlayer"
+        ];
+        center = [ "WindowTitle" ];
         right = [
           "KeyboardLayout"
           "SystemInfo"
-          ["Tempo" "Settings"]
+          [
+            "Tempo"
+            "Settings"
+          ]
         ];
       };
 
@@ -31,7 +38,11 @@
       };
 
       system_info = {
-        indicators = ["Cpu" "Memory" "Temperature"];
+        indicators = [
+          "Cpu"
+          "Memory"
+          "Temperature"
+        ];
         temperature = {
           sensor = "k10temp Tctl";
           warn_threshold = 70;

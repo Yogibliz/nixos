@@ -1,5 +1,6 @@
 # ── Zsh ───────────────────────────────────────────────────
-{...}: {
+{ ... }:
+{
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -19,7 +20,10 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins = ["git" "fzf"];
+      plugins = [
+        "git"
+        "fzf"
+      ];
     };
   };
 }

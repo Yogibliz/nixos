@@ -12,16 +12,16 @@
             max_items = 6;
             default_terminal = "ghostty";
             plugins = {
-              applications = {};
-              calc = {};
-              terminal = {};
+              applications = { };
+              calc = { };
+              terminal = { };
             };
           };
         };
         switch = {
           key = "Tab";
           modifier = "alt";
-          filter_by = ["current_workspace"];
+          filter_by = [ "current_workspace" ];
         };
       };
     };

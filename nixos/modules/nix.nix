@@ -1,8 +1,11 @@
 {
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
-      trusted-users = ["iris"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [ "iris" ];
     };
     gc = {
       automatic = true;

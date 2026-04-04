@@ -1,8 +1,9 @@
-{...}: {
-   programs.nixvim.plugins.vimtex = {
-      enable = true;
-      settings = {
-	
-      };
-   };
+{ ... }:
+{
+  programs.nixvim.plugins.vimtex = {
+    enable = true;
+    settings = {
+      view_method = "zathura";
+    };
+  };
 }

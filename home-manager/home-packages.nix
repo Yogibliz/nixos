@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # Packages stored alphabetiacally within categories
   home.packages = with pkgs; [
     # CLI utilities
