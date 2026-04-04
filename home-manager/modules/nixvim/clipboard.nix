@@ -1,6 +1,6 @@
 {...}: {
   programs.nixvim.clipboard = {
-    register = "wl-copy";
+    register = "unnamedplus";
     providers.wl-copy.enable = true;
   };
 }
