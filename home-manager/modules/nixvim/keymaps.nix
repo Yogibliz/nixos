@@ -23,6 +23,17 @@
     { mode = "n"; key = ";"; action = "^"; }
     { mode = "n"; key = "'"; action = "$"; }
 
+    # Windows
+    { mode = "n"; key = "<leader>ww"; action = "<C-w>p"; options.desc = "Other window"; }
+    { mode = "n"; key = "<leader>wd"; action = "<C-w>c"; options.desc = "Close window"; }
+    { mode = "n"; key = "<leader>w-"; action = "<C-w>s"; options.desc = "Split horizontal"; }
+    { mode = "n"; key = "<leader>w|"; action = "<C-w>v"; options.desc = "Split vertical"; }
+
+    # Buffers
+    { mode = "n"; key = "<leader>bd"; action = "<cmd>bd<cr>"; options.desc = "Delete buffer"; }
+    { mode = "n"; key = "<leader>bn"; action = "<cmd>bnext<cr>"; options.desc = "Next buffer"; }
+    { mode = "n"; key = "<leader>bp"; action = "<cmd>bprev<cr>"; options.desc = "Prev buffer"; }
+
     # Diagnostic navigation
     {
       mode = "n";
