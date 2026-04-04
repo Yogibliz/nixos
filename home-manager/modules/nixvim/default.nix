@@ -7,9 +7,9 @@
     ./keymaps.nix
     ./plugins/blink.nix
     ./plugins/conform.nix
-    ./plugins/fzf-lua.nix
     ./plugins/icons.nix
     ./plugins/lsp.nix
+    ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/trouble.nix
     ./plugins/vimtex.nix
