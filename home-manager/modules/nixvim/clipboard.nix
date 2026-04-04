@@ -1,5 +1,6 @@
 {...}: {
-  programs.nixvim.clipboard.providers = {
-    wl-copy.enable = true;
+  programs.nixvim.clipboard = {
+    register = "wl-copy";
+    providers.wl-copy.enable = true;
   };
 }
