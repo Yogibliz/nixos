@@ -8,6 +8,7 @@
     ./plugins/blink.nix
     ./plugins/conform.nix
     ./plugins/icons.nix
+    ./plugins/lazygit.nix
     ./plugins/lsp.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
