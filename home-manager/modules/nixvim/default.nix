@@ -7,6 +7,7 @@
     ./plugins/blink.nix
     ./plugins/conform.nix
     ./plugins/fzf-lua.nix
+    ./plugins/icons.nix
     ./plugins/lsp.nix
     ./plugins/treesitter.nix
     ./plugins/trouble.nix
