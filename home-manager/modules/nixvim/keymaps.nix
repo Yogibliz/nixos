@@ -81,15 +81,17 @@
       action = "<C-w>c";
       options.desc = "Close window";
     }
+
+    # Splits
     {
       mode = "n";
-      key = "<leader>w-";
+      key = "<leader>-";
       action = "<C-w>s";
       options.desc = "Split horizontal";
     }
     {
       mode = "n";
-      key = "<leader>w|";
+      key = "<leader>|";
       action = "<C-w>v";
       options.desc = "Split vertical";
     }
