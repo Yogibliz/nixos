@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.nixvim.plugins.vimtex = {
     enable = true;
@@ -23,10 +23,9 @@
     };
   };
 
-  programs.nixvim.extraPackages = with pkgs; [
-    texliveFull
-    zathura
-  ];
+  programs.nixvim.extraConfigLua = ''
+    vim.env.PATH = "/etc/profiles/per-user/iris/bin:" .. vim.env.PATH
+  '';
 
   programs.nixvim.keymaps = [
     {

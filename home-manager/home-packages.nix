@@ -17,6 +17,7 @@
     cargo
     statix
     python3
+    texliveFull
 
     # Desktop apps
     ghostty
@@ -26,6 +27,7 @@
     spotify
     vesktop
     yazi
+    zathura
     zotero
 
     # Media
