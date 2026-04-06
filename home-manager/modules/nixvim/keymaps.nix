@@ -151,5 +151,33 @@
         noremap = true;
       };
     }
+
+    # Neotree
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = "<cmd>Neotree toggle<cr>";
+      options.desc = "Toggle file explorer";
+    }
+    {
+      mode = "n";
+      key = "<leader>fe";
+      action = "<cmd>Neotree reveal<cr>";
+      options.desc = "Reveal current file in explorer";
+    }
+
+    # Control-S Regex without needing escapes
+    {
+      mode = [
+        "n"
+        "v"
+      ];
+      key = "<C-r>";
+      action = ":%s/\\v//gc<Left><Left><Left><Left>";
+      options = {
+        desc = "Search and replace (regex)";
+        noremap = true;
+      };
+    }
   ];
 }

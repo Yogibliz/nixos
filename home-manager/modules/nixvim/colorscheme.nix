@@ -28,6 +28,34 @@
             bg = "none";
           };
 
+          # Telescope
+          TelescopeNormal = {
+            bg = "base";
+          };
+          TelescopePromptNormal = {
+            bg = "surface";
+          };
+          TelescopeBorder = {
+            fg = "overlay";
+            bg = "base";
+          };
+          TelescopePromptBorder = {
+            fg = "overlay";
+            bg = "surface";
+          };
+          TelescopePromptTitle = {
+            fg = "base";
+            bg = "foam";
+          };
+          TelescopeResultsTitle = {
+            fg = "base";
+            bg = "base";
+          };
+          TelescopePreviewTitle = {
+            fg = "base";
+            bg = "iris";
+          };
+
           # Floating windows
           NormalFloat = {
             bg = "none";
