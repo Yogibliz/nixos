@@ -8,11 +8,6 @@
         upower.enable = true;
         power-profiles-daemon.enable = true;
 
-        jellyfin = {
-          enable = true;
-          user = "iris";
-        };
-
         xserver.xkb = {
           layout = "us";
           variant = "";

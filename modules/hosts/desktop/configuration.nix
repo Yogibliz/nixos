@@ -21,11 +21,12 @@
         self.nixosModules.users
 
         # features
+        self.nixosModules.homeManager
         self.nixosModules.hyprland
         self.nixosModules.noctalia
         self.nixosModules.steam
         self.nixosModules.gamescope
-        self.nixosModules.homeManager
+        self.nixosModules.jellyfin
       ];
 
       nix.settings.experimental-features = [
@@ -35,7 +36,7 @@
 
       home-manager.users.iris.imports = [
         "${self}/home/home.nix"
-	"${self}/home/hosts/desktop.nix"
+        "${self}/home/hosts/desktop.nix"
       ];
 
       networking.hostName = "desktop";
