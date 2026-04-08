@@ -33,6 +33,11 @@
         "flakes"
       ];
 
+      home-manager.users.iris.imports = [
+        "${self}/home/home.nix"
+	"${self}/home/hosts/desktop.nix"
+      ];
+
       networking.hostName = "desktop";
 
       fileSystems."/mnt/games" = {
