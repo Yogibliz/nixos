@@ -25,7 +25,6 @@
         self.nixosModules.hyprland
         self.nixosModules.noctalia
         self.nixosModules.steam
-        self.nixosModules.gamescope
         self.nixosModules.jellyfin
       ];
 
