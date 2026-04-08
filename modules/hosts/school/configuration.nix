@@ -23,9 +23,7 @@
         # features
         self.nixosModules.hyprland
         self.nixosModules.noctalia
-
-        # home manager
-        inputs.home-manager.nixosModules.home-manager
+        self.nixosModules.homeManager
       ];
 
       nix.settings.experimental-features = [
@@ -52,28 +50,5 @@
           "nofail"
         ];
       };
-
-      programs.gamescope = {
-        enable = true;
-        capSysNice = true;
-      };
-
-      programs.steam = {
-        enable = true;
-        gamescopeSession.enable = true;
-        remotePlay.openFirewall = true;
-        dedicatedServer.openFirewall = true;
-      };
-
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        extraSpecialArgs = { inherit inputs self; };
-        users.iris.imports = [
-          "${self}/home/home.nix"
-          "${self}/home/hosts/school.nix"
-        ];
-      };
-
     };
 }
