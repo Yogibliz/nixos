@@ -33,7 +33,7 @@
 
       home-manager.users.iris.imports = [
         "${self}/home/home.nix"
-        "${self}/home/hosts/desktop.nix"
+        "${self}/home/hosts/laptop.nix"
       ];
 
       networking.hostName = "laptop";
