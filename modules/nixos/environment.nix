@@ -16,7 +16,7 @@
         };
         systemPackages = with pkgs; [
           inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-	  git
+          git
           mesa
           wget
           wireplumber
