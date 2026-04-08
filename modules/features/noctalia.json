@@ -14,8 +14,8 @@
       "contentPadding": 2,
       "fontScale": 1,
       "enableExclusionZoneInset": true,
-      "backgroundOpacity": 0.93,
-      "useSeparateOpacity": false,
+      "backgroundOpacity": 0,
+      "useSeparateOpacity": true,
       "marginVertical": 4,
       "marginHorizontal": 4,
       "frameThickness": 8,
@@ -78,33 +78,13 @@
         ],
         "center": [
           {
-            "characterCount": 2,
-            "colorizeIcons": false,
-            "emptyColor": "secondary",
-            "enableScrollWheel": true,
-            "focusedColor": "primary",
-            "followFocusedScreen": false,
-            "fontWeight": "bold",
-            "groupedBorderOpacity": 1,
-            "hideUnoccupied": false,
-            "iconScale": 0.8,
-            "id": "Workspace",
-            "labelMode": "index",
-            "occupiedColor": "secondary",
-            "pillSize": 0.7,
-            "showApplications": false,
-            "showApplicationsHover": false,
-            "showBadge": true,
-            "showLabelsOnlyWhenOccupied": true,
-            "unfocusedIconsOpacity": 1
-          },
-          {
             "colorizeIcons": false,
             "hideMode": "hidden",
             "id": "ActiveWindow",
-            "maxWidth": 250,
+            "maxWidth": 400,
             "scrollingMode": "hover",
             "showIcon": true,
+            "showText": true,
             "textColor": "none",
             "useFixedWidth": false
           }
@@ -247,7 +227,8 @@
           "Del"
         ]
       },
-      "reverseScroll": false
+      "reverseScroll": false,
+      "smoothScrollEnabled": true
     },
     "ui": {
       "fontDefault": "Sans Serif",
@@ -267,6 +248,7 @@
       "name": "Linköping",
       "weatherEnabled": true,
       "weatherShowEffects": true,
+      "weatherTaliaMascotAlways": false,
       "useFahrenheit": false,
       "use12hourFormat": false,
       "showWeekNumberInCalendar": false,
@@ -275,7 +257,8 @@
       "analogClockInCalendar": false,
       "firstDayOfWeek": -1,
       "hideWeatherTimezone": false,
-      "hideWeatherCityName": false
+      "hideWeatherCityName": false,
+      "autoLocate": false
     },
     "calendar": {
       "cards": [
@@ -323,6 +306,7 @@
       "showHiddenFiles": false,
       "viewMode": "single",
       "setWallpaperOnAllMonitors": true,
+      "linkLightAndDarkWallpapers": true,
       "fillMode": "crop",
       "fillColor": "#000000",
       "useSolidColor": false,
@@ -506,7 +490,6 @@
       "indicatorOpacity": 0.6
     },
     "network": {
-      "airplaneModeEnabled": false,
       "bluetoothRssiPollingEnabled": false,
       "bluetoothRssiPollIntervalMs": 60000,
       "networkPanelView": "ethernet",
@@ -652,7 +635,8 @@
       "manualSunrise": "06:30",
       "manualSunset": "18:30",
       "generationMethod": "tonal-spot",
-      "monitorForColors": ""
+      "monitorForColors": "",
+      "syncGsettings": true
     },
     "templates": {
       "activeTemplates": [],
@@ -711,7 +695,12 @@
     "barVisible": true,
     "openedPanel": "",
     "lockScreenActive": false,
-    "wallpapers": {},
+    "wallpapers": {
+      "DP-1": "/nix/store/7j4a02nkk4ilda585jbjgg9f9i9b4ibb-noctalia-shell-4.7.5/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
+      "DP-2": "/nix/store/7j4a02nkk4ilda585jbjgg9f9i9b4ibb-noctalia-shell-4.7.5/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
+      "DP-3": "/nix/store/7j4a02nkk4ilda585jbjgg9f9i9b4ibb-noctalia-shell-4.7.5/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
+      "HDMI-A-1": "/nix/store/7j4a02nkk4ilda585jbjgg9f9i9b4ibb-noctalia-shell-4.7.5/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
+    },
     "desktopWidgetsEditMode": false,
     "display": {
       "DP-1": {
@@ -767,7 +756,7 @@
       "lastSeenTs": 0
     },
     "changelogState": {
-      "lastSeenVersion": "v4.7.1"
+      "lastSeenVersion": "v4.7.5"
     },
     "colorSchemesList": {
       "schemes": [],
