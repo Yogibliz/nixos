@@ -9,6 +9,7 @@
       number = true;
       relativenumber = true;
       shiftwidth = 2;
+      linebreak = true;
     };
   };
 }
