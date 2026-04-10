@@ -12,6 +12,8 @@
     ./noice.nix
     ./telescope.nix
     ./icons.nix
+    ./snacks.nix
+    ./smear-cursor.nix
     ./surround.nix
     ./treesitter.nix
     ./treesitter-textobjects.nix
