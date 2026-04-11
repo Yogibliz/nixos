@@ -5,6 +5,7 @@
     settings = {
       open_mapping = "[[<C-t>]]";
       direction = "horizontal";
+      size = 20;
     };
   };
 }
