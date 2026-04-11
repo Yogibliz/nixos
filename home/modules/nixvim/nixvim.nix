@@ -1,5 +1,10 @@
-{ ... }:
+{ lib, ... }:
+let
+  pluginFiles = lib.filesystem.listFilesRecursive ./plugins;
+in
 {
+  imports = pluginFiles;
+
   programs.nixvim = {
     enable = true;
 

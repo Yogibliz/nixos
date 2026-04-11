@@ -6,6 +6,5 @@
     ./clipboard.nix
     ./colorscheme.nix
     ./keymaps.nix
-    ./plugins
   ];
 }
