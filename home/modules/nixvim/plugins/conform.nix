@@ -18,6 +18,7 @@
   };
 
   programs.nixvim.extraPackages = with pkgs; [
+    black
     nixfmt
     stylua
     rustfmt
