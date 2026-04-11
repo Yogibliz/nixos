@@ -71,15 +71,33 @@
     # Windows
     {
       mode = "n";
-      key = "<leader>ww";
-      action = "<C-w>p";
-      options.desc = "Other window";
-    }
-    {
-      mode = "n";
       key = "<leader>wd";
       action = "<C-w>c";
       options.desc = "Close window";
+    }
+    {
+      mode = "n";
+      key = "<S-h>";
+      action = "<C-w>h";
+      options.desc = "Move to left window";
+    }
+    {
+      mode = "n";
+      key = "<S-j>";
+      action = "<C-w>j";
+      options.desc = "Move to window below";
+    }
+    {
+      mode = "n";
+      key = "<S-k>";
+      action = "<C-w>k";
+      options.desc = "Move to window above";
+    }
+    {
+      mode = "n";
+      key = "<S-l>";
+      action = "<C-w>l";
+      options.desc = "Move to right window";
     }
 
     # Splits
@@ -115,7 +133,6 @@
       action = "<cmd>bprev<cr>";
       options.desc = "Prev buffer";
     }
-
     # Diagnostic navigation
     {
       mode = "n";
