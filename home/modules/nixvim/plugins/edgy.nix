@@ -10,6 +10,13 @@
           title = "nvimtree";
         }
       ];
+      bottom = [
+        {
+          ft = "toggleterm";
+          size = 20;
+          title = "Terminal";
+        }
+      ];
     };
   };
 }
