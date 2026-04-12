@@ -251,14 +251,14 @@
       "weatherTaliaMascotAlways": false,
       "useFahrenheit": false,
       "use12hourFormat": false,
-      "showWeekNumberInCalendar": false,
+      "showWeekNumberInCalendar": true,
       "showCalendarEvents": true,
       "showCalendarWeather": true,
       "analogClockInCalendar": false,
-      "firstDayOfWeek": -1,
+      "firstDayOfWeek": 1,
       "hideWeatherTimezone": false,
       "hideWeatherCityName": false,
-      "autoLocate": false
+      "autoLocate": true
     },
     "calendar": {
       "cards": [
@@ -455,8 +455,8 @@
       "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor"
     },
     "noctaliaPerformance": {
-      "disableWallpaper": true,
-      "disableDesktopWidgets": true
+      "disableWallpaper": false,
+      "disableDesktopWidgets": false
     },
     "dock": {
       "enabled": false,
@@ -501,7 +501,7 @@
     },
     "sessionMenu": {
       "enableCountdown": true,
-      "countdownDuration": 10000,
+      "countdownDuration": 3000,
       "position": "center",
       "showHeader": true,
       "showKeybinds": true,
@@ -696,10 +696,10 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/nix/store/7j4a02nkk4ilda585jbjgg9f9i9b4ibb-noctalia-shell-4.7.5/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
-      "DP-2": "/nix/store/7j4a02nkk4ilda585jbjgg9f9i9b4ibb-noctalia-shell-4.7.5/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
-      "DP-3": "/nix/store/7j4a02nkk4ilda585jbjgg9f9i9b4ibb-noctalia-shell-4.7.5/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
-      "HDMI-A-1": "/nix/store/7j4a02nkk4ilda585jbjgg9f9i9b4ibb-noctalia-shell-4.7.5/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
+      "DP-1": "/home/iris/Pictures/Wallpapers/wallhaven-yx3kok.jpg",
+      "DP-2": "/home/iris/Pictures/Wallpapers/1255488.png",
+      "DP-3": "/home/iris/Pictures/Wallpapers/wp4162349-celeste-game-wallpapers.jpg",
+      "HDMI-A-1": "/home/iris/Pictures/Wallpapers/1367730.jpeg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -753,7 +753,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 0
+      "lastSeenTs": 1776026318000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"
