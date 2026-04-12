@@ -21,7 +21,6 @@
 
         displayManager.sddm = {
           enable = true;
-          withUWSM = true;
           wayland.enable = true;
         };
 
