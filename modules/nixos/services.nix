@@ -21,12 +21,8 @@
 
         displayManager.sddm = {
           enable = true;
+          withUWSM = true;
           wayland.enable = true;
-          settings.General.DefaultSession = "hyprland.desktop";
-        };
-
-        xserver = {
-          enable = true;
         };
 
         resolved = {
