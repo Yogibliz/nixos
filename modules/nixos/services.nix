@@ -22,17 +22,10 @@
         displayManager.sddm = {
           enable = true;
           wayland.enable = true;
-          theme = "sddm-astronaut-theme";
+        };
 
-          package = pkgs.kdePackages.sddm;
-
-          # Can't get it to work...
-          # extraPackages = [
-          #   (pkgs.sddm-astronaut.override
-          #     {
-          #       embeddedTheme = "pixel_sakura";
-          #     })
-          # ];
+        xserver = {
+          enable = true;
         };
 
         resolved = {
