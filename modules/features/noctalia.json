@@ -356,7 +356,7 @@
       "position": "top_center",
       "pinnedApps": [],
       "sortByMostUsed": true,
-      "terminalCommand": "ghostty --",
+      "terminalCommand": "ghostty",
       "customLaunchPrefixEnabled": false,
       "customLaunchPrefix": "",
       "viewMode": "list",
@@ -455,8 +455,8 @@
       "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor"
     },
     "noctaliaPerformance": {
-      "disableWallpaper": false,
-      "disableDesktopWidgets": false
+      "disableWallpaper": true,
+      "disableDesktopWidgets": true
     },
     "dock": {
       "enabled": false,
@@ -501,7 +501,7 @@
     },
     "sessionMenu": {
       "enableCountdown": true,
-      "countdownDuration": 3000,
+      "countdownDuration": 10000,
       "position": "center",
       "showHeader": true,
       "showKeybinds": true,
