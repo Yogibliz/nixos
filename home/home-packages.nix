@@ -22,11 +22,9 @@
     # Desktop apps
     ghostty
     nautilus
-    proton-vpn
     pavucontrol
     spotify
     vesktop
-    yazi
     zathura
     zotero
 
@@ -37,7 +35,6 @@
     # System / UI
     adwaita-icon-theme
     btop
-    hyprpaper
     hyprshot
     networkmanagerapplet
     wl-clipboard
