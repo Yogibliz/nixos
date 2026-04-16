@@ -17,6 +17,7 @@
         self.nixosModules.security
         self.nixosModules.services
         self.nixosModules.system
+        self.nixosModules.systemd
         self.nixosModules.time
         self.nixosModules.users
 
