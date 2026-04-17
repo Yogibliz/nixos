@@ -1,16 +1,13 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.systemd =
-    { ... }:
+    { lib, ... }:
     {
       systemd.services = {
+        NetworkManager-wait-online.enable = false;
         jellyfin = {
-          enable = true;
-          serviceConfig = {
-            Wants = "";
-            After = "";
-          };
-          wantedBy = [ "multi-user.target" ];
+          wants = lib.mkForce [ ];
+          after = lib.mkForce [ "network.target" ];
         };
       };
     };
