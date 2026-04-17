@@ -20,11 +20,6 @@
           icon = " ";
         }
         {
-          __unkeyed-1 = "<leader>g";
-          group = "git";
-          icon = " ";
-        }
-        {
           __unkeyed-1 = "<leader>u";
           group = "ui";
           icon = " ";
