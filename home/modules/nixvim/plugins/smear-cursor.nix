@@ -6,6 +6,7 @@
       stiffness = 0.6;
       trailing_stiffness = 0.45;
       distance_stop_animating = 0.1;
+      time_interval = 5;
     };
   };
 }
