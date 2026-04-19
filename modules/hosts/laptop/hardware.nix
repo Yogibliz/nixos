@@ -22,6 +22,12 @@
       boot.initrd.kernelModules = [ ];
       boot.kernelModules = [ "kvm-intel" ];
       boot.extraModulePackages = [ ];
+      boot.kernelPatches = [
+        {
+          name = "samsung-galaxy-book4-audio";
+          patch = ./samsung-audio.patch;
+        }
+      ];
 
       fileSystems."/" = {
         device = "/dev/disk/by-uuid/71ef275e-7e51-4473-bd9a-3bdfa4bc1bde";
