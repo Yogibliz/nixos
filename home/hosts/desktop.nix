@@ -8,5 +8,6 @@
   ];
 
   home.packages = with pkgs; [
+    openssl_3_5
   ];
 }
