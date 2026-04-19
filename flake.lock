@@ -450,19 +450,11 @@
     "samsung-fixes": {
       "flake": false,
       "locked": {
-<<<<<<< HEAD
         "lastModified": 1776525976,
         "narHash": "sha256-FXbLOJG6P7oUFv3Orbah5R8i/CapfopItsvonvK13Gg=",
         "owner": "Andycodeman",
         "repo": "samsung-galaxy-book-linux-fixes",
         "rev": "15888d2111f8235b18f50f2615074e328523c47a",
-=======
-        "lastModified": 1776294330,
-        "narHash": "sha256-ATrxb0+woOc3nZ0c2qwplnFOQ5Z8PwgODXKtwqMSvOs=",
-        "owner": "Andycodeman",
-        "repo": "samsung-galaxy-book-linux-fixes",
-        "rev": "51bdbd9754d5304506d2fdc90fba1b85bf600952",
->>>>>>> 36fb5cb (add samsung audio patch)
         "type": "github"
       },
       "original": {
