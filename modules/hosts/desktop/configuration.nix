@@ -29,8 +29,6 @@
         self.nixosModules.jellyfin
       ];
 
-      nix.optimise.automatic = true;
-
       nix.settings.experimental-features = [
         "nix-command"
         "flakes"
@@ -42,23 +40,5 @@
       ];
 
       networking.hostName = "desktop";
-
-      fileSystems."/mnt/games" = {
-        device = "/dev/disk/by-uuid/c82bd535-419a-4d80-92c1-22f3c4b88eb4";
-        fsType = "ext4";
-        options = [
-          "defaults"
-          "nofail"
-        ];
-      };
-
-      fileSystems."/mnt/media" = {
-        device = "/dev/disk/by-uuid/4c4cf374-ebe1-4d9e-8c42-e1b0fdc5d764";
-        fsType = "ext4";
-        options = [
-          "defaults"
-          "nofail"
-        ];
-      };
     };
 }
