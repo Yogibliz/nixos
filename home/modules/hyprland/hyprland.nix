@@ -10,6 +10,10 @@
         "match:class steam, match:title Steam, tile 1"
       ];
 
+      misc = {
+        vrr = 1;
+      };
+
       decoration.rounding = 12;
 
       general = {
