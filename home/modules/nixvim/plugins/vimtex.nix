@@ -34,5 +34,30 @@
       action = "<cmd>VimtexCountWords<CR>";
       options.desc = "Count Words";
     }
+    {
+      mode = "n";
+      key = "<localleader>lb";
+      action = {
+        __raw = ''
+          	  function()
+          	      -- Ensure this only runs in tex files
+          	      if vim.bo.filetype ~= 'tex' then return end
+
+          	      local first_line = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]
+          	      local xe_shebang = "% !TeX program = xelatex"
+          	      local pdf_shebang = "% !TeX program = pdflatex"
+
+          	      if first_line == xe_shebang then
+          		vim.api.nvim_buf_set_lines(0, 0, 1, false, {pdf_shebang})
+          	      elseif first_line == pdf_shebang then
+          		vim.api.nvim_buf_set_lines(0, 0, 1, false, {xe_shebang})
+          	      else
+          		vim.api.nvim_buf_set_lines(0, 0, 0, false, {xe_shebang})
+          	      end
+          	   end
+          	'';
+      };
+      options.desc = "Create/Swap Shebang (xelatex/pdflatex)";
+    }
   ];
 }

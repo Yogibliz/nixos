@@ -25,6 +25,7 @@
         self.nixosModules.noctalia
         self.nixosModules.homeManager
         self.nixosModules.samsungAudio
+        self.nixosModules.proton
       ];
 
       nix.settings.experimental-features = [

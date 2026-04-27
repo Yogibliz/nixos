@@ -24,6 +24,7 @@
         self.nixosModules.hyprland
         self.nixosModules.noctalia
         self.nixosModules.homeManager
+        self.nixosModules.proton
       ];
 
       nix.settings.experimental-features = [

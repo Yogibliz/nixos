@@ -5,14 +5,14 @@
     plugins = [ pkgs.hyprlandPlugins.hy3 ];
 
     settings = {
+      misc = {
+        vfr = false;
+      };
+
       windowrule = [
         "match:class steam, float 1"
         "match:class steam, match:title Steam, tile 1"
       ];
-
-      misc = {
-        vrr = 1;
-      };
 
       decoration.rounding = 12;
 

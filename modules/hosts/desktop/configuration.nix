@@ -27,6 +27,7 @@
         self.nixosModules.noctalia
         self.nixosModules.steam
         self.nixosModules.jellyfin
+        self.nixosModules.proton
       ];
 
       nix.settings.experimental-features = [
