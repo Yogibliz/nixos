@@ -13,34 +13,34 @@
     "Mod+W".action = spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle";
 
     # ── Window management ─────────────────────────────────────────────────────
-    "Mod+Q".action = close-window;
-    "Mod+F".action = fullscreen-window;
-    "Mod+V".action = toggle-window-floating;
+    "Mod+Q".action = closeWindow;
+    "Mod+F".action = fullscreenWindow;
+    "Mod+V".action = toggleWindowFloating;
 
     # ── Focus movement ────────────────────────────────────────────────────────
-    "Mod+H".action = focus-column-left;
-    "Mod+L".action = focus-column-right;
-    "Mod+K".action = focus-window-up;
-    "Mod+J".action = focus-window-down;
+    "Mod+H".action = focusColumnLeft;
+    "Mod+L".action = focusColumnRight;
+    "Mod+K".action = focusWindowUp;
+    "Mod+J".action = focusWindowDown;
 
     # ── Window movement ───────────────────────────────────────────────────────
-    "Mod+Shift+H".action = move-column-left;
-    "Mod+Shift+L".action = move-column-right;
-    "Mod+Shift+K".action = move-window-up;
-    "Mod+Shift+J".action = move-window-down;
+    "Mod+Shift+H".action = moveColumnLeft;
+    "Mod+Shift+L".action = moveColumnRight;
+    "Mod+Shift+K".action = moveWindowUp;
+    "Mod+Shift+J".action = moveWindowDown;
 
     # ── Workspaces ────────────────────────────────────────────────────────────
-    "Mod+1".action = focus-workspace 1;
-    "Mod+2".action = focus-workspace 2;
-    "Mod+3".action = focus-workspace 3;
-    "Mod+4".action = focus-workspace 4;
-    "Mod+5".action = focus-workspace 5;
+    "Mod+1".action = focusWorkspace 1;
+    "Mod+2".action = focusWorkspace 2;
+    "Mod+3".action = focusWorkspace 3;
+    "Mod+4".action = focusWorkspace 4;
+    "Mod+5".action = focusWorkspace 5;
 
-    "Mod+Shift+1".action = move-column-to-workspace 1;
-    "Mod+Shift+2".action = move-column-to-workspace 2;
-    "Mod+Shift+3".action = move-column-to-workspace 3;
-    "Mod+Shift+4".action = move-column-to-workspace 4;
-    "Mod+Shift+5".action = move-column-to-workspace 5;
+    "Mod+Shift+1".action = moveColumnToWorkspace 1;
+    "Mod+Shift+2".action = moveColumnToWorkspace 2;
+    "Mod+Shift+3".action = moveColumnToWorkspace 3;
+    "Mod+Shift+4".action = moveColumnToWorkspace 4;
+    "Mod+Shift+5".action = moveColumnToWorkspace 5;
 
     # ── Screenshot ────────────────────────────────────────────────────────────
     "Mod+Shift+S".action = screenshot;
