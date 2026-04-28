@@ -22,6 +22,7 @@
 
         # features
         self.nixosModules.hyprland
+        self.nixosModules.niri
         self.nixosModules.noctalia
         self.nixosModules.homeManager
         self.nixosModules.samsungAudio

@@ -24,6 +24,7 @@
         # features
         self.nixosModules.homeManager
         self.nixosModules.hyprland
+        self.nixosModules.niri
         self.nixosModules.noctalia
         self.nixosModules.steam
         self.nixosModules.jellyfin
