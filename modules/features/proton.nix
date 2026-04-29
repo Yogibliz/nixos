@@ -1,14 +1,13 @@
 { self, ... }:
 {
   flake.nixosModules.proton =
-    { ... }:
+    { pkgs, ... }:
     {
       # Apps
-      programs = {
-        proton-vpn.enable = true;
-        proton-pass.enable = true;
-        proton-authenticator = true;
-        protonmail-desktop = true;
-      };
+      home-manager.users.iris.home.packages = with pkgs; [
+        proton-vpn
+        proton-pass
+        protonmail-desktop
+      ];
     };
 }
