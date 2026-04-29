@@ -23,7 +23,11 @@
         border = {
           enable = true;
           width = 4;
+          active.color = "#c4a7e7";
+          inactive.color = "#403d52";
         };
+
+        focus-ring.enable = false;
       };
 
       window-rules = [

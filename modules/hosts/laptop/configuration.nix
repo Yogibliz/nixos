@@ -8,6 +8,7 @@
 
         # shared NixOS modules
         self.nixosModules.boot
+        self.nixosModules.swap
         self.nixosModules.environment
         self.nixosModules.fonts
         self.nixosModules.sharedHardware
