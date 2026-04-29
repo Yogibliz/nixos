@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   # Packages stored alphabetiacally within categories
   home.packages = with pkgs; [
@@ -10,6 +10,7 @@
     ripgrep
     tree
     time
+    cachix
 
     # Development
     gcc
@@ -29,7 +30,7 @@
     zotero
 
     # Media
-    ani-cli
+    # ani-cli
     mpv
 
     # System / UI
@@ -38,5 +39,9 @@
     hyprshot
     networkmanagerapplet
     wl-clipboard
+
+    # Flake pkgs
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

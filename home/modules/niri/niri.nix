@@ -4,10 +4,12 @@
     settings = {
       prefer-no-csd = true;
 
+      hotkey-overlay.skip-at-startup = true;
+
       input = {
         keyboard.xkb = {
           layout = "us,se";
-          options = "grp:win_space_toggle,caps:escape";
+          options = "grp:alt_space_toggle,caps:escape";
         };
         touchpad = {
           natural-scroll = true;
@@ -20,11 +22,21 @@
         gaps = 10;
         border = {
           enable = true;
-          width = 2;
+          width = 4;
         };
       };
 
       window-rules = [
+        {
+          matches = [ ]; # empty = all windows
+          geometry-corner-radius = {
+            top-left = 12.0;
+            top-right = 12.0;
+            bottom-left = 12.0;
+            bottom-right = 12.0;
+          };
+          clip-to-geometry = true;
+        }
         {
           matches = [ { app-id = "^steam$"; } ];
           open-floating = true;
@@ -42,6 +54,12 @@
 
       spawn-at-startup = [
         { command = [ "noctalia-shell" ]; }
+        {
+          command = [
+            "vicinae"
+            "server"
+          ];
+        }
       ];
     };
   };

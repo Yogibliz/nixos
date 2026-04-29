@@ -7,11 +7,8 @@
     "Mod+E".action.spawn = "nautilus";
 
     # ── Noctalia ──────────────────────────────────────────────────────────────
-    "Mod+Super_L".action.spawn = [
-      "noctalia-shell"
-      "ipc"
-      "call"
-      "launcher"
+    "Mod+D".action.spawn = [
+      "vicinae"
       "toggle"
     ];
     "Mod+Escape".action.spawn = [
@@ -37,6 +34,7 @@
     ];
 
     # ── Window management ─────────────────────────────────────────────────────
+    "Mod+Space".action.toggle-overview = { };
     "Mod+Q".action.close-window = { };
     "Mod+F".action.fullscreen-window = { };
     "Mod+V".action.toggle-window-floating = { };
