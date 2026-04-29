@@ -3,8 +3,7 @@
   flake.nixosModules.niri =
     { ... }:
     {
-      programs.niri = {
-        enable = true;
-      };
+      imports = [ inputs.niri-flake.nixosModules.niri ];
+      programs.niri.enable = true;
     };
 }

@@ -114,11 +114,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1777295000,
         "narHash": "sha256-xzWerLYQG2W+VGJfaZ+8/Puswbok1o8Tix6/6hIW1rY=",
         "owner": "nix-community",
         "repo": "home-manager",
         "rev": "b408d49b845167add697937761a89c41c996ac7a",
+=======
+        "lastModified": 1777389590,
+        "narHash": "sha256-HWbn7WASXsXGADiBDt6/k9U/HpGBEmoeqIOzrf+z2HE=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "8ec5a714dbbeb3fda00bd9758175555ebbad4d07",
+>>>>>>> ba8fbb8 (add niri for testing)
         "type": "github"
       },
       "original": {
@@ -332,6 +340,64 @@
         "type": "github"
       }
     },
+    "niri-flake": {
+      "inputs": {
+        "niri-stable": "niri-stable",
+        "niri-unstable": "niri-unstable",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": "nixpkgs-stable",
+        "xwayland-satellite-stable": "xwayland-satellite-stable",
+        "xwayland-satellite-unstable": "xwayland-satellite-unstable"
+      },
+      "locked": {
+        "lastModified": 1777392425,
+        "narHash": "sha256-3BkgH3q6+x3JwnqasEUQweLutd9mGQCM/RH4m5baUkM=",
+        "owner": "sodiboo",
+        "repo": "niri-flake",
+        "rev": "b1455250f3d388d720c6c3667fd3932dab6a9dba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sodiboo",
+        "repo": "niri-flake",
+        "type": "github"
+      }
+    },
+    "niri-stable": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1756556321,
+        "narHash": "sha256-RLD89dfjN0RVO86C/Mot0T7aduCygPGaYbog566F0Qo=",
+        "owner": "YaLTeR",
+        "repo": "niri",
+        "rev": "01be0e65f4eb91a9cd624ac0b76aaeab765c7294",
+        "type": "github"
+      },
+      "original": {
+        "owner": "YaLTeR",
+        "ref": "v25.08",
+        "repo": "niri",
+        "type": "github"
+      }
+    },
+    "niri-unstable": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777305786,
+        "narHash": "sha256-ktXwpDZ71HBRJNw5opB741CfzB2r0F5IcNQGDNwvTKk=",
+        "owner": "YaLTeR",
+        "repo": "niri",
+        "rev": "26100096e843e72004fc29224286e216891be182",
+        "type": "github"
+      },
+      "original": {
+        "owner": "YaLTeR",
+        "repo": "niri",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1770115704,
@@ -363,13 +429,37 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs-stable": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1776949667,
         "narHash": "sha256-GMSVw35Q+294GlrTUKlx087E31z7KurReQ1YHSKp5iw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "01fbdeef22b76df85ea168fbfe1bfd9e63681b30",
+=======
+        "lastModified": 1777077449,
+        "narHash": "sha256-AIiMJiqvGrN4HyLEbKAoCSRRYn0rnlW5VbKNIMIYqm4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a4bf06618f0b5ee50f14ed8f0da77d34ecc19160",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1777270315,
+        "narHash": "sha256-yKB4G6cKsQsWN7M6rZGk6gkJPDNPIzT05y4qzRyCDlI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6368eda62c9775c38ef7f714b2555a741c20c72d",
+>>>>>>> ba8fbb8 (add niri for testing)
         "type": "github"
       },
       "original": {
@@ -440,6 +530,7 @@
         "home-manager": "home-manager",
         "import-tree": "import-tree",
         "millennium": "millennium",
+        "niri-flake": "niri-flake",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
         "samsung-fixes": "samsung-fixes",
@@ -500,16 +591,57 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1777158145,
         "narHash": "sha256-xYXjoA5+9aDu/A4Og/89JF8n41b7vca9av1ecyR6dgo=",
         "owner": "BirdeeHub",
         "repo": "nix-wrapper-modules",
         "rev": "fd6d1dc5fdfb1aa39c355f4da36773a972a35721",
+=======
+        "lastModified": 1777396204,
+        "narHash": "sha256-C+KDfIIU2s5qfkPaJ86LuqhCkNpXh0z92S+W1tWW7BM=",
+        "owner": "BirdeeHub",
+        "repo": "nix-wrapper-modules",
+        "rev": "25aa38af0498ad57b9b2561a2c122e20f52d0058",
+>>>>>>> ba8fbb8 (add niri for testing)
         "type": "github"
       },
       "original": {
         "owner": "BirdeeHub",
         "repo": "nix-wrapper-modules",
+        "type": "github"
+      }
+    },
+    "xwayland-satellite-stable": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1755491097,
+        "narHash": "sha256-m+9tUfsmBeF2Gn4HWa6vSITZ4Gz1eA1F5Kh62B0N4oE=",
+        "owner": "Supreeeme",
+        "repo": "xwayland-satellite",
+        "rev": "388d291e82ffbc73be18169d39470f340707edaa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Supreeeme",
+        "ref": "v0.7",
+        "repo": "xwayland-satellite",
+        "type": "github"
+      }
+    },
+    "xwayland-satellite-unstable": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773622265,
+        "narHash": "sha256-wToKwH7IgWdGLMSIWksEDs4eumR6UbbsuPQ42r0oTXQ=",
+        "owner": "Supreeeme",
+        "repo": "xwayland-satellite",
+        "rev": "a879e5e0896a326adc79c474bf457b8b99011027",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Supreeeme",
+        "repo": "xwayland-satellite",
         "type": "github"
       }
     },
@@ -520,11 +652,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1777092705,
         "narHash": "sha256-qKMvM2+eKusg6H6lG2bwDdFjNi1XfEjdLD5xIt8ZgFs=",
         "owner": "youwen5",
         "repo": "zen-browser-flake",
         "rev": "10f5c809db4f8e7badb6d505924ebbaaeefda4e4",
+=======
+        "lastModified": 1777352968,
+        "narHash": "sha256-BZ+BHCINHSyyCOWo4pCJQU4T994iZLiw7lgFMNw+W9k=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "bebce586893c7d441edd6cf9cf2cf62a1799361e",
+>>>>>>> ba8fbb8 (add niri for testing)
         "type": "github"
       },
       "original": {
