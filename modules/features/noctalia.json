@@ -310,7 +310,7 @@
     "wallpaper": {
       "enabled": true,
       "overviewEnabled": false,
-      "directory": "/home/iris/Pictures/Wallpapers",
+      "directory": "/home/iris/dotfiles/Wallpapers",
       "monitorDirectories": [
         {
           "directory": "/home/iris/Pictures/Wallpapers",
@@ -335,8 +335,8 @@
       ],
       "enableMultiMonitorDirectories": false,
       "showHiddenFiles": false,
-      "viewMode": "single",
-      "setWallpaperOnAllMonitors": true,
+      "viewMode": "browse",
+      "setWallpaperOnAllMonitors": false,
       "linkLightAndDarkWallpapers": true,
       "fillMode": "crop",
       "fillColor": "#000000",
@@ -362,7 +362,7 @@
       "overviewBlur": 0.4,
       "overviewTint": 0.6,
       "useWallhaven": false,
-      "wallhavenQuery": "",
+      "wallhavenQuery": "call of the night",
       "wallhavenSorting": "relevance",
       "wallhavenOrder": "desc",
       "wallhavenCategories": "111",
@@ -727,10 +727,10 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-2": "/home/iris/Pictures/Wallpapers/1255488.png",
+      "DP-2": "/home/iris/Pictures/Wallpapers/wallhaven_28yk9g.jpg",
       "DP-3": "/home/iris/Pictures/Wallpapers/wp4162349-celeste-game-wallpapers.jpg",
-      "DP-1": "/home/iris/Pictures/Wallpapers/wallhaven-v973e3.jpg",
-      "HDMI-A-1": "/home/iris/Pictures/Wallpapers/wallhaven-yx3kok.jpg"
+      "DP-1": "/home/iris/Pictures/Wallpapers/wallhaven_gw7qyd.jpg",
+      "HDMI-A-1": "/home/iris/Pictures/Wallpapers/wallhaven-v973e3.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -796,7 +796,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1777488227000
+      "lastSeenTs": 1777537840000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.6"

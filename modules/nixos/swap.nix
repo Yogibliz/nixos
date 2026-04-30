@@ -1,7 +1,7 @@
 { self, ... }:
 {
   flake.nixosModules.swap = {
-    swapDevice = [
+    swapDevices = [
       {
         device = "/var/lib/swapfile";
         size = 8192;

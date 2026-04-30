@@ -6,6 +6,12 @@
 
       hotkey-overlay.skip-at-startup = true;
 
+      cursor = {
+        hide-when-typing = true;
+      };
+
+      gestures.hot-corners.enable = false;
+
       input = {
         keyboard.xkb = {
           layout = "us,se";
@@ -32,7 +38,7 @@
 
       window-rules = [
         {
-          matches = [ ]; # empty = all windows
+          matches = [ ];
           geometry-corner-radius = {
             top-left = 12.0;
             top-right = 12.0;

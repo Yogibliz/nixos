@@ -42,10 +42,14 @@
     # ── Focus movement ────────────────────────────────────────────────────────
     "Mod+H".action.focus-column-left = { };
     "Mod+L".action.focus-column-right = { };
+    "Mod+WheelScrollUp".action.focus-column-left = { };
+    "Mod+WheelScrollDown".action.focus-column-right = { };
     "Mod+K".action.focus-window-up = { };
     "Mod+J".action.focus-window-down = { };
 
     # ── Window movement ───────────────────────────────────────────────────────
+    "Mod+I".action.consume-window-into-column = { };
+    "Mod+O".action.expel-window-from-column = { };
     "Mod+Shift+H".action.move-column-left = { };
     "Mod+Shift+L".action.move-column-right = { };
     "Mod+Shift+K".action.move-window-up = { };
