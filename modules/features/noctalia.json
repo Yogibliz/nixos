@@ -198,7 +198,7 @@
       "screenOverrides": []
     },
     "general": {
-      "avatarImage": "/home/iris/.face",
+      "avatarImage": "/home/iris/dotfiles/.face",
       "dimmerOpacity": 0.2,
       "showScreenCorners": false,
       "forceBlackScreenCorners": false,
@@ -727,76 +727,64 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-2": "/home/iris/Pictures/Wallpapers/wallhaven_28yk9g.jpg",
-      "DP-3": "/home/iris/Pictures/Wallpapers/wp4162349-celeste-game-wallpapers.jpg",
-      "DP-1": "/home/iris/Pictures/Wallpapers/wallhaven_gw7qyd.jpg",
-      "HDMI-A-1": "/home/iris/Pictures/Wallpapers/wallhaven-v973e3.jpg"
+      "DP-1": "/home/iris/dotfiles/Wallpapers/wallhaven_gw7qyd.jpg",
+      "DP-2": "/home/iris/dotfiles/Wallpapers/wallhaven_28yk9g.jpg",
+      "DP-3": "/home/iris/dotfiles/Wallpapers/wp4162349-celeste-game-wallpapers.jpg",
+      "HDMI-A-1": "/home/iris/dotfiles/Wallpapers/wallhaven_e88pv8.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
       "DP-1": {
         "name": "DP-1",
-        "connected": true,
         "scale": 1,
         "width": 3440,
         "height": 1440,
+        "refresh_rate": 175.00101,
         "x": 1080,
         "y": 0,
-        "physical_width": 800,
-        "physical_height": 340,
-        "refresh_rate": 175001,
-        "vrr_supported": true,
-        "vrr_enabled": false,
-        "transform": "Normal"
+        "active_workspace": 1,
+        "vrr": false,
+        "focused": true
       },
       "DP-2": {
         "name": "DP-2",
-        "connected": true,
-        "scale": 1,
-        "width": 1080,
-        "height": 1920,
-        "x": 0,
-        "y": 0,
-        "physical_width": 530,
-        "physical_height": 300,
-        "refresh_rate": 60000,
-        "vrr_supported": false,
-        "vrr_enabled": false,
-        "transform": "270"
-      },
-      "DP-3": {
-        "name": "DP-3",
-        "connected": true,
         "scale": 1,
         "width": 1920,
         "height": 1080,
+        "refresh_rate": 144.013,
+        "x": 0,
+        "y": 0,
+        "active_workspace": 2,
+        "vrr": false,
+        "focused": false
+      },
+      "DP-3": {
+        "name": "DP-3",
+        "scale": 1,
+        "width": 1920,
+        "height": 1080,
+        "refresh_rate": 144.00101,
         "x": 4520,
         "y": 0,
-        "physical_width": 600,
-        "physical_height": 340,
-        "refresh_rate": 60000,
-        "vrr_supported": true,
-        "vrr_enabled": false,
-        "transform": "Normal"
+        "active_workspace": 3,
+        "vrr": false,
+        "focused": false
       },
       "HDMI-A-1": {
         "name": "HDMI-A-1",
-        "connected": true,
         "scale": 1.5,
-        "width": 2560,
-        "height": 1440,
+        "width": 3840,
+        "height": 2160,
+        "refresh_rate": 120,
         "x": 6440,
         "y": 0,
-        "physical_width": 1440,
-        "physical_height": 810,
-        "refresh_rate": 120000,
-        "vrr_supported": true,
-        "vrr_enabled": false,
-        "transform": "Normal"
+        "active_workspace": 4,
+        "vrr": false,
+        "focused": false
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1777537840000
+      "lastSeenTs": 1777815314000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.6"

@@ -7,55 +7,24 @@
     "HDMI-A-1, 3840x2160@120, 6440x0, 1.5"
   ];
 
-  programs.niri.settings.outputs = {
+  wayland.windowManager.sway.config.output = {
     "DP-2" = {
-      mode = {
-        width = 1920;
-        height = 1080;
-        refresh = 144.0;
-      };
-      position = {
-        x = 0;
-        y = 0;
-      };
-      scale = 1.0;
-      transform.rotation = 270;
+      mode = "1920x1080@144Hz";
+      position = "0 0";
+      transform = "90";
     };
     "DP-1" = {
-      mode = {
-        width = 3440;
-        height = 1440;
-        refresh = 175.0;
-      };
-      position = {
-        x = 1080;
-        y = 0;
-      };
-      scale = 1.0;
+      mode = "3440x1440@175Hz";
+      position = "1080 0";
     };
     "DP-3" = {
-      mode = {
-        width = 1920;
-        height = 1080;
-        refresh = 144.0;
-      };
-      position = {
-        x = 4520;
-        y = 0;
-      };
-      scale = 1.0;
+      mode = "1920x1080@144Hz";
+      position = "4520 0";
     };
     "HDMI-A-1" = {
-      mode = {
-        width = 3840;
-        height = 2160;
-        refresh = 120.0;
-      };
-      position = {
-        x = 6440;
-        y = 0;
-      };
-      scale = 1.5;
+      mode = "3840x2160@120Hz";
+      position = "6440 0";
+      scale = "1.5";
     };
   };
 

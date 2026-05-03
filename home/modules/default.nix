@@ -3,7 +3,7 @@
     ./ghostty.nix
     ./git.nix
     ./hyprland
-    ./niri
+    ./sway
     ./nixvim
     ./zsh.nix
   ];

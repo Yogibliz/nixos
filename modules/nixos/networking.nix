@@ -3,7 +3,13 @@
   flake.nixosModules.networking = {
     networking = {
       networkmanager.enable = true;
-      firewall.checkReversePath = "loose";
+      firewall = {
+        checkReversePath = "loose";
+        allowedTCPPorts = [
+          3000
+          11434
+        ];
+      };
     };
   };
 }

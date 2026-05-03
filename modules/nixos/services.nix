@@ -7,6 +7,7 @@
         blueman.enable = true;
         upower.enable = true;
         power-profiles-daemon.enable = true;
+        udisks2.enable = true;
 
         xserver.xkb = {
           layout = "us";

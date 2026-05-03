@@ -25,6 +25,7 @@
     nautilus
     pavucontrol
     spotify
+    ventoy-full
     vesktop
     zathura
     zotero
@@ -37,6 +38,10 @@
     adwaita-icon-theme
     btop
     hyprshot
+    grim
+    slurp
+    swaylock
+    swayidle
     networkmanagerapplet
     wl-clipboard
 
@@ -44,4 +49,16 @@
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
+
+  services.udiskie = {
+    enable = true;
+    settings = {
+      # workaround for
+      # https://github.com/nix-community/home-manager/issues/632
+      program_options = {
+        # replace with your favorite file manager
+        file_manager = "${pkgs.nautilus}/bin/nautilus";
+      };
+    };
+  };
 }

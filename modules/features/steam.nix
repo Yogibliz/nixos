@@ -21,5 +21,8 @@
         enable = true;
         capSysNice = true;
       };
+
+      # XWayland for Steam
+      programs.xwayland.enable = true;
     };
 }

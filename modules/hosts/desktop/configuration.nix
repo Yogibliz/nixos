@@ -25,12 +25,21 @@
         # features
         self.nixosModules.homeManager
         self.nixosModules.hyprland
-        self.nixosModules.niri
+        self.nixosModules.sway
+        self.nixosModules.ollama
         self.nixosModules.noctalia
         self.nixosModules.steam
         self.nixosModules.jellyfin
         self.nixosModules.proton
       ];
+
+      nixpkgs.config = {
+        # rocmSupport = true;
+        permittedInsecurePackages = [
+          "ventoy-1.1.12"
+        ];
+      };
+      services.gnome.gnome-keyring.enable = true;
 
       nix.settings.experimental-features = [
         "nix-command"
