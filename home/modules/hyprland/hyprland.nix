@@ -1,8 +1,12 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [ pkgs.hyprlandPlugins.hy3 ];
+
+    extraConfig = ''
+      source = ${config.xdg.configHome}/hypr/colors.conf
+    '';
 
     settings = {
       misc = {
@@ -14,12 +18,14 @@
         "match:class steam, match:title Steam, tile 1"
       ];
 
-      decoration.rounding = 12;
+      decoration = {
+        rounding = 12;
+      };
 
       general = {
         gaps_in = 5;
         gaps_out = 10;
-        border_size = 2;
+        border_size = 4;
         layout = "hy3";
       };
 
@@ -29,6 +35,7 @@
           padding = 6;
           rounding = 3;
         };
+
         autotile = {
           enable = true;
           ephemeral_groups = true;
@@ -47,5 +54,14 @@
         touchpad.natural_scroll = true;
       };
     };
+  };
+  home.file.".config/hypr/colors.conf" = {
+    force = true;
+    text = ''
+      general {
+          col.active_border = rgb(ffffff)
+          col.inactive_border = rgb(444444)
+      }
+    '';
   };
 }

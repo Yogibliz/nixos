@@ -1,13 +1,11 @@
 { pkgs, config, ... }:
 
 {
-  # 1. Install Matugen and our bulletproof background script
   home.packages = with pkgs; [
     matugen
     (pkgs.writeShellScriptBin "update-theme" ''
       WP_PATH="$1"
 
-      # If Noctalia didn't pass the path, extract it from the current state!
       if [ -z "$WP_PATH" ]; then
         WP_PATH=$(noctalia-shell ipc call state all | ${pkgs.jq}/bin/jq -r '.state.wallpapers | to_entries | .[0].value')
       fi
@@ -17,16 +15,26 @@
         exit 1
       fi
 
-      # Run Matugen, forcing the primary color selection to bypass the interactive prompt
       ${pkgs.matugen}/bin/matugen image "$WP_PATH" --source-color-index 0
 
+      ACCENT=$(grep '^accent = ' ${config.xdg.dataHome}/vicinae/themes/matugen.toml | cut -d'"' -f2 | tr -d '#')
+
+      # Persist for next login or rebuild
+      echo "general {" > ${config.xdg.configHome}/hypr/colors.conf
+      echo "    col.active_border = rgb(''${ACCENT}) rgb(''${ACCENT}) 45deg" >> ${config.xdg.configHome}/hypr/colors.conf
+      echo "}" >> ${config.xdg.configHome}/hypr/colors.conf
+
+      # Apply to current session
+      hyprctl keyword general:col.active_border "rgb(''${ACCENT}) rgb(''${ACCENT}) 45deg"
+
+      # Restart vicinae server so it gets the latest matugen theme.
       vicinae server --replace &
       sleep 1
       vicinae theme set matugen
     '')
   ];
 
-  # 2. Feed Matugen the raw TOML template (Now with version = 1 and inherits)
+  # Taken from vicinae themes folder on GitHub.
   xdg.configFile."matugen/templates/vicinae.toml".text = ''
     [meta]
     version = 1
@@ -133,17 +141,17 @@
     spinner = "{{colors.primary.default.hex}}"
   '';
 
-  # 3. Tell Matugen to route the output back to .config
+  # Make mutagen only fetch color and output using template into vicinae's themes folder.
   xdg.configFile."matugen/config.toml".text = ''
     [config.wallpaper]
     command = "echo" 
-    set = false      
+    set = false
 
     [templates.vicinae]
     input_path = "${config.xdg.configHome}/matugen/templates/vicinae.toml"
     output_path = "${config.xdg.dataHome}/vicinae/themes/matugen.toml"
   '';
 
-  # Force Home Manager to create the correct themes directory
+  # Make sure the themes folder exists (should by default, but not sure)
   home.file.".local/share/vicinae/themes/.keep".text = "";
 }

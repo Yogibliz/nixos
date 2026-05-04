@@ -5,6 +5,7 @@
     # CLI utilities
     bat
     eza
+    fastfetch
     fd
     fzf
     ripgrep
