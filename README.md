@@ -6,7 +6,6 @@ To reproduce the NixOS setup simply run a few commands:
 1. Clone and enter the repo to ~/dotfiles
 ```bash
 git clone git@github.com:Yogibliz/nixos.git ~/dotfiles
-cd ~/dotfiles
 ```
 
 2. Generate hardware config for this machine and fill it into the host hardware file
