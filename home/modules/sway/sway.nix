@@ -12,7 +12,7 @@
       input."*" = {
         xkb_layout = "us,se";
         xkb_options = "grp:win_space_toggle,caps:escape";
-        natural_scroll = "enabled";
+        natural_scroll = "disabled";
       };
 
       gaps = {
