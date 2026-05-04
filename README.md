@@ -34,7 +34,7 @@ Run the generator and copy the relevant fields into the inner block:
 nixos-generate-config --show-hardware-config
 ```
 
-The fields to copy over are things like `boot` `fileSystems` and `nixpkgs.hostPlatform`. These files are gitignored since they are machine-specific.
+The fields to copy over are things like `boot` `fileSystems`, `hardware` and `nixpkgs.hostPlatform`. These files are gitignored since they are machine-specific.
 
 3. First rebuild (picks up NixOS + Home Manager + Flakes)
 ```bash
