@@ -38,7 +38,7 @@ The fields to copy over are things like `boot` `fileSystems` and `nixpkgs.hostPl
 
 After updating the `hardware.nix` file make sure to run `git update-index --skip-worktree modules/hosts/<host>/hardware.nix` so it's not updated on GitHub and the placeholder remains.
 
-3. First rebuild (picks up NixOS + Home Manager in one shot)
+3. First rebuild (picks up NixOS + Home Manager + Flakes)
 ```bash
 sudo nixos-rebuild switch --flake ~/dotfiles#<host>
 ```
