@@ -659,7 +659,7 @@
       "backlightDeviceMappings": []
     },
     "colorSchemes": {
-      "useWallpaperColors": false,
+      "useWallpaperColors": true,
       "predefinedScheme": "Rose Pine",
       "darkMode": true,
       "schedulingMode": "off",
@@ -684,7 +684,7 @@
     },
     "hooks": {
       "enabled": true,
-      "wallpaperChange": "matugen image --source-color-index 0",
+      "wallpaperChange": "update-theme",
       "darkModeChange": "",
       "screenLock": "",
       "screenUnlock": "",
@@ -727,7 +727,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/home/iris/dotfiles/Wallpapers/wallhaven_gw7qyd.jpg",
+      "DP-1": "/home/iris/dotfiles/Wallpapers/wallhaven_gw7qyd.png",
       "DP-2": "/home/iris/dotfiles/Wallpapers/wallhaven_28yk9g.jpg",
       "DP-3": "/home/iris/dotfiles/Wallpapers/wp4162349-celeste-game-wallpapers.jpg",
       "HDMI-A-1": "/home/iris/dotfiles/Wallpapers/wallhaven_e88pv8.jpg"
@@ -784,7 +784,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1777815314000
+      "lastSeenTs": 1777918082000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.6"
