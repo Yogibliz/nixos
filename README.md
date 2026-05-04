@@ -36,12 +36,11 @@ nixos-generate-config --show-hardware-config
 
 The fields to copy over are things like `boot` `fileSystems` and `nixpkgs.hostPlatform`. These files are gitignored since they are machine-specific.
 
-After updating the `hardware.nix` file make sure to run `git update-index --skip-worktree modules/hosts/<host>/hardware.nix` so it's not updated on GitHub and the placeholder remains.
-
 3. First rebuild (picks up NixOS + Home Manager + Flakes)
 ```bash
 sudo nixos-rebuild switch --flake ~/dotfiles#<host>
 ```
+After updating the `hardware.nix` file and rebuilding for the first time, make sure to run `git update-index --skip-worktree modules/hosts/<host>/hardware.nix` so it's not updated on GitHub and the placeholder remains.
 
 4. Then for future updates use the alias:
 ```bash
