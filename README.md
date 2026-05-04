@@ -10,21 +10,18 @@ git clone git@github.com:Yogibliz/nixos.git ~/dotfiles
 
 2. Generate hardware config for this machine and fill it into the host hardware file
 
-Each host has a placeholder hardware file at `~/dotfiles/modules/hosts/<host>/hardware.nix` with the following structure:
+Each host has a placeholder hardware file at `~/dotfiles/hosts/<host>/hardware.nix` with the following structure:
 
 ```nix
-{ self, inputs, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 {
-  flake.nixosModules.<host>Hardware =
-    { config, lib, pkgs, modulesPath, ... }:
-    {
-      imports = [
-        (modulesPath + "/installer/scan/not-detected.nix")
-      ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
-      # --- FILL BELOW WITH GENERATED HARDWARE CONFIG ---
+  # (CPU microcode settings may be here)
 
-    };
+  # --- FILL BELOW WITH GENERATED HARDWARE CONFIG ---
 }
 ```
 
@@ -40,7 +37,7 @@ The fields to copy over are things like `boot` `fileSystems`, `hardware` and `ni
 ```bash
 sudo nixos-rebuild switch --flake ~/dotfiles#<host>
 ```
-After updating the `hardware.nix` file and rebuilding for the first time, make sure to run `git update-index --skip-worktree modules/hosts/<host>/hardware.nix` so it's not updated on GitHub and the placeholder remains.
+After updating the `hardware.nix` file and rebuilding for the first time, make sure to run `git update-index --skip-worktree ~dotfiles/hosts/<host>/hardware.nix` so it's not updated on GitHub and the placeholder remains.
 
 4. Then for future updates use the alias:
 ```bash
