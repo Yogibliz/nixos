@@ -34,9 +34,9 @@ Run the generator and copy the relevant fields into the inner block:
 nixos-generate-config --show-hardware-config
 ```
 
-The fields to copy over are things like `boot.initrd.availableKernelModules`, `boot.kernelModules`, `fileSystems`, `swapDevices` and `nixpkgs.hostPlatform`. These files are gitignored since they are machine-specific.
+The fields to copy over are things like `boot` `fileSystems` and `nixpkgs.hostPlatform`. These files are gitignored since they are machine-specific.
 
-> **Note:** Some hosts require additional kernel patches or boot parameters to function correctly (e.g. the laptop requires specific modules to reach the login screen). Check the existing host files for reference.
+After updating the `hardware.nix` file make sure to run `git update-index --skip-worktree modules/hosts/<host>/hardware.nix` so it's not updated on GitHub and the placeholder remains.
 
 3. First rebuild (picks up NixOS + Home Manager in one shot)
 ```bash
