@@ -21,14 +21,8 @@
           wireplumber
           playerctl
           brightnessctl
-          grim
-          slurp
-          swaylock
-          swayidle
           xdg-desktop-portal-hyprland
           xdg-desktop-portal-gtk
-          xdg-desktop-portal-luminous
-          xwayland-satellite
         ];
       };
     };

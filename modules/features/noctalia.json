@@ -684,7 +684,7 @@
     },
     "hooks": {
       "enabled": true,
-      "wallpaperChange": "",
+      "wallpaperChange": "matugen image --source-color-index 0",
       "darkModeChange": "",
       "screenLock": "",
       "screenUnlock": "",

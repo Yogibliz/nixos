@@ -25,7 +25,6 @@
         # features
         self.nixosModules.homeManager
         self.nixosModules.hyprland
-        self.nixosModules.sway
         self.nixosModules.ollama
         self.nixosModules.noctalia
         self.nixosModules.steam

@@ -37,6 +37,7 @@
 
       exec-once = [
         "noctalia-shell"
+        "vicinae server"
       ];
 
       input = {

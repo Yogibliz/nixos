@@ -1,5 +1,5 @@
 # ── Zsh ───────────────────────────────────────────────────
-{ ... }:
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -22,7 +22,7 @@
       enable = true;
       theme = "robbyrussell";
       plugins = [
-        "git"
+        "gitfast"
         "fzf"
       ];
     };
