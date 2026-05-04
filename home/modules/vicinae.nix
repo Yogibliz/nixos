@@ -12,8 +12,5 @@
       process-manager
       protondb-search
     ];
-    settings = {
-
-    };
   };
 }

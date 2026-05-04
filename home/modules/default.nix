@@ -3,8 +3,9 @@
     ./ghostty.nix
     ./git.nix
     ./hyprland
-    ./sway
     ./nixvim
+    ./sway
+    ./vicinae.nix
     ./zsh.nix
   ];
 }
