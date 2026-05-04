@@ -1,0 +1,51 @@
+{ self, inputs, ... }:
+{
+  flake.nixosModules.laptopHardware =
+    {
+      config,
+      lib,
+      pkgs,
+      modulesPath,
+      ...
+    }:
+
+    {
+      imports = [
+        (modulesPath + "/installer/scan/not-detected.nix")
+      ];
+
+      boot.initrd.availableKernelModules = [
+        "xhci_pci"
+        "thunderbolt"
+        "nvme"
+      ];
+      boot.initrd.kernelModules = [ ];
+      boot.kernelModules = [ "kvm-intel" ];
+      boot.extraModulePackages = [ ];
+      boot.kernelPatches = [
+        {
+          name = "samsung-galaxy-book4-audio";
+          patch = ./samsung-audio.patch;
+        }
+      ];
+
+      fileSystems."/" = {
+        device = "/dev/disk/by-uuid/71ef275e-7e51-4473-bd9a-3bdfa4bc1bde";
+        fsType = "ext4";
+      };
+
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-uuid/3C6A-2C82";
+        fsType = "vfat";
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
+      };
+
+      swapDevices = [ ];
+
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    };
+}

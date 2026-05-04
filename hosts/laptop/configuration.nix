@@ -1,10 +1,15 @@
 { self, inputs, ... }:
 {
-  flake.nixosModules.desktopConfiguration =
-    { pkgs, lib, ... }:
+  flake.nixosModules.laptopConfiguration =
+    {
+      pkgs,
+      lib,
+      hostname,
+      ...
+    }:
     {
       imports = [
-        self.nixosModules.desktopHardware
+        self.nixosModules.laptopHardware
 
         # shared NixOS modules
         self.nixosModules.boot
@@ -18,21 +23,16 @@
         self.nixosModules.security
         self.nixosModules.services
         self.nixosModules.system
-        self.nixosModules.systemd
         self.nixosModules.time
         self.nixosModules.users
 
         # features
-        self.nixosModules.homeManager
         self.nixosModules.hyprland
-        self.nixosModules.ollama
         self.nixosModules.noctalia
-        self.nixosModules.steam
-        self.nixosModules.jellyfin
+        self.nixosModules.homeManager
+        self.nixosModules.samsungAudio
         self.nixosModules.proton
       ];
-
-      services.gnome.gnome-keyring.enable = true;
 
       nix.settings.experimental-features = [
         "nix-command"
@@ -41,9 +41,10 @@
 
       home-manager.users.iris.imports = [
         "${self}/home/home.nix"
-        "${self}/home/hosts/desktop.nix"
+        "${self}/home/hosts/laptop.nix"
       ];
 
-      networking.hostName = "desktop";
+      networking.hostName = hostname;
+
     };
 }

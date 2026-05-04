@@ -1,10 +1,15 @@
 { self, inputs, ... }:
 {
-  flake.nixosModules.laptopConfiguration =
-    { pkgs, lib, ... }:
+  flake.nixosModules.schoolConfiguration =
+    {
+      pkgs,
+      lib,
+      hostname,
+      ...
+    }:
     {
       imports = [
-        self.nixosModules.laptopHardware
+        self.nixosModules.schoolHardware
 
         # shared NixOS modules
         self.nixosModules.boot
@@ -25,7 +30,6 @@
         self.nixosModules.hyprland
         self.nixosModules.noctalia
         self.nixosModules.homeManager
-        self.nixosModules.samsungAudio
         self.nixosModules.proton
       ];
 
@@ -36,10 +40,10 @@
 
       home-manager.users.iris.imports = [
         "${self}/home/home.nix"
-        "${self}/home/hosts/laptop.nix"
+        "${self}/home/hosts/school.nix"
       ];
 
-      networking.hostName = "laptop";
+      networking.hostName = hostname;
 
     };
 }

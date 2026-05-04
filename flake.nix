@@ -41,5 +41,37 @@
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+  outputs =
+    inputs@{ self, flake-parts, ... }:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ (inputs.import-tree ./modules) ];
+
+      flake =
+        let
+          mkHost =
+            hostname: system:
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit system;
+
+              specialArgs = { inherit inputs hostname self; };
+
+              modules = [
+                inputs.home-manager.nixosModules.home-manager
+                {
+                  home-manager.extraSpecialArgs = { inherit inputs hostname self; };
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                }
+                ./hosts/${hostname}/configuration.nix
+              ];
+            };
+        in
+        {
+          nixosConfigurations = {
+            "laptop" = mkHost "laptop" "x86_64-linux";
+            "desktop" = mkHost "desktop" "x86_64-linux";
+            "school" = mkHost "school" "x86_64-linux";
+          };
+        };
+    };
 }
