@@ -47,7 +47,6 @@
 
     # Flake pkgs
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   services.udiskie = {

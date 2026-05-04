@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 {
-  programs.vicinae = {
+  services.vicinae = {
     enable = true;
     package = inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default;
     extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
