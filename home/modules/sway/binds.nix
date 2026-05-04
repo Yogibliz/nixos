@@ -13,6 +13,9 @@
       "${mod}+f" = "fullscreen toggle";
       "${mod}+v" = "floating toggle";
       "${mod}+Shift+s" = "exec grim -g \"$(slurp)\" - | wl-copy";
+      "${mod}+w" = "noctalia-shell wallpaper toggle";
+      "${mod}+s" = "noctalia-shell settings toggle";
+      "${mod}+Escape" = "noctalia-shell lockScreen lock";
 
       "${mod}+h" = "focus left";
       "${mod}+l" = "focus right";

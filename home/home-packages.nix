@@ -35,6 +35,7 @@
 
     # System / UI
     adwaita-icon-theme
+    app2unit
     btop
     hyprshot
     grim
