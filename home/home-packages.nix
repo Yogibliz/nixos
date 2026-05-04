@@ -25,7 +25,6 @@
     nautilus
     pavucontrol
     spotify
-    ventoy-full
     vesktop
     zathura
     zotero

@@ -33,12 +33,6 @@
         self.nixosModules.proton
       ];
 
-      nixpkgs.config = {
-        # rocmSupport = true;
-        permittedInsecurePackages = [
-          "ventoy-1.1.12"
-        ];
-      };
       services.gnome.gnome-keyring.enable = true;
 
       nix.settings.experimental-features = [
