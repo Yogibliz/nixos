@@ -659,7 +659,7 @@
       "backlightDeviceMappings": []
     },
     "colorSchemes": {
-      "useWallpaperColors": true,
+      "useWallpaperColors": false,
       "predefinedScheme": "Rose Pine",
       "darkMode": true,
       "schedulingMode": "off",

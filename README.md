@@ -46,4 +46,6 @@ nrs
 
 ### If there are any Hyprland errors, relog to make sure plugins are loaded: `hyprctl dispatch exit`
 
+### Updating the noctalia shell is easiest done through the settings menu, the running `nix run nixpkgs#noctalia-shell ipc call state all > /home/iris/dotfiles/modules/features/noctalia/hosts/$(hostname)/noctalia.json` and `nrs` to apply/test the changes.
+
 ## Enjoy!
