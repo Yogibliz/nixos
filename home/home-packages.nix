@@ -3,6 +3,7 @@
   # Packages stored alphabetiacally within categories
   home.packages = with pkgs; [
     # CLI utilities
+    appimage-run
     bat
     eza
     fastfetch
@@ -36,6 +37,7 @@
 
     # Media
     # ani-cli
+    ani-skip
     mpv
 
     # System
