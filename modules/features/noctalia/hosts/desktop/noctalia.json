@@ -699,7 +699,7 @@
       "notifyUpdates": true
     },
     "idle": {
-      "enabled": true,
+      "enabled": false,
       "screenOffTimeout": 300,
       "lockTimeout": 660,
       "suspendTimeout": 1800,
@@ -784,7 +784,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1777918082000
+      "lastSeenTs": 1778067594000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.6"
