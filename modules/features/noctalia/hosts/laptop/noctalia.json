@@ -700,7 +700,7 @@
       "notifyUpdates": true
     },
     "idle": {
-      "enabled": true,
+      "enabled": false,
       "screenOffTimeout": 300,
       "lockTimeout": 660,
       "suspendTimeout": 1800,
@@ -728,7 +728,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/nix/store/kb3bgk1akxy3qf8cm0lgfn3bk13nv308-noctalia-shell-4.7.6/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
+      "eDP-1": "/home/iris/dotfiles/Wallpapers/wallhaven_rr3e91.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -746,7 +746,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 0
+      "lastSeenTs": 1777943574000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.6"

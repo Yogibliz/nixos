@@ -21,6 +21,7 @@
           wireplumber
           playerctl
           brightnessctl
+          wayland-pipewire-idle-inhibit
           xdg-desktop-portal-hyprland
           xdg-desktop-portal-gtk
         ];

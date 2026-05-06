@@ -30,15 +30,18 @@
     zathura
     zotero
 
+    # Hyprland
+    hyprshot
+    hypridle
+
     # Media
     # ani-cli
     mpv
 
-    # System / UI
+    # System
     adwaita-icon-theme
     app2unit
     btop
-    hyprshot
     networkmanagerapplet
     wl-clipboard
     zsh-autopair

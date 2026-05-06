@@ -45,6 +45,7 @@
       exec-once = [
         "noctalia-shell"
         "vicinae server"
+        "hypridle"
       ];
 
       input = {
