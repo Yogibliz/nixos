@@ -55,8 +55,8 @@
     ) (builtins.genList (x: x + 1) 5);
 
     binde = [
-      "$modA, H, resizeactive, -20 0"
-      "$modA, L, resizeactive, 20 0"
+      "$modA, H, resizeactive, 20 0"
+      "$modA, L, resizeactive, -20 0"
       "$modA, K, resizeactive, 0 -20"
       "$modA, J, resizeactive, 0 20"
       ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
