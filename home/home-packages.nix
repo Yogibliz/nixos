@@ -15,12 +15,15 @@
     cachix
 
     # Development
-    gcc
+    # gcc
+    gcc_multi
     rustc
     cargo
+    gnumake
     statix
     python3
     texliveFull
+    qemu_full
 
     # Desktop apps
     ghostty
@@ -28,6 +31,7 @@
     pavucontrol
     spotify
     vesktop
+    vscode
     zathura
     zotero
 

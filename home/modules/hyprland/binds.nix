@@ -1,6 +1,8 @@
 {
   wayland.windowManager.hyprland.settings = {
-    "$leader" = "SUPER";
+    "$mod" = "SUPER";
+    "$modS" = "SUPER SHIFT";
+    "$modA" = "SUPER ALT";
 
     "$browser" = "zen";
     "$menu" = "vicinae";
@@ -10,30 +12,30 @@
     "$noctalia" = "noctalia-shell ipc call";
 
     bind = [
-      "$leader, Super_L, exec, vicinae toggle"
-      "$leader, escape, exec, $noctalia lockScreen lock"
-      "$leader, S, exec, $noctalia settings toggle"
-      "$leader, W, exec, $noctalia wallpaper toggle"
-      "$leader, T, exec, $terminal"
-      "$leader, Q, killactive"
-      "$leader, B, exec, $browser"
-      "$leader, F, fullscreen"
-      "$leader, V, togglefloating"
-      "$leader SHIFT, S, exec, $screenshot"
-      "$leader, E, exec, $explorer"
+      "$mod, Super_L, exec, vicinae toggle"
+      "$mod, escape, exec, $noctalia lockScreen lock"
+      "$mod, S, exec, $noctalia settings toggle"
+      "$mod, W, exec, $noctalia wallpaper toggle"
+      "$mod, T, exec, $terminal"
+      "$mod, Q, killactive"
+      "$mod, B, exec, $browser"
+      "$mod, F, fullscreen"
+      "$mod, V, togglefloating"
+      "$modS, S, exec, $screenshot"
+      "$mod, E, exec, $explorer"
 
-      "$leader, H, hy3:movefocus, l"
-      "$leader, L, hy3:movefocus, r"
-      "$leader, K, hy3:movefocus, u"
-      "$leader, J, hy3:movefocus, d"
+      "$mod, H, hy3:movefocus, l"
+      "$mod, L, hy3:movefocus, r"
+      "$mod, K, hy3:movefocus, u"
+      "$mod, J, hy3:movefocus, d"
 
-      "$leader SHIFT, H, hy3:movewindow, l"
-      "$leader SHIFT, L, hy3:movewindow, r"
-      "$leader SHIFT, K, hy3:movewindow, u"
-      "$leader SHIFT, J, hy3:movewindow, d"
+      "$modS, H, hy3:movewindow, l"
+      "$modS, L, hy3:movewindow, r"
+      "$modS, K, hy3:movewindow, u"
+      "$modS, J, hy3:movewindow, d"
 
-      "$leader, A, hy3:changefocus, raise"
-      "$leader SHIFT, A, hy3:changefocus, lower"
+      "$mod, A, hy3:changefocus, raise"
+      "$modS, A, hy3:changefocus, lower"
 
       ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ", XF86AudioPlay, exec, playerctl play-pause"
@@ -47,12 +49,16 @@
         ws = toString n;
       in
       [
-        "$leader, ${ws}, workspace, ${ws}"
-        "$leader SHIFT, ${ws}, movetoworkspace, ${ws}"
+        "$mod, ${ws}, workspace, ${ws}"
+        "$modS, ${ws}, movetoworkspace, ${ws}"
       ]
     ) (builtins.genList (x: x + 1) 5);
 
     binde = [
+      "$modA, H, resizeactive, -20 0"
+      "$modA, L, resizeactive, 20 0"
+      "$modA, K, resizeactive, 0 -20"
+      "$modA, J, resizeactive, 0 20"
       ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
       ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
@@ -60,8 +66,8 @@
     ];
 
     bindm = [
-      "$leader, mouse:272, movewindow"
-      "$leader, mouse:273, resizewindow"
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
     ];
   };
 }
