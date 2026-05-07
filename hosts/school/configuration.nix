@@ -12,7 +12,6 @@
     ./hardware.nix
     # shared NixOS modules via self
     self.nixosModules.boot
-    self.nixosModules.swap
     self.nixosModules.environment
     self.nixosModules.fonts
     self.nixosModules.sharedHardware
