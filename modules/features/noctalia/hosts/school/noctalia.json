@@ -196,7 +196,12 @@
       "rightClickAction": "controlCenter",
       "rightClickFollowMouse": true,
       "rightClickCommand": "",
-      "screenOverrides": []
+      "screenOverrides": [
+        {
+          "enabled": false,
+          "name": "DP-1"
+        }
+      ]
     },
     "general": {
       "avatarImage": "/home/iris/dotfiles/.face",
@@ -311,7 +316,7 @@
     "wallpaper": {
       "enabled": true,
       "overviewEnabled": false,
-      "directory": "/home/iris/Pictures/Wallpapers",
+      "directory": "/home/iris/dotfiles/Wallpapers",
       "monitorDirectories": [
         {
           "directory": "/home/iris/Pictures/Wallpapers",
