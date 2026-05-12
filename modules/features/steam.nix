@@ -9,7 +9,9 @@
       # Steam
       programs.steam = {
         enable = true;
-        package = pkgs.millennium-steam;
+        # Broken temp
+        # package = pkgs.millennium-steam;
+        pacakge = pkgs.steam;
         gamescopeSession.enable = true;
         remotePlay.openFirewall = true;
         dedicatedServer.openFirewall = true;
