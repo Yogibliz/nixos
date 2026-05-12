@@ -1,8 +1,14 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    plugins = [ pkgs.hyprlandPlugins.hy3 ];
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    plugins = [ inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3 ];
 
     extraConfig = ''
       source = ${config.xdg.configHome}/hypr/colors.conf
@@ -12,6 +18,14 @@
       misc = {
         vfr = false;
       };
+
+      workspace = [
+        "1, monitor:DP-1, default:true"
+        "2, monitor:DP-1"
+        "3, monitor:DP-2, default:true"
+        "4, monitor:DP-3, default:true"
+        "5, monitor:HDMI-A-1, default:true"
+      ];
 
       windowrule = [
         "match:class steam, float 1"

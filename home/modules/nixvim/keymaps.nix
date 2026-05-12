@@ -13,8 +13,8 @@
     { mode = "v"; key = "K"; action = ":m '<-2<CR>gv=gv"; }
 
     # Half-page movement, centered
-    { mode = "n"; key = "<C-j>"; action = "<C-d>zz"; }
-    { mode = "n"; key = "<C-k>"; action = "<C-u>zz"; }
+    { mode = "n"; key = "<A-j>"; action = "<C-d>zz"; }
+    { mode = "n"; key = "<A-k>"; action = "<C-u>zz"; }
 
     # Keep search results centered
     { mode = "n"; key = "n"; action = "nzzzv"; }

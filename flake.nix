@@ -3,16 +3,24 @@
     extra-substituters = [
       "https://vicinae.cachix.org"
       "https://noctalia.cachix.org"
+      "https://hyprland.cachix.org"
     ];
     extra-trusted-public-keys = [
       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
     ];
   };
 
   inputs = {
     vicinae.url = "github:vicinaehq/vicinae";
     vicinae-extensions.url = "github:vicinaehq/extensions";
+
+    hyprland.url = "github:hyprwm/Hyprland?submodules=1&ref=v0.54.2";
+    hy3 = {
+      url = "github:outfoxxed/hy3?ref=hl0.54.2.1";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     import-tree.url = "github:vic/import-tree";
     flake-parts.url = "github:hercules-ci/flake-parts";
