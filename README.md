@@ -37,7 +37,7 @@ The fields to copy over are things like `boot` `fileSystems`, `hardware` and `ni
 ```bash
 sudo nixos-rebuild switch --flake ~/dotfiles#<host>
 ```
-After updating the `hardware.nix` file and rebuilding for the first time, make sure to run `git update-index --skip-worktree ~/dotfiles/hosts/<host>/hardware.nix` so it's not updated on GitHub and the placeholder remains.
+After updating the `hardware.nix` file and rebuilding for the first time, make sure to run `git update-index --skip-worktree ~/dotfiles/hosts/$(hostname)/hardware.nix` so it's not updated on GitHub and the placeholder remains.
 
 4. Then for future updates use the alias:
 ```bash
