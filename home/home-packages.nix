@@ -10,6 +10,7 @@
     fd
     fzf
     ripgrep
+    mmv
     tree
     time
     cachix
