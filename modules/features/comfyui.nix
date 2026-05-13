@@ -5,7 +5,7 @@
     {
       environment.systemPackages = [
         (pkgs.writeShellScriptBin "comfyui" ''
-          exec ${inputs.comfyui-nix.packages.${pkgs.stdenv.hostPlatform.system}.rocm}/bin/comfyui \
+          exec nix run github:utensils/comfyui-nix#rocm -- \
             --use-pytorch-cross-attention \
             --gpu-only \
             "$@"
