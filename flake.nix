@@ -31,7 +31,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-    comfyui-nix.url = "github:utensils/comfyui-nix";
+
+    comfyui-nix = {
+      url = "github:utensils/comfyui-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
