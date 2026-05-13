@@ -13,6 +13,7 @@
 
         settings = {
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          "zen.theme.content-element-separation" = 0;
         };
 
         userChrome = ''
