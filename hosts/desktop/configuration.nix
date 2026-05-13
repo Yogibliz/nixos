@@ -31,8 +31,6 @@
     # Features
     self.nixosModules.homeManager
     self.nixosModules.hyprland
-    self.nixosModules.comfyui
-    self.nixosModules.ollama
     self.nixosModules.noctalia
     self.nixosModules.steam
     self.nixosModules.jellyfin
