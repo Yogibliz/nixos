@@ -28,7 +28,7 @@ Each host has a placeholder hardware file at `~/dotfiles/hosts/<host>/hardware.n
 Run the generator and copy the relevant fields into the inner block:
 
 ```bash
-nixos-generate-config --show-hardware-config
+nixos-generate-config --show-hardware-config >> temp.nix
 ```
 
 The fields to copy over are things like `boot` `fileSystems`, `hardware` and `nixpkgs.hostPlatform`. These files are gitignored since they are machine-specific.
