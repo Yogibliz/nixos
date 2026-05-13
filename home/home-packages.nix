@@ -54,9 +54,6 @@
     zsh-autopair
     zsh-syntax-highlighting
     zsh-completions
-
-    # Flake pkgs
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   services.udiskie = {
