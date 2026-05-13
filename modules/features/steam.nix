@@ -4,7 +4,7 @@
     { pkgs, ... }:
     {
       # Millennium
-      nixpkgs.overlays = [ inputs.millennium.overlays.default ];
+      # nixpkgs.overlays = [ inputs.millennium.overlays.default ];
 
       # Steam
       programs.steam = {
