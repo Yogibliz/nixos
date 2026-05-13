@@ -18,7 +18,6 @@
         userChrome = ''
           /* Hide the "Space" text/indicator and workspace buttons */
           #zen-workspaces-button,
-          #zen-spaces-separator,
           #zen-current-workspace-indicator,
           [id*="workspace-indicator"],
           [class*="workspace-indicator"] {
