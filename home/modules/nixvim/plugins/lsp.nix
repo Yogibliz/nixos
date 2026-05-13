@@ -10,10 +10,15 @@
         installCargo = false;
         installRustc = false;
       };
+      qmlls = {
+        enable = true;
+        cmd = [ "${pkgs.kdePackages.qtdeclarative}/bin/qmlls" ];
+      };
     };
   };
 
   programs.nixvim.extraPackages = with pkgs; [
     nixd
+    kdePackages.qtdeclarative
   ];
 }

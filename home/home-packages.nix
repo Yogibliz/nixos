@@ -25,6 +25,7 @@
     python3
     texliveFull
     qemu_full
+    quickshell
 
     # Desktop apps
     ghostty
