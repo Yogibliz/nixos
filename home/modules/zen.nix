@@ -1,17 +1,9 @@
-{
-  pkgs,
-  inputs,
-  config,
-  ...
-}:
+{ pkgs, inputs, ... }:
 
 {
   programs.firefox = {
     enable = true;
     package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
-
-    # This tells Home Manager where Zen keeps its profiles
-    # It also silences that evaluation warning
     configPath = ".config/zen";
 
     profiles = {
@@ -24,8 +16,12 @@
         };
 
         userChrome = ''
-          /* Hide the Spaces/Workspaces button in the sidebar */
-          #zen-workspaces-button {
+          /* Hide the "Space" text/indicator and workspace buttons */
+          #zen-workspaces-button,
+          #zen-spaces-separator,
+          #zen-current-workspace-indicator,
+          [id*="workspace-indicator"],
+          [class*="workspace-indicator"] {
             display: none !important;
           }
         '';

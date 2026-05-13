@@ -71,6 +71,7 @@
                   home-manager.extraSpecialArgs = { inherit inputs hostname self; };
                   home-manager.useGlobalPkgs = true;
                   home-manager.useUserPackages = true;
+                  home-manager.backupFileExtension = "backup";
                 }
                 ./hosts/${hostname}/configuration.nix
               ];
