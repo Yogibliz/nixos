@@ -6,6 +6,7 @@
     ./matugen.nix
     ./nixvim
     ./vicinae.nix
+    ./zen.nix
     ./zsh.nix
   ];
 }

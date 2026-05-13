@@ -1,24 +1,35 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 
 {
-  home.packages = [
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
-
   programs.firefox = {
     enable = true;
-    profiles.default = {
-      # Enable custom CSS support
-      settings = {
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-      };
+    package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
-      # Inject CSS to hide the Spaces/Workspaces button
-      userChrome = ''
-        #zen-workspaces-button {
-          display: none !important;
-        }
-      '';
+    # This tells Home Manager where Zen keeps its profiles
+    # It also silences that evaluation warning
+    configPath = ".config/zen";
+
+    profiles = {
+      "Default Profile" = {
+        id = 0;
+        isDefault = true;
+
+        settings = {
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        };
+
+        userChrome = ''
+          /* Hide the Spaces/Workspaces button in the sidebar */
+          #zen-workspaces-button {
+            display: none !important;
+          }
+        '';
+      };
     };
   };
 }
