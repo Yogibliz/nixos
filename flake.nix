@@ -18,9 +18,9 @@
     vicinae.url = "github:vicinaehq/vicinae";
     vicinae-extensions.url = "github:vicinaehq/extensions";
 
-    hyprland.url = "github:hyprwm/Hyprland?submodules=1&ref=v0.54.2";
+    hyprland.url = "github:hyprwm/Hyprland";
     hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.54.2.1";
+      url = "github:outfoxxed/hy3";
       inputs.hyprland.follows = "hyprland";
     };
 
