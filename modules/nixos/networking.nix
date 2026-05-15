@@ -8,6 +8,12 @@
         allowedTCPPorts = [
           3000
           11434
+          27036
+          27037
+        ];
+        allowedUDPPorts = [
+          27031
+          27036
         ];
       };
     };

@@ -15,7 +15,7 @@
     '';
 
     settings = {
-      misc = {
+      debug = {
         vfr = false;
       };
 
