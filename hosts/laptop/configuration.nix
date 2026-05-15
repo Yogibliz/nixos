@@ -24,6 +24,7 @@
     self.nixosModules.system
     self.nixosModules.time
     self.nixosModules.users
+    self.nixosModules.xdg
 
     # features
     self.nixosModules.hyprland
