@@ -24,12 +24,14 @@
     self.nixosModules.system
     self.nixosModules.time
     self.nixosModules.users
+
     # features
     self.nixosModules.hyprland
     self.nixosModules.noctalia
     self.nixosModules.homeManager
     self.nixosModules.samsungAudio
     self.nixosModules.proton
+    self.nixosModules.steam
   ];
 
   nix.settings.experimental-features = [
