@@ -27,6 +27,7 @@
     self.nixosModules.systemd
     self.nixosModules.time
     self.nixosModules.users
+    self.nixosModules.xdg
 
     # Features
     self.nixosModules.homeManager
@@ -48,6 +49,23 @@
     "${self}/home/home.nix"
     "${self}/home/hosts/desktop.nix"
   ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      libva
+      libva-vdpau-driver
+      libvdpau-va-gl
+    ];
+  };
+
+  environment.sessionVariables = {
+    AMD_VULKAN_ICD = "RADV";
+    ENABLE_LAYER_MESA_ANTI_LAG = "1";
+    RADV_PERFTEST = "sam, nircache, ngcc";
+    PROTON_ENABLE_WAYLAND = "1";
+  };
 
   # Using the hostname passed down from mkHost
   networking.hostName = hostname;
