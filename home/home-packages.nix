@@ -14,7 +14,6 @@
     tree
     time
     cachix
-    psmisc
 
     # Development
     # gcc

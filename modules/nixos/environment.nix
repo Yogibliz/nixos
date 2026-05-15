@@ -21,6 +21,7 @@
           wget
           wireplumber
           playerctl
+          psmisc
           brightnessctl
           wayland-pipewire-idle-inhibit
           vulkan-tools
