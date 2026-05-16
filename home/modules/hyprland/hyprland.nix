@@ -7,77 +7,76 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "lua";
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     plugins = [ inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3 ];
 
     extraConfig = ''
-      source = ${config.xdg.configHome}/hypr/colors.conf
-    '';
+        hl.plugin.load("${inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3}/lib/libhy3.so")
+        local config_dir = os.getenv("XDG_CONFIG_HOME") or (os.getenv("HOME") .. "/.config")
+        dofile(config_dir .. "/hypr/colors.lua")
 
-    settings = {
-      debug = {
-        vfr = true;
-      };
+      settings = {
+        -- General config
+        hl.config({
+          general = {
+            gaps_in     = 5,
+            gaps_out    = 10,
+            border_size = 4,
+            layout      = "hy3",
+            ["col.active_border"] = { colors = { "rgb(ffffff)", "rgb(ffffff)" }, angle = 45 },
+            ["col.inactive_border"] = "rgb(444444)",
+          },
+          decoration = {
+            rounding = 12,
+          },
+          input = {
+            kb_layout  = "us,se",
+            kb_options = "grp:win_space_toggle, caps:escape",
+            follow_mouse = 1,
+            touchpad = {
+              natural_scroll = true,
+            },
+          },
+          debug = {
+            vfr = false,
+          },
+        })
 
-      workspace = [
-        "1, monitor:DP-1, default:true"
-        "2, monitor:DP-1"
-        "3, monitor:DP-2, default:true"
-        "4, monitor:DP-3, default:true"
-        "5, monitor:HDMI-A-1, default:true"
-      ];
+        -- hy3 plugin config
+        hl.config({
+          plugin = {
+            hy3 = {
+              tabs = {
+                height = 4,
+                padding = 6,
+                radius = 6,
+              },
+              autotile = {
+                enable = true,
+              },
+            },
+          },
+        })
 
-      windowrule = [
-        "match:class steam, float 1"
-        "match:class steam, match:title Steam, tile 1"
-      ];
+        -- Workspace rules
+        hl.workspace_rule({ workspace = "1", monitor = "DP-1", default = true })
+        hl.workspace_rule({ workspace = "2", monitor = "DP-1" })
+        hl.workspace_rule({ workspace = "3", monitor = "DP-2", default = true })
+        hl.workspace_rule({ workspace = "4", monitor = "DP-3", default = true })
+        hl.workspace_rule({ workspace = "5", monitor = "HDMI-A-1", default = true })
 
-      decoration = {
-        rounding = 12;
-      };
+        -- Window rules
+        hl.window_rule({ match = { class = "steam" },                       float = true })
+        hl.window_rule({ match = { class = "steam", title = "Steam" },      tile  = true })
 
-      general = {
-        gaps_in = 5;
-        gaps_out = 10;
-        border_size = 4;
-        layout = "hy3";
-      };
+        -- Autostart
+        hl.on("hyprland.start", function()
+          hl.exec_cmd("noctalia-shell")
+          hl.exec_cmd("vicinae server")
+          hl.exec_cmd("hypridle")
+          hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+        end)    '';
 
-      plugin.hy3 = {
-        tabs = {
-          height = 4;
-          padding = 6;
-          rounding = 3;
-        };
-
-        autotile = {
-          enable = true;
-          ephemeral_groups = true;
-        };
-      };
-
-      exec-once = [
-        "noctalia-shell"
-        "vicinae server"
-        "hypridle"
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-      ];
-
-      input = {
-        kb_layout = "us,se";
-        kb_options = "grp:win_space_toggle, caps:escape";
-        follow_mouse = 1;
-        touchpad.natural_scroll = true;
-      };
-    };
-  };
-  home.file.".config/hypr/colors.conf" = {
-    force = true;
-    text = ''
-      general {
-          col.active_border = rgb(ffffff)
-          col.inactive_border = rgb(444444)
-      }
-    '';
   };
 }

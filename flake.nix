@@ -15,27 +15,21 @@
   };
 
   inputs = {
-    # Flake helper imports
-    import-tree.url = "github:vic/import-tree";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-
-    # Package imports
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     vicinae.url = "github:vicinaehq/vicinae";
     vicinae-extensions.url = "github:vicinaehq/extensions";
+
     hyprland.url = "github:hyprwm/Hyprland";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     hy3 = {
       url = "github:outfoxxed/hy3";
       inputs.hyprland.follows = "hyprland";
     };
 
-    millennium = {
-      url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    import-tree.url = "github:vic/import-tree";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -79,9 +73,6 @@
                   home-manager.useGlobalPkgs = true;
                   home-manager.useUserPackages = true;
                   home-manager.backupFileExtension = "backup";
-                  home-manager.sharedModules = map (n: inputs.${n}.homeManagerModules.default) (
-                    import ./hm-modules.nix
-                  );
                 }
                 ./hosts/${hostname}/configuration.nix
               ];

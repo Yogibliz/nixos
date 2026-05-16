@@ -1,36 +1,40 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
     matugen
     (pkgs.writeShellScriptBin "update-theme" ''
-      WP_PATH="$1"
+          WP_PATH="$1"
 
-      if [ -z "$WP_PATH" ]; then
-        WP_PATH=$(noctalia-shell ipc call state all | ${pkgs.jq}/bin/jq -r '.state.wallpapers | to_entries | .[0].value')
-      fi
+          if [ -z "$WP_PATH" ]; then
+            WP_PATH=$(noctalia-shell ipc call state all | ${pkgs.jq}/bin/jq -r '.state.wallpapers | to_entries | .[0].value')
+          fi
 
-      if [ -z "$WP_PATH" ] || [ "$WP_PATH" = "null" ]; then
-        echo "Error: Could not find wallpaper path."
-        exit 1
-      fi
+          if [ -z "$WP_PATH" ] || [ "$WP_PATH" = "null" ]; then
+            echo "Error: Could not find wallpaper path."
+            exit 1
+          fi
 
-      ${pkgs.matugen}/bin/matugen image "$WP_PATH" --source-color-index 0
+          ${pkgs.matugen}/bin/matugen image "$WP_PATH" --source-color-index 0
 
-      ACCENT=$(grep '^accent = ' ${config.xdg.dataHome}/vicinae/themes/matugen.toml | cut -d'"' -f2 | tr -d '#')
+          ACCENT=$(grep '^accent = ' ${config.xdg.dataHome}/vicinae/themes/matugen.toml | cut -d'"' -f2 | tr -d '#')
 
-      # Persist for next login or rebuild
-      echo "general {" > ${config.xdg.configHome}/hypr/colors.conf
-      echo "    col.active_border = rgb(''${ACCENT}) rgb(''${ACCENT}) 45deg" >> ${config.xdg.configHome}/hypr/colors.conf
-      echo "}" >> ${config.xdg.configHome}/hypr/colors.conf
+          # Persist for next login or rebuild
+          echo "hl.config({ general = { [\"col.active_border\"] = { colors = { \"rgb(''${ACCENT})\", \"rgb(''${ACCENT})\" }, angle = 45 } } })" \
+      > ${config.xdg.configHome}/hypr/colors.lua
 
-      # Apply to current session
-      hyprctl keyword general:col.active_border "rgb(''${ACCENT}) rgb(''${ACCENT}) 45deg"
+          # Apply to current session
+          hyprctl eval "hl.config({ general = { [\"col.active_border\"] = { colors = { \"rgb(''${ACCENT})\", \"rgb(''${ACCENT})\" }, angle = 45 } } })"
 
-      # Restart vicinae server so it gets the latest matugen theme.
-      vicinae server --replace &
-      sleep 1
-      vicinae theme set matugen
+          # Restart vicinae server so it gets the latest matugen theme.
+          vicinae server --replace &
+          sleep 1
+          vicinae theme set matugen
     '')
   ];
 
@@ -150,6 +154,13 @@
     [templates.vicinae]
     input_path = "${config.xdg.configHome}/matugen/templates/vicinae.toml"
     output_path = "${config.xdg.dataHome}/vicinae/themes/matugen.toml"
+  '';
+
+  home.activation.hyprlandColors = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -f "${config.xdg.configHome}/hypr/colors.lua" ]; then
+      echo 'hl.config({ general = { ["col.active_border"] = "rgb(ffffff) rgb(ffffff) 45deg" } })' \
+        > "${config.xdg.configHome}/hypr/colors.lua"
+    fi
   '';
 
   # Make sure the themes folder exists (should by default, but not sure)

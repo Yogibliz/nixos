@@ -4,18 +4,15 @@
     { pkgs, ... }:
     {
       # Millennium
-      # nixpkgs.overlays = [ inputs.millennium.overlays.default ];
+      nixpkgs.overlays = [ inputs.millennium.overlays.default ];
 
       # Steam
       programs.steam = {
         enable = true;
-<<<<<<< HEAD
         # Broken temp
-=======
-        # Broken
->>>>>>> 5958c0c (test hm-modules layout)
         # package = pkgs.millennium-steam;
         package = pkgs.steam;
+
         gamescopeSession.enable = true;
         remotePlay.openFirewall = true;
         dedicatedServer.openFirewall = true;
