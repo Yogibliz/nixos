@@ -19,6 +19,7 @@
     vicinae-extensions.url = "github:vicinaehq/extensions";
 
     hyprland.url = "github:hyprwm/Hyprland";
+
     hy3 = {
       url = "github:outfoxxed/hy3";
       inputs.hyprland.follows = "hyprland";

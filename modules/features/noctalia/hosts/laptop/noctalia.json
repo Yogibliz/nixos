@@ -480,14 +480,14 @@
       "diskAvailCriticalThreshold": 10,
       "batteryWarningThreshold": 20,
       "batteryCriticalThreshold": 5,
-      "enableDgpuMonitoring": true,
+      "enableDgpuMonitoring": false,
       "useCustomColors": false,
       "warningColor": "",
       "criticalColor": "",
       "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor"
     },
     "noctaliaPerformance": {
-      "disableWallpaper": true,
+      "disableWallpaper": false,
       "disableDesktopWidgets": true
     },
     "dock": {
@@ -728,7 +728,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/iris/dotfiles/Wallpapers/wallhaven_rr3e91.jpg"
+      "eDP-1": "/home/iris/dotfiles/Wallpapers/blue_hair_yellow_eyes_rimuru_tempest_anime_girl_black_dress_4k_hd_rimuru_tempest.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -740,13 +740,13 @@
         "refresh_rate": 120.001,
         "x": 0,
         "y": 0,
-        "active_workspace": 1,
+        "active_workspace": 6,
         "vrr": false,
         "focused": true
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1777943574000
+      "lastSeenTs": 1778834538000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.6"
