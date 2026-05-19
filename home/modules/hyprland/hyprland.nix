@@ -16,7 +16,7 @@
 
     settings = {
       debug = {
-        vfr = false;
+        vfr = true;
       };
 
       workspace = [
