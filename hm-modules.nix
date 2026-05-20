@@ -1,0 +1,5 @@
+[
+  "hyprland"
+  "vicinae"
+  "spicetify-nix"
+]

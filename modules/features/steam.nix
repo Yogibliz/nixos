@@ -9,7 +9,11 @@
       # Steam
       programs.steam = {
         enable = true;
+<<<<<<< HEAD
         # Broken temp
+=======
+        # Broken
+>>>>>>> 5958c0c (test hm-modules layout)
         # package = pkgs.millennium-steam;
         package = pkgs.steam;
         gamescopeSession.enable = true;

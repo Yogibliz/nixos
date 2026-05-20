@@ -1,7 +1,6 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   imports = [
-    inputs.vicinae.homeManagerModules.default
     ./modules
     ./home-packages.nix
   ];

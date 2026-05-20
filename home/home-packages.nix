@@ -31,7 +31,6 @@
     ghostty
     nautilus
     pavucontrol
-    spotify
     vesktop
     vscode
     zathura
