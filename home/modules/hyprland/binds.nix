@@ -265,8 +265,6 @@
       local screenshot = "hyprshot -m region --clipboard-only -s"
       local noctalia = "noctalia-shell ipc call"
 
-      local hy3 = hl.plugin.hy3
-
       -- Applications
       hl.bind(mod .. " + Super_L", hl.dsp.exec_cmd("vicinae toggle"))
       hl.bind(mod .. " + Escape", hl.dsp.exec_cmd(noctalia .. " lockScreen lock"))

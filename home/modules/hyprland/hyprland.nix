@@ -10,9 +10,11 @@
     enable = true;
     configType = "lua";
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # plugins = [ inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3 ];
+    plugins = [ inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3 ];
 
     extraConfig = ''
+      hl.plugin.load("${inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3}/lib/libhy3.so")
+      local hy3 = hl.plugin.hy3
       local config_dir = os.getenv("XDG_CONFIG_HOME") or (os.getenv("HOME") .. "/.config")
       dofile(config_dir .. "/hypr/colors.lua")
     '';
@@ -23,7 +25,7 @@
           gaps_in = 5;
           gaps_out = 10;
           border_size = 4;
-          # layout = "hy3";
+          layout = "hy3";
           "col.active_border" = {
             colors = [
               "rgb(ffffff)"
@@ -52,16 +54,16 @@
         };
       };
 
-      # config.plugin.hy3 = {
-      #   tabs = {
-      #     height = 4;
-      #     padding = 6;
-      #     radius = 6;
-      #   };
-      #   autotile = {
-      #     enable = true;
-      #   };
-      # };
+      config.plugin.hy3 = {
+        tabs = {
+          height = 4;
+          padding = 6;
+          radius = 6;
+        };
+        autotile = {
+          enable = true;
+        };
+      };
 
       workspace_rule = [
         {
