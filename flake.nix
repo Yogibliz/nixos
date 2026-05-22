@@ -30,6 +30,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -73,6 +74,12 @@
                   home-manager.useGlobalPkgs = true;
                   home-manager.useUserPackages = true;
                   home-manager.backupFileExtension = "backup";
+                  home-manager.sharedModules =
+                    (map (n: inputs.${n}.homeManagerModules.default) (import ./hm-modules.nix))
+                    ++ [
+                      # Inputs that don't follow the homeManagerModules.default standard:
+
+                    ];
                 }
                 ./hosts/${hostname}/configuration.nix
               ];
