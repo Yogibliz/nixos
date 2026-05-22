@@ -8,8 +8,13 @@ in
     enable = true;
     enabledExtensions = with spicePkgs.extensions; [
       hidePodcasts
+      lastfm
+      betterGenres
+      history
+      keyboardShortcut
     ];
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
+    theme = spicePkgs.themes.dribbblishDynamic;
+    # theme = spicePkgs.themes.bloom;
+    # colorScheme = "violet";
   };
 }

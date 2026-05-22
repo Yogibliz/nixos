@@ -41,7 +41,7 @@
     hypridle
 
     # Media
-    # ani-cli
+    ani-cli
     ani-skip
     mpv
 

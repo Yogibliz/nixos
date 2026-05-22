@@ -38,5 +38,6 @@
 
   home.packages = with pkgs; [
     openssl_3_5
+    artix-games-launcher
   ];
 }
