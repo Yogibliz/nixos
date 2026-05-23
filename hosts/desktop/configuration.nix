@@ -36,6 +36,7 @@
     self.nixosModules.steam
     self.nixosModules.jellyfin
     self.nixosModules.proton
+    self.nixosModules.vicinae
   ];
 
   services.gnome.gnome-keyring.enable = true;

@@ -29,7 +29,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     home-manager = {

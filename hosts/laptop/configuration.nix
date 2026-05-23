@@ -32,6 +32,7 @@
     self.nixosModules.homeManager
     self.nixosModules.samsungAudio
     self.nixosModules.proton
+    self.nixosModules.vicinae
   ];
 
   nix.settings.experimental-features = [

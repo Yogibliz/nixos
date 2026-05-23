@@ -8,6 +8,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = false;
     configType = "lua";
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     plugins = [ inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3 ];
@@ -112,12 +113,12 @@
         _args = [
           "hyprland.start"
           (lib.generators.mkLuaInline ''
-            function()
-              hl.exec_cmd("noctalia-shell")
-              hl.exec_cmd("vicinae server")
-              hl.exec_cmd("hypridle")
-              hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-            end
+                  function()
+            	hl.exec_cmd("noctalia-shell")
+            	hl.exec_cmd("uwsm app -- vicinae server")
+            	hl.exec_cmd("hypridle")
+            	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+                  end
           '')
         ];
       };

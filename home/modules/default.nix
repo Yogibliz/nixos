@@ -6,7 +6,6 @@
     ./matugen.nix
     ./nixvim
     ./spicetify.nix
-    ./vicinae.nix
     ./zen.nix
     ./zsh.nix
   ];

@@ -28,6 +28,7 @@
     self.nixosModules.noctalia
     self.nixosModules.homeManager
     self.nixosModules.proton
+    self.nixosModules.vicinae
   ];
 
   nix.settings.experimental-features = [

@@ -10,8 +10,8 @@
       programs.steam = {
         enable = true;
         # Broken temp
-        # package = pkgs.millennium-steam;
-        package = pkgs.steam;
+        package = pkgs.millennium-steam;
+        # package = pkgs.steam;
 
         gamescopeSession.enable = true;
         remotePlay.openFirewall = true;
@@ -22,7 +22,7 @@
       # Gamescope
       programs.gamescope = {
         enable = true;
-        capSysNice = true;
+        capSysNice = false;
       };
 
       # XWayland for Steam

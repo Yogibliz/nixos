@@ -1,5 +1,4 @@
 [
   "hyprland"
-  "vicinae"
   "spicetify-nix"
 ]
