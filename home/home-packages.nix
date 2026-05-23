@@ -16,15 +16,13 @@
     cachix
 
     # Development
-    # gcc
-    gcc_multi
+    gcc
     rustc
     cargo
     gnumake
     statix
     python3
     texliveFull
-    qemu_full
     quickshell
 
     # Desktop apps
@@ -47,7 +45,6 @@
 
     # System
     adwaita-icon-theme
-    app2unit
     btop
     networkmanagerapplet
     wl-clipboard
@@ -56,12 +53,4 @@
     zsh-completions
   ];
 
-  services.udiskie = {
-    enable = true;
-    settings = {
-      program_options = {
-        file_manager = "${pkgs.nautilus}/bin/nautilus";
-      };
-    };
-  };
 }
