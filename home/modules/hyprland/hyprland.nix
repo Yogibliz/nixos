@@ -116,7 +116,7 @@
             	    function()
             	      hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
             	      hl.exec_cmd("noctalia-shell")
-            	      hl.exec_cmd("zsh -c 'uwsm app -- vicinae server --replace &!'")
+            	      hl.exec_cmd("vicinae server")
             	      hl.exec_cmd("hypridle")
             	    end
           '')
