@@ -1,7 +1,9 @@
 { inputs, ... }:
 {
   imports = [
-    ./binds.nix
-    ./hyprland.nix
+    # ./binds_hyprlang.nix
+    # ./hyprland_hyprlang.nix
+    ./binds_lua.nix
+    ./hyprland_lua.nix
   ];
 }

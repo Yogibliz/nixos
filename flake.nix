@@ -31,6 +31,7 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    nixvim.url = "github:nix-community/nixvim";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -39,11 +40,6 @@
 
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
