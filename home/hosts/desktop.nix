@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   wayland.windowManager.hyprland.settings.monitor = [
     {
@@ -39,4 +39,9 @@
     openssl_3_5
     artix-games-launcher
   ];
+
+  home.file.".config/Artix Game Launcher/Pepper Data/Shockwave Flash/WritableRoot/#SharedObjects/UFVPF3WA/game.aq.com/AQLite_Data.sol" =
+    {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/modules/artix-launcher/AQLite_Data.sol";
+    };
 }
