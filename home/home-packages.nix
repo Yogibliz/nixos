@@ -14,7 +14,6 @@
     ripgrep
     tree
     time
-    ydotool
 
     # Development
     gcc

@@ -16,6 +16,7 @@
           "video"
           "input"
           "plugdev"
+          "ydotool"
         ];
       };
     };
