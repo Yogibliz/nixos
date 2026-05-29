@@ -12,7 +12,7 @@
       local noctalia = "noctalia-shell ipc call"
 
       -- Macro
-      hl.bind("", "F13", "exec", "~/LR_loop.sh")
+      hl.bind("", "F13", hl.dsp.exec_cmd("~/LR_loop.sh"))
 
       -- Applications
       hl.bind(mod .. " + Super_L", hl.dsp.exec_cmd("vicinae toggle"))
