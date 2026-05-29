@@ -24,5 +24,4 @@
   };
 
   programs.home-manager.enable = true;
-  programs.ydotool.enable = true;
 }

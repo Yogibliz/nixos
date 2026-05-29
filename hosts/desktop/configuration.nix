@@ -41,6 +41,10 @@
 
   services.gnome.gnome-keyring.enable = true;
 
+  programs = {
+    ydotool.enable = true;
+  };
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"

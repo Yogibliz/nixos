@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 {
   wayland.windowManager.hyprland.settings.monitor = [
     {
@@ -40,9 +45,26 @@
     artix-games-launcher
   ];
 
-  home.file.".config/Artix Game Launcher/Pepper Data/Shockwave Flash/WritableRoot/#SharedObjects/UFVPF3WA/game.aq.com/AQLite_Data.sol" =
-    {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/modules/artix-launcher/AQLite_Data.sol";
-      force = true;
-    };
+  home.activation = {
+    linkAQLiteData =
+      let
+        targetPath = "${config.home.homeDirectory}/.config/Artix Game Launcher/Pepper Data/Shockwave Flash/WritableRoot/#SharedObjects/UFVPF3WA/game.aq.com/AQLite_Data.sol";
+        sourcePath = "${config.home.homeDirectory}/dotfiles/home/modules/artix-launcher/AQLite_Data.sol";
+      in
+      lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        	mkdir -p "$(dirname "${targetPath}")"
+
+        	if [ -e "${targetPath}" ] || [ -L "${targetPath}" ]; then
+        	  rm -f "${targetPath}"
+        	fi
+
+        	ln -s "${sourcePath}" "${targetPath}"
+      '';
+  };
+
+  # home.file.".config/Artix Game Launcher/Pepper Data/Shockwave Flash/WritableRoot/#SharedObjects/UFVPF3WA/game.aq.com/AQLite_Data.sol" =
+  #   {
+  #     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/modules/artix-launcher/AQLite_Data.sol";
+  #     force = true;
+  #   };
 }
