@@ -48,21 +48,16 @@
   home.activation = {
     linkAQLiteData =
       let
-        targetPath = "${config.home.homeDirectory}/.config/Artix Game Launcher/Pepper Data/Shockwave Flash/WritableRoot/#SharedObjects/UFVPF3WA/game.aq.com/AQLite_Data.sol";
-        sourcePath = "${config.home.homeDirectory}/dotfiles/home/modules/artix-launcher/AQLite_Data.sol";
+        targetDir = "${config.home.homeDirectory}/.config/Artix Game Launcher/Pepper Data/Shockwave Flash/WritableRoot/#SharedObjects/UFVPF3WA/game.aq.com";
+        sourceDir = "${config.home.homeDirectory}/dotfiles/home/modules/artix-launcher/game.aq.com";
       in
       lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        mkdir -p "${dirOf targetPath}"
-        if [ -e "${targetPath}" ] || [ -L "${targetPath}" ]; then
-          rm -f "${targetPath}"
+        mkdir -p "${sourceDir}"
+        mkdir -p "$(dirname "${targetDir}")"
+        if [ -e "${targetDir}" ] || [ -L "${targetDir}" ]; then
+          rm -rf "${targetDir}"
         fi
-        ln -s "${sourcePath}" "${targetPath}"
+        ln -s "${sourceDir}" "${targetDir}"
       '';
   };
-
-  # home.file.".config/Artix Game Launcher/Pepper Data/Shockwave Flash/WritableRoot/#SharedObjects/UFVPF3WA/game.aq.com/AQLite_Data.sol" =
-  #   {
-  #     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/modules/artix-launcher/AQLite_Data.sol";
-  #     force = true;
-  #   };
 }
