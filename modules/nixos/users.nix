@@ -14,6 +14,8 @@
           "wheel"
           "gamemode"
           "video"
+          "input"
+          "plugdev"
         ];
       };
     };

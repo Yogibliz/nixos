@@ -5,6 +5,7 @@
     {
       hardware = {
         bluetooth.enable = true;
+        keyboard.qmk.enable = true;
       };
     };
 }

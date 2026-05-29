@@ -5,15 +5,16 @@
     # CLI utilities
     appimage-run
     bat
+    cachix
     eza
     fastfetch
     fd
     fzf
-    ripgrep
     mmv
+    ripgrep
     tree
     time
-    cachix
+    ydotool
 
     # Development
     gcc
@@ -27,10 +28,12 @@
 
     # Desktop apps
     ghostty
+    google-chrome
     nautilus
     pavucontrol
     vesktop
     vscode
+    qmk
     zathura
     zotero
 

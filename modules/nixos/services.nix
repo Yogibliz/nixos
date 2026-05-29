@@ -28,6 +28,14 @@
           enable = true;
           settings.Resolve.DNSSEC = "false";
         };
+
+        udev.packages = with pkgs; [
+          qmk-udev-rules
+        ];
+
+        udev.extraRules = ''
+          KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl"
+        '';
       };
     };
 }
