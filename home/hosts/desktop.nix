@@ -52,13 +52,11 @@
         sourcePath = "${config.home.homeDirectory}/dotfiles/home/modules/artix-launcher/AQLite_Data.sol";
       in
       lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        	mkdir -p "$(dirname "${targetPath}")"
-
-        	if [ -e "${targetPath}" ] || [ -L "${targetPath}" ]; then
-        	  rm -f "${targetPath}"
-        	fi
-
-        	ln -s "${sourcePath}" "${targetPath}"
+        mkdir -p "${dirOf targetPath}"
+        if [ -e "${targetPath}" ] || [ -L "${targetPath}" ]; then
+          rm -f "${targetPath}"
+        fi
+        ln -s "${sourcePath}" "${targetPath}"
       '';
   };
 
