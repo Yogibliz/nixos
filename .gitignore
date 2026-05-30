@@ -1,1 +1,3 @@
 /hosts/*/hardware.nix
+/home/modules/artix-launcher/game.aq.com/*
+!/home/modules/artix-launcher/game.aq.com/AQLite_Data.sol
