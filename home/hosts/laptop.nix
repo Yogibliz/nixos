@@ -13,5 +13,6 @@
     openssl_3_5
     libva-utils
     mission-center
+    artix-games-launcher
   ];
 }
