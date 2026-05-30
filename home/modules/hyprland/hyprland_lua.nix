@@ -25,14 +25,6 @@
           gaps_out = 10;
           border_size = 4;
           layout = "hy3";
-          "col.active_border" = {
-            colors = [
-              "rgb(ffffff)"
-              "rgb(ffffff)"
-            ];
-            angle = 45;
-          };
-          "col.inactive_border" = "rgb(444444)";
         };
 
         decoration = {

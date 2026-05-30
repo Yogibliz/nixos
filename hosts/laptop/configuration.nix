@@ -32,6 +32,7 @@
     self.nixosModules.homeManager
     self.nixosModules.samsungAudio
     self.nixosModules.proton
+    self.nixosModules.steam
     self.nixosModules.vicinae
   ];
 
