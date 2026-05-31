@@ -8,6 +8,7 @@
 
     shellAliases = {
       nv = "nvim";
+      gl = "git log --stat";
       ll = "eza -la";
       la = "eza -a";
       cat = "bat";
