@@ -30,6 +30,9 @@
     google-chrome
     nautilus
     pavucontrol
+    protonmail-desktop
+    proton-pass
+    proton-vpn
     vesktop
     vscode
     qmk
@@ -43,6 +46,9 @@
     # Media
     ani-cli
     ani-skip
+    jellyfin
+    jellyfin-ffmpeg
+    jellyfin-web
     mpv
 
     # System
