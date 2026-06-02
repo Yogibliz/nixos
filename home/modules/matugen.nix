@@ -157,8 +157,10 @@
   '';
 
   home.activation.hyprlandColors = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -f "${config.xdg.configHome}/hypr/colors.lua" ]; then
-      echo 'hl.config({ general = { ["col.active_border"] = "rgb(ffffff) rgb(ffffff) 45deg" } })' \
+    if [ ! -f "${config.xdg.configHome}/hypr/colors.lua" ];
+    then
+      # Fix the default fallback layout to use valid Lua table syntax
+      echo "hl.config({ general = { [\"col.active_border\"] = { colors = { \"rgb(ffffff)\", \"rgb(ffffff)\" }, angle = 45 } } })" \
         > "${config.xdg.configHome}/hypr/colors.lua"
     fi
   '';

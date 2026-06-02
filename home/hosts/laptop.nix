@@ -1,16 +1,15 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   xdg.configFile."hypr/monitors.lua".text = ''
-         hl.config({
-          monitor = {
-          {
-            output = "";
-    	mode = "preferred";
-    	position = "auto";
-    	scale = 1;
-          
-          },
-         })
+    hl.monitor({
+      output = "",
+      mode = "preferred",
+      position = "auto",
+      scale = 1,
+    })
   '';
 
   home.packages = with pkgs; [
