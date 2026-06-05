@@ -30,6 +30,7 @@
       mode = "3840x2160@120";
       position = "6440x0";
       scale = 1.5;
+      disabled = true;
     }
   ];
 

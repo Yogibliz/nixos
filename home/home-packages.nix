@@ -10,6 +10,7 @@
     fastfetch
     fd
     fzf
+    mesa-demos
     mmv
     ripgrep
     tree
