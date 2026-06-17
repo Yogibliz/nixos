@@ -15,19 +15,22 @@
   };
 
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     vicinae.url = "github:vicinaehq/vicinae";
     vicinae-extensions.url = "github:vicinaehq/extensions";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    hy3 = {
-      url = "github:outfoxxed/hy3";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    #
+    # hy3 = {
+    #   url = "github:outfoxxed/hy3";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
     import-tree.url = "github:vic/import-tree";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";

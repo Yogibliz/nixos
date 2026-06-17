@@ -1,4 +1,3 @@
 [
-  "hyprland"
   "spicetify-nix"
 ]
