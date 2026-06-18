@@ -6,6 +6,7 @@
     appimage-run
     bat
     cachix
+    calc
     eza
     fastfetch
     fd

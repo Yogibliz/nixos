@@ -3,6 +3,7 @@
   programs.nixvim.plugins.lsp = {
     enable = true;
     servers = {
+      clangd.enable = true;
       nixd.enable = true;
       lua_ls.enable = true;
       rust_analyzer = {
