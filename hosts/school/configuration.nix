@@ -10,7 +10,7 @@
 {
   imports = [
     ./hardware.nix
-    # shared NixOS modules via self
+    # Shared NixOS modules via self
     self.nixosModules.boot
     self.nixosModules.environment
     self.nixosModules.fonts
@@ -23,22 +23,16 @@
     self.nixosModules.system
     self.nixosModules.time
     self.nixosModules.users
-    # features
+
+    # Features
     self.nixosModules.hyprland
     self.nixosModules.noctalia
-    self.nixosModules.homeManager
-    self.nixosModules.proton
     self.nixosModules.vicinae
   ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
-  ];
-
-  home-manager.users.iris.imports = [
-    "${self}/home/home.nix"
-    "${self}/home/hosts/school.nix"
   ];
 
   networking.hostName = hostname;

@@ -10,7 +10,7 @@
 {
   imports = [
     ./hardware.nix
-    # shared NixOS modules via self
+    # Shared NixOS modules via self
     self.nixosModules.boot
     self.nixosModules.swap
     self.nixosModules.environment
@@ -26,12 +26,10 @@
     self.nixosModules.users
     self.nixosModules.xdg
 
-    # features
+    # Features
     self.nixosModules.hyprland
     self.nixosModules.noctalia
-    self.nixosModules.homeManager
     self.nixosModules.samsungAudio
-    self.nixosModules.proton
     self.nixosModules.steam
     self.nixosModules.vicinae
   ];
@@ -39,11 +37,6 @@
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
-  ];
-
-  home-manager.users.iris.imports = [
-    "${self}/home/home.nix"
-    "${self}/home/hosts/laptop.nix"
   ];
 
   hardware.graphics = {

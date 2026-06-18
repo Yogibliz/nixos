@@ -9,10 +9,9 @@
 
 {
   imports = [
-    # You can now import the hardware file directly using a relative path!
     ./hardware.nix
 
-    # You still load your shared modules via `self` thanks to import-tree
+    # Shared NixOS modules via self
     self.nixosModules.boot
     self.nixosModules.swap
     self.nixosModules.environment
@@ -30,12 +29,10 @@
     self.nixosModules.xdg
 
     # Features
-    self.nixosModules.homeManager
     self.nixosModules.hyprland
     self.nixosModules.noctalia
     self.nixosModules.steam
     self.nixosModules.jellyfin
-    self.nixosModules.proton
     self.nixosModules.vicinae
   ];
 
@@ -48,11 +45,6 @@
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
-  ];
-
-  home-manager.users.iris.imports = [
-    "${self}/home/home.nix"
-    "${self}/home/hosts/desktop.nix"
   ];
 
   hardware.graphics = {

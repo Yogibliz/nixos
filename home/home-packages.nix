@@ -32,6 +32,9 @@
     google-chrome
     nautilus
     pavucontrol
+    proton-vpn
+    proton-pass
+    protonmail-desktop
     vesktop
     vscode
     qmk
