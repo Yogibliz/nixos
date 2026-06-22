@@ -11,6 +11,7 @@
     fastfetch
     fd
     fzf
+    mediawriter
     mesa-demos
     mmv
     ripgrep

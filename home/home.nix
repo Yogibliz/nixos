@@ -23,5 +23,9 @@
     };
   };
 
+  services.udiskie = {
+    enable = true;
+  };
+
   programs.home-manager.enable = true;
 }
