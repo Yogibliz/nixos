@@ -1,79 +1,265 @@
+{ lib, config, ... }:
+
+let
+  mod = "SUPER";
+  modS = "SUPER + SHIFT";
+  modA = "SUPER + ALT";
+
+  browser = "zen";
+  terminal = "ghostty";
+  explorer = "nautilus";
+  screenshot = "hyprshot -m region --clipboard-only -s";
+  noctalia = "noctalia msg";
+
+  # Helper using the lib.generators.mkLuaInline function.
+  mkBind =
+    {
+      key,
+      action,
+      options ? null,
+    }:
+    {
+      _args = [
+        key
+        (lib.generators.mkLuaInline action)
+      ]
+      ++ lib.optional (options != null) options;
+    };
+in
 {
   wayland.windowManager.hyprland = {
-    extraConfig = ''
-      local mod  = "SUPER"
-      local modS = "SUPER + SHIFT"
-      local modA = "SUPER + ALT"
+    settings = {
+      # Use `bind` and apply `map mkBind` across the combined list
+      bind = map mkBind (
+        [
+          # =============================[ Macro ]============================= #
+          {
+            key = "XF86Tools";
+            action = "hl.dsp.exec_cmd('/home/iris/LR_loop.sh')";
+          }
 
-      local browser = "zen"
-      local terminal = "ghostty"
-      local explorer = "nautilus"
-      local screenshot = "hyprshot -m region --clipboard-only -s"
-      local noctalia = "noctalia-shell ipc call"
+          # =========================[ Applications ]========================== #
+          {
+            key = "${mod} + Super_L";
+            action = "hl.dsp.exec_cmd('vicinae toggle')";
+          }
+          {
+            key = "${mod} + Escape";
+            action = "hl.dsp.exec_cmd('${noctalia} session lock')";
+          }
+          {
+            key = "${mod} + S";
+            action = "hl.dsp.exec_cmd('${noctalia} settings-toggle')";
+          }
+          {
+            key = "${mod} + W";
+            action = "hl.dsp.exec_cmd('${noctalia} panel-toggle wallpaper')";
+          }
+          {
+            key = "${mod} + T";
+            action = "hl.dsp.exec_cmd('${terminal}')";
+          }
+          {
+            key = "${mod} + B";
+            action = "hl.dsp.exec_cmd('${browser}')";
+          }
+          {
+            key = "${mod} + E";
+            action = "hl.dsp.exec_cmd('${explorer}')";
+          }
+          {
+            key = "${modS} + S";
+            action = "hl.dsp.exec_cmd('${screenshot}')";
+          }
 
-      -- Macro
-      hl.bind("XF86Tools", hl.dsp.exec_cmd("/home/iris/LR_loop.sh"))
+          # =======================[ Window management ]======================= #
+          {
+            key = "${mod} + Q";
+            action = "hl.plugin.hy3.kill_active()";
+          }
+          {
+            key = "${mod} + F";
+            action = "hl.dsp.window.fullscreen()";
+          }
+          {
+            key = "${mod} + V";
+            action = "hl.dsp.window.float({ action = 'toggle' })";
+          }
+          {
+            key = "ALT + TAB";
+            action = "hl.dsp.exec_cmd('${noctalia} window-switcher')";
+          }
 
-      -- Applications
-      hl.bind(mod .. " + Super_L", hl.dsp.exec_cmd("vicinae toggle"))
-      hl.bind(mod .. " + Escape", hl.dsp.exec_cmd(noctalia .. " lockScreen lock"))
-      hl.bind(mod .. " + S", hl.dsp.exec_cmd(noctalia .. " settings toggle"))
-      hl.bind(mod .. " + W", hl.dsp.exec_cmd(noctalia .. " wallpaper toggle"))
-      hl.bind(mod .. " + T", hl.dsp.exec_cmd(terminal))
-      hl.bind(mod .. " + B", hl.dsp.exec_cmd(browser))
-      hl.bind(mod .. " + E", hl.dsp.exec_cmd(explorer))
-      hl.bind(modS .. " + S", hl.dsp.exec_cmd(screenshot))
+          # ==========================[ hy3: focus ]=========================== #
+          {
+            key = "${mod} + H";
+            action = "hl.plugin.hy3.move_focus('l')";
+          }
+          {
+            key = "${mod} + L";
+            action = "hl.plugin.hy3.move_focus('r')";
+          }
+          {
+            key = "${mod} + K";
+            action = "hl.plugin.hy3.move_focus('u')";
+          }
+          {
+            key = "${mod} + J";
+            action = "hl.plugin.hy3.move_focus('d')";
+          }
 
-      -- Window management
-      hl.bind(mod .. " + Q", hy3.kill_active())
-      hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
-      hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+          # =======================[ hy3: move window ]======================== #
+          {
+            key = "${modS} + H";
+            action = "hl.plugin.hy3.move_window('l')";
+          }
+          {
+            key = "${modS} + L";
+            action = "hl.plugin.hy3.move_window('r')";
+          }
+          {
+            key = "${modS} + K";
+            action = "hl.plugin.hy3.move_window('u')";
+          }
+          {
+            key = "${modS} + J";
+            action = "hl.plugin.hy3.move_window('d')";
+          }
 
-      -- hy3: focus
-      hl.bind(mod .. " + H", hy3.move_focus("l"))
-      hl.bind(mod .. " + L", hy3.move_focus("r"))
-      hl.bind(mod .. " + K", hy3.move_focus("u"))
-      hl.bind(mod .. " + J", hy3.move_focus("d"))
+          # ====================[ hy3: change focus group ]==================== #
+          {
+            key = "${mod} + A";
+            action = "hl.plugin.hy3.change_focus('raise')";
+          }
+          {
+            key = "${modS} + A";
+            action = "hl.plugin.hy3.change_focus('lower')";
+          }
 
-      -- hy3: move window
-      hl.bind(modS .. " + H", hy3.move_window("l"))
-      hl.bind(modS .. " + L", hy3.move_window("r"))
-      hl.bind(modS .. " + K", hy3.move_window("u"))
-      hl.bind(modS .. " + J", hy3.move_window("d"))
+          # ===========================[ Media keys ]========================== #
+          {
+            key = "XF86AudioMute";
+            action = "hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle')";
+          }
+          {
+            key = "XF86AudioPlay";
+            action = "hl.dsp.exec_cmd('playerctl play-pause')";
+          }
+          {
+            key = "XF86AudioNext";
+            action = "hl.dsp.exec_cmd('playerctl next')";
+          }
+          {
+            key = "XF86AudioPrev";
+            action = "hl.dsp.exec_cmd('playerctl previous')";
+          }
 
-      -- hy3: change focus group
-      hl.bind(mod .. " + A", hy3.change_focus("raise"))
-      hl.bind(modS .. " + A", hy3.change_focus("lower"))
+          # =============================[ Resize ]============================ #
+          {
+            key = "${modA} + H";
+            action = "hl.dsp.window.resize({ x = 20, y = 0, relative = true })";
+            options = {
+              repeating = true;
+            };
+          }
+          {
+            key = "${modA} + L";
+            action = "hl.dsp.window.resize({ x = -20, y = 0, relative = true })";
+            options = {
+              repeating = true;
+            };
+          }
+          {
+            key = "${modA} + K";
+            action = "hl.dsp.window.resize({ x = 0, y = -20, relative = true })";
+            options = {
+              repeating = true;
+            };
+          }
+          {
+            key = "${modA} + J";
+            action = "hl.dsp.window.resize({ x = 0, y = 20, relative = true })";
+            options = {
+              repeating = true;
+            };
+          }
 
-      -- Media keys
-      hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
-      hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
-      hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
-      hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
+          # ============================[ Volume ]============================ #
+          {
+            key = "XF86AudioLowerVolume";
+            action = "hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-')";
+            options = {
+              repeating = true;
+            };
+          }
+          {
+            key = "XF86AudioRaiseVolume";
+            action = "hl.dsp.exec_cmd('wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+')";
+            options = {
+              repeating = true;
+            };
+          }
+          {
+            key = "${mod} + mouse_up";
+            action = "hl.dsp.exec_cmd('${noctalia} volume-up')";
+          }
+          {
+            key = "${mod} + mouse_down";
+            action = "hl.dsp.exec_cmd('${noctalia} volume-down')";
+          }
 
-      -- Workspaces 1-5
-      for i = 1, 5 do
-        local ws = tostring(i)
-        hl.bind(mod .. " + " .. ws, hl.dsp.focus({ workspace = ws }))
-        hl.bind(modS .. " + " .. ws, hl.dsp.window.move({ workspace = ws }))
-      end
+          # ==========================[ Brightness ]========================== #
+          {
+            key = "XF86MonBrightnessUp";
+            action = "hl.dsp.exec_cmd('brightnessctl set 5%+')";
+            options = {
+              repeating = true;
+            };
+          }
+          {
+            key = "XF86MonBrightnessDown";
+            action = "hl.dsp.exec_cmd('brightnessctl set 5%-')";
+            options = {
+              repeating = true;
+            };
+          }
 
-      -- Resize
-      hl.bind(modA .. " + H", hl.dsp.window.resize({ x = 20, y = 0, relative = true }), { repeating = true })
-      hl.bind(modA .. " + L", hl.dsp.window.resize({ x = -20, y = 0, relative = true }), { repeating = true })
-      hl.bind(modA .. " + K", hl.dsp.window.resize({ x = 0, y = -20, relative = true }), { repeating = true })
-      hl.bind(modA .. " + J", hl.dsp.window.resize({ x = 0, y = 20, relative = true }), { repeating = true })
-
-      -- Volume / brightness
-      hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
-      hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
-      hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), { repeating = true })
-      hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { repeating = true })
-
-      -- Mouse binds
-      hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-      hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-    '';
-
+          # ==========================[ Mouse binds ]========================== #
+          {
+            key = "${mod} + mouse:272";
+            action = "hl.dsp.window.drag()";
+            options = {
+              mouse = true;
+            };
+          }
+          {
+            key = "${mod} + mouse:273";
+            action = "hl.dsp.window.resize()";
+            options = {
+              mouse = true;
+            };
+          }
+        ]
+        # ===========================[ Workspaces ]========================== #
+        ++ (builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              ws = toString (i + 1);
+            in
+            [
+              {
+                key = "${mod} + ${ws}";
+                action = "hl.dsp.focus({ workspace = '${ws}' })";
+              }
+              {
+                key = "${modS} + ${ws}";
+                action = "hl.dsp.window.move({ workspace = '${ws}' })";
+              }
+            ]
+          ) 5
+        ))
+      );
+    };
   };
 }

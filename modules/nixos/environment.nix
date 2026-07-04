@@ -16,6 +16,7 @@
         };
 
         systemPackages = with pkgs; [
+          fuse3
           git
           mesa
           wget

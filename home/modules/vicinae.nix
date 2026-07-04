@@ -2,7 +2,7 @@
 {
   imports = [ inputs.vicinae.homeManagerModules.default ];
 
-  services.vicinae = {
+  programs.vicinae = {
     enable = true;
     package = inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default;
     systemd = {
@@ -11,7 +11,7 @@
     };
 
     extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
-      bluetooth
+      # bluetooth
       nix
       player-pilot
       power-profile

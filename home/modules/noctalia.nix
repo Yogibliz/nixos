@@ -2,10 +2,12 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 
 let
+  # The reload hook handles live updates after Noctalia writes the new files
   reloadHook = pkgs.writeShellScriptBin "noctalia-reload-hook" ''
     # Apply the newly generated Lua config to the live session
     hyprctl eval "$(cat ${config.xdg.configHome}/hypr/colors.lua)"
@@ -17,6 +19,45 @@ let
   '';
 in
 {
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
+
+  programs.noctalia = {
+    enable = true;
+
+    settings = {
+      bar = {
+        main = {
+          position = "top";
+          capsule = "true";
+        };
+      };
+
+      control_center = {
+        width = 1200;
+      };
+
+      weather = {
+        enabled = true;
+        refresh_minutes = 15;
+        unit = "metric";
+        effects = true;
+      };
+
+      location = {
+        auto_locate = true;
+      };
+
+      wallpaper = {
+        enabled = true;
+        directory = "/home/iris/dotfiles/Wallpapers";
+      };
+    };
+  };
+
+  # --- Noctalia Wallpaper Color Switching ---
+
   xdg.configFile."noctalia/templates/vicinae.toml".text = ''
     [meta]
     version = 1
@@ -123,7 +164,6 @@ in
     spinner = "{{colors.primary.default.hex}}"
   '';
 
-  # 3. NEW: We replace your complex bash logic with a native template for colors.lua
   xdg.configFile."noctalia/templates/colors.lua".text = ''
     hl.config({ 
       general = { 
@@ -135,21 +175,17 @@ in
     })
   '';
 
-  # 4. Map the inputs to outputs and attach the reload hook
   xdg.configFile."noctalia/user-templates.toml".text = ''
-    [config]
-
-    [templates.vicinae]
+    [vicinae]
     input_path = "${config.xdg.configHome}/noctalia/templates/vicinae.toml"
     output_path = "${config.xdg.dataHome}/vicinae/themes/matugen.toml"
     command = "${lib.getExe reloadHook}"
 
-    [templates.hyprland_colors]
+    [hyprland_colors]
     input_path = "${config.xdg.configHome}/noctalia/templates/colors.lua"
     output_path = "${config.xdg.configHome}/hypr/colors.lua"
   '';
 
-  # 5. Keep your existing failsafes
   home.activation.hyprlandColors = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ ! -f "${config.xdg.configHome}/hypr/colors.lua" ]; then
       echo 'hl.config({ general = { ["col.active_border"] = { colors = { "rgb(ffffff)", "rgb(ffffff)" }, angle = 45 } } })' \

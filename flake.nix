@@ -24,6 +24,16 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixvim.url = "github:nix-community/nixvim";
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -62,9 +72,9 @@
             hostname: system:
             inputs.home-manager.lib.homeManagerConfiguration {
               pkgs = import inputs.nixpkgs {
-		inherit system;
-		config.allowUnfree = true;
-	      };
+                inherit system;
+                config.allowUnfree = true;
+              };
               extraSpecialArgs = { inherit inputs hostname self; };
               modules = [
                 ./home/home.nix

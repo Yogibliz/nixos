@@ -11,7 +11,6 @@
     fastfetch
     fd
     fzf
-    mediawriter
     mesa-demos
     mmv
     ripgrep
@@ -36,6 +35,7 @@
     proton-vpn
     proton-pass
     protonmail-desktop
+    sone
     vesktop
     vscode
     qmk

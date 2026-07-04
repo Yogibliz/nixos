@@ -30,7 +30,6 @@
 
     # Features
     self.nixosModules.hyprland
-    self.nixosModules.noctalia
     self.nixosModules.steam
     self.nixosModules.jellyfin
     self.nixosModules.vicinae
@@ -46,6 +45,8 @@
     "nix-command"
     "flakes"
   ];
+
+  programs.noctalia-greeter.settings.output.name = "DP-1";
 
   hardware.graphics = {
     enable = true;

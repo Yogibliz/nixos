@@ -3,6 +3,28 @@
   flake.nixosModules.services =
     { pkgs, ... }:
     {
+      imports = [
+        inputs.noctalia-greeter.nixosModules.default
+      ];
+
+      programs.noctalia-greeter = {
+        enable = true;
+        package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
+        settings = {
+          cursor = {
+            theme = "Bibata-Modern-Ice";
+            size = 24;
+          };
+          keyboard = {
+            layout = "us";
+          };
+          appearance = {
+            password_style = "random";
+          };
+        };
+      };
+
       services = {
         blueman.enable = true;
         upower.enable = true;
@@ -18,10 +40,6 @@
           alsa.enable = true;
           alsa.support32Bit = true;
           pulse.enable = true;
-        };
-
-        displayManager.ly = {
-          enable = true;
         };
 
         resolved = {

@@ -5,6 +5,7 @@
     ./hyprland
     ./matugen.nix
     ./nixvim
+    ./noctalia.nix
     ./obs.nix
     ./spicetify.nix
     ./vicinae.nix
