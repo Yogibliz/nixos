@@ -7,15 +7,16 @@
 }:
 
 let
-  # The reload hook handles live updates after Noctalia writes the new files
   reloadHook = pkgs.writeShellScriptBin "noctalia-reload-hook" ''
-    # Apply the newly generated Lua config to the live session
-    hyprctl eval "$(cat ${config.xdg.configHome}/hypr/colors.lua)"
-
-    # Restart vicinae server so it gets the latest theme
-    vicinae server --replace &
-    sleep 1
-    vicinae theme set matugen
+    (
+      export PATH="${config.home.profileDirectory}/bin:/run/current-system/sw/bin:$PATH"
+      
+      ${pkgs.hyprland}/bin/hyprctl eval "$(${pkgs.coreutils}/bin/cat ${config.xdg.configHome}/hypr/colors.lua)"
+      
+      systemctl --user restart vicinae
+      ${pkgs.coreutils}/bin/sleep 1
+      vicinae theme set palette
+    ) >/dev/null 2>&1 &
   '';
 in
 {
@@ -27,17 +28,81 @@ in
     enable = true;
 
     settings = {
-      bar = {
-        main = {
-          position = "top";
-          capsule = "true";
+      # ----- Widget Settings -----
+      widget = {
+        media = {
+          title_scroll = "always";
+          max_length = 450;
         };
       };
 
+      # ----- Control Center Settings -----
       control_center = {
         width = 1200;
       };
 
+      # ----- Location Service Settings -----
+      location = {
+        auto_locate = true;
+      };
+
+      # ----- Shell Settings -----
+      shell = {
+        settings_show_advanced = true;
+        panel = {
+          transparency_mode = "glass";
+        };
+      };
+
+      # ----- Bar Settings -----
+      bar.main = {
+        monitor = {
+          dp3 = {
+            match = "DP-3";
+            enabled = false;
+          };
+
+          dp2 = {
+            match = "DP-2";
+            enabled = false;
+          };
+        };
+
+        # ----- Capsule Group(s) -----
+        capsule_group = {
+          id = "wp";
+          members = [
+            "wallpaper"
+            "wallhaven"
+            "mpvpaper"
+          ];
+          enabled = true;
+        };
+
+        position = "top";
+        capsule = "true";
+        thickness = 46;
+        background_opacity = 0.8;
+
+        # ----- Bar Widgets -----
+        start = [
+          "group:wp"
+          "workspaces"
+        ];
+        center = [ "clock" ];
+        end = [
+          "media"
+          "tray"
+          "notifications"
+          "bluetooth"
+          "volume"
+          "brightness"
+          "battery"
+          "session"
+        ];
+      };
+
+      # ----- Weather Settings -----
       weather = {
         enabled = true;
         refresh_minutes = 15;
@@ -45,24 +110,159 @@ in
         effects = true;
       };
 
-      location = {
-        auto_locate = true;
-      };
-
+      # ----- Wallpaper Settings -----
       wallpaper = {
         enabled = true;
-        directory = "/home/iris/dotfiles/Wallpapers";
+        directory = "$HOME/dotfiles/Wallpapers";
+      };
+
+      # ----- Theme Settings -----
+      theme = {
+        mode = "dark";
+        source = "wallpaper";
+        wallpaper_scheme = "m3-content";
+
+        templates.user = {
+          vicinae = {
+            input_path = "$XDG_CONFIG_HOME/noctalia/templates/vicinae.toml";
+            output_path = "$XDG_DATA_HOME/vicinae/themes/palette.toml";
+            post_hook = "${lib.getExe reloadHook}";
+          };
+          hyprland_colors = {
+            input_path = "$XDG_CONFIG_HOME/noctalia/templates/colors.lua";
+            output_path = "$XDG_CONFIG_HOME/hypr/colors.lua";
+            post_hook = "${lib.getExe reloadHook}";
+          };
+        };
+      };
+
+      # ----- Plugin Settings -----
+      plugins = {
+        enabled = [
+          "noctalia/wallhaven"
+          "noctalia/mpvpaper"
+        ];
+      };
+
+      plugin_settings = {
+        "noctalia/mpvpaper" = {
+          video_directory = "${config.home.homeDirectory}/dotfiles/Wallpapers/Video";
+        };
+
+        # No one would still a little api_key for wallhaven, since it's free, surely :)
+        "noctalia/wallhaven" = {
+          api_key = "l83Zzc2Ti34fOKCTYLDHyIhmjNby17sD";
+        };
+      };
+
+      # ----- Desktop Widget Settings -----
+      desktop_widgets = {
+        schema_version = 2;
+
+        grid = {
+          cell_size = 16;
+          major_interval = 4;
+          visible = true;
+        };
+
+        widget_order = [
+          "desktop-widget-0000000000000001"
+          "desktop-widget-0000000000000002"
+          "desktop-widget-0000000000000003"
+          "desktop-widget-0000000000000004"
+          "desktop-widget-0000000000000005"
+        ];
+
+        widget = {
+          desktop-widget-0000000000000001 = {
+            box_height = 224.0;
+            box_width = 512.0;
+            cx = 3112.0;
+            cy = 224.0;
+            output = "DP-1";
+            rotation = 0.0;
+            type = "media_player";
+            settings = {
+              background = false;
+              layout = "horizontal";
+            };
+          };
+
+          desktop-widget-0000000000000002 = {
+            box_height = 224.0;
+            box_width = 512.0;
+            cx = 320.0;
+            cy = 224.0;
+            output = "DP-1";
+            rotation = 0.0;
+            type = "weather";
+            settings = {
+              background = false;
+              show_forecast = true;
+            };
+          };
+
+          desktop-widget-0000000000000003 = {
+            box_height = 144.0;
+            box_width = 304.0;
+            cx = 1720.0;
+            cy = 144.0;
+            output = "DP-1";
+            rotation = 0.0;
+            type = "clock";
+            settings = {
+              background = false;
+              center_text = true;
+              clock_style = "digital";
+              shadow = true;
+            };
+          };
+
+          desktop-widget-0000000000000004 = {
+            box_height = 176.0;
+            box_width = 512.0;
+            cx = 3112.0;
+            cy = 424.0;
+            output = "DP-1";
+            rotation = 0.0;
+            type = "audio_visualizer";
+            settings = {
+              background = false;
+              bands = 48;
+              centered = true;
+              color_1 = "primary";
+              color_2 = "on_primary";
+              mirrored = true;
+              show_when_idle = true;
+            };
+          };
+
+          desktop-widget-0000000000000005 = {
+            box_height = 720.0;
+            box_width = 688.0;
+            cx = 3088.0;
+            cy = 1080.0;
+            output = "DP-1";
+            rotation = 0.0;
+            type = "sticker";
+            settings = {
+              background = false;
+              image_path = "${config.home.homeDirectory}/dotfiles/Stickers/mahiro.png";
+              opacity = 1.0;
+            };
+          };
+        };
       };
     };
   };
 
-  # --- Noctalia Wallpaper Color Switching ---
+  # --- Noctalia color switching and Vicinae re-theming alongside wallpaper changes ---
 
   xdg.configFile."noctalia/templates/vicinae.toml".text = ''
     [meta]
     version = 1
-    name = "Matugen"
-    description = "Material You theme generated by Matugen"
+    name = "Palette"
+    description = "Wallpaper based theme colors"
     variant = "dark"
     inherits = "vicinae-dark"
 
@@ -175,17 +375,7 @@ in
     })
   '';
 
-  xdg.configFile."noctalia/user-templates.toml".text = ''
-    [vicinae]
-    input_path = "${config.xdg.configHome}/noctalia/templates/vicinae.toml"
-    output_path = "${config.xdg.dataHome}/vicinae/themes/matugen.toml"
-    command = "${lib.getExe reloadHook}"
-
-    [hyprland_colors]
-    input_path = "${config.xdg.configHome}/noctalia/templates/colors.lua"
-    output_path = "${config.xdg.configHome}/hypr/colors.lua"
-  '';
-
+  # Generates a mutable fallback file for Hyprland to read on first launch
   home.activation.hyprlandColors = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ ! -f "${config.xdg.configHome}/hypr/colors.lua" ]; then
       echo 'hl.config({ general = { ["col.active_border"] = { colors = { "rgb(ffffff)", "rgb(ffffff)" }, angle = 45 } } })' \
@@ -193,5 +383,6 @@ in
     fi
   '';
 
+  # Ensures Vicinae's directory exists for Noctalia to write the theme output
   home.file.".local/share/vicinae/themes/.keep".text = "";
 }

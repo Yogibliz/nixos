@@ -50,11 +50,13 @@
     ani-cli
     ani-skip
     mpv
+    mpvpaper
 
     # System
     adwaita-icon-theme
     btop
     networkmanagerapplet
+    upower
     wl-clipboard
     zsh-autopair
     zsh-syntax-highlighting

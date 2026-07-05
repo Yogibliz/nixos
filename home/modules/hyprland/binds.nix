@@ -56,6 +56,10 @@ in
             action = "hl.dsp.exec_cmd('${noctalia} panel-toggle wallpaper')";
           }
           {
+            key = "${mod} + C";
+            action = "hl.dsp.exec_cmd('${noctalia} panel-toggle control-center')";
+          }
+          {
             key = "${mod} + T";
             action = "hl.dsp.exec_cmd('${terminal}')";
           }
