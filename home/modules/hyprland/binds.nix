@@ -8,7 +8,6 @@ let
   browser = "zen";
   terminal = "ghostty";
   explorer = "nautilus";
-  screenshot = "hyprshot -m region --clipboard-only -s";
   noctalia = "noctalia msg";
 
   # Helper using the lib.generators.mkLuaInline function.
@@ -73,7 +72,7 @@ in
           }
           {
             key = "${modS} + S";
-            action = "hl.dsp.exec_cmd('${screenshot}')";
+            action = "hl.dsp.exec_cmd('${noctalia} screenshot-region')";
           }
 
           # =======================[ Window management ]======================= #
@@ -205,11 +204,11 @@ in
           }
           {
             key = "${mod} + mouse_up";
-            action = "hl.dsp.exec_cmd('${noctalia} volume-up')";
+            action = "hl.dsp.exec_cmd('${noctalia} volume-down')";
           }
           {
             key = "${mod} + mouse_down";
-            action = "hl.dsp.exec_cmd('${noctalia} volume-down')";
+            action = "hl.dsp.exec_cmd('${noctalia} volume-up')";
           }
 
           # ==========================[ Brightness ]========================== #

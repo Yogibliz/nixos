@@ -46,7 +46,7 @@
     "flakes"
   ];
 
-  programs.noctalia-greeter.settings.output.name = "DP-1";
+  programs.noctalia-greeter.settings.output.name = "DP-2";
 
   hardware.graphics = {
     enable = true;

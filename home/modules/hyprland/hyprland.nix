@@ -59,27 +59,24 @@
       workspace_rule = [
         {
           workspace = "1";
-          monitor = "DP-1";
-          default = true;
+          monitor = "DP-3";
         }
         {
           workspace = "2";
-          monitor = "DP-1";
-        }
-        {
-          workspace = "3";
           monitor = "DP-2";
           default = true;
         }
         {
+          workspace = "3";
+          monitor = "DP-2";
+        }
+        {
           workspace = "4";
-          monitor = "DP-3";
-          default = true;
+          monitor = "DP-1";
         }
         {
           workspace = "5";
           monitor = "HDMI-A-1";
-          default = true;
         }
       ];
 

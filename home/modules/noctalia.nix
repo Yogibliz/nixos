@@ -49,6 +49,12 @@ in
       # ----- Shell Settings -----
       shell = {
         settings_show_advanced = true;
+        screenshot = {
+          save_to_file = false;
+          copy_to_clipboard = true;
+          freeze_screen = true;
+        };
+
         panel = {
           transparency_mode = "glass";
         };
@@ -56,14 +62,21 @@ in
 
       # ----- Bar Settings -----
       bar.main = {
+        position = "top";
+        capsule = "true";
+        thickness = 46;
+        background_opacity = 0.8;
+        margin_ends = 360;
+
+        # ----- Monitor overrides -----
         monitor = {
           dp3 = {
-            match = "DP-3";
+            match = "DP-1";
             enabled = false;
           };
 
           dp2 = {
-            match = "DP-2";
+            match = "DP-3";
             enabled = false;
           };
         };
@@ -78,11 +91,6 @@ in
           ];
           enabled = true;
         };
-
-        position = "top";
-        capsule = "true";
-        thickness = 46;
-        background_opacity = 0.8;
 
         # ----- Bar Widgets -----
         start = [
@@ -166,21 +174,20 @@ in
         };
 
         widget_order = [
-          "desktop-widget-0000000000000001"
-          "desktop-widget-0000000000000002"
-          "desktop-widget-0000000000000003"
-          "desktop-widget-0000000000000004"
-          "desktop-widget-0000000000000005"
+          "desktop-widget-media-player"
+          "desktop-widget-weather"
+          "desktop-widget-clock"
+          "desktop-widget-audio-visualizer"
+          "desktop-widget-sticker"
         ];
 
         widget = {
-          desktop-widget-0000000000000001 = {
+          desktop-widget-media-player = {
             box_height = 224.0;
             box_width = 512.0;
             cx = 3112.0;
             cy = 224.0;
-            output = "DP-1";
-            rotation = 0.0;
+            output = "DP-2";
             type = "media_player";
             settings = {
               background = false;
@@ -188,13 +195,12 @@ in
             };
           };
 
-          desktop-widget-0000000000000002 = {
+          desktop-widget-weather = {
             box_height = 224.0;
             box_width = 512.0;
             cx = 320.0;
             cy = 224.0;
-            output = "DP-1";
-            rotation = 0.0;
+            output = "DP-2";
             type = "weather";
             settings = {
               background = false;
@@ -202,13 +208,12 @@ in
             };
           };
 
-          desktop-widget-0000000000000003 = {
+          desktop-widget-clock = {
             box_height = 144.0;
             box_width = 304.0;
             cx = 1720.0;
             cy = 144.0;
-            output = "DP-1";
-            rotation = 0.0;
+            output = "DP-2";
             type = "clock";
             settings = {
               background = false;
@@ -218,13 +223,12 @@ in
             };
           };
 
-          desktop-widget-0000000000000004 = {
+          desktop-widget-audio-visualizer = {
             box_height = 176.0;
             box_width = 512.0;
             cx = 3112.0;
             cy = 424.0;
-            output = "DP-1";
-            rotation = 0.0;
+            output = "DP-2";
             type = "audio_visualizer";
             settings = {
               background = false;
@@ -237,13 +241,12 @@ in
             };
           };
 
-          desktop-widget-0000000000000005 = {
+          desktop-widget-sticker = {
             box_height = 720.0;
             box_width = 688.0;
             cx = 3088.0;
             cy = 1080.0;
-            output = "DP-1";
-            rotation = 0.0;
+            output = "DP-2";
             type = "sticker";
             settings = {
               background = false;

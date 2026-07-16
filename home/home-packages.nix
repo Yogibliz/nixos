@@ -30,6 +30,7 @@
     # Desktop apps
     ghostty
     google-chrome
+    heroic
     nautilus
     pavucontrol
     proton-vpn
@@ -56,7 +57,6 @@
     adwaita-icon-theme
     btop
     networkmanagerapplet
-    upower
     wl-clipboard
     zsh-autopair
     zsh-syntax-highlighting
