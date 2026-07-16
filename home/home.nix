@@ -2,7 +2,6 @@
 {
   imports = [
     ./modules
-    ./home-packages.nix
   ];
 
   home = {

@@ -21,7 +21,6 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixvim.url = "github:nix-community/nixvim";
 
     noctalia = {
@@ -79,9 +78,7 @@
               modules = [
                 ./home/home.nix
                 ./home/hosts/${hostname}.nix
-                {
-                  imports = map (n: inputs.${n}.homeManagerModules.default) (import ./hm-modules.nix);
-                }
+
               ];
             };
         in

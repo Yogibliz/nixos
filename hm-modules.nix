@@ -1,3 +1,3 @@
 [
-  "spicetify-nix"
+  # Add homeManagerModules here :)
 ]
