@@ -28,7 +28,6 @@
 
     # Features
     self.nixosModules.hyprland
-    self.nixosModules.noctalia
     self.nixosModules.samsungAudio
     self.nixosModules.steam
     self.nixosModules.vicinae
