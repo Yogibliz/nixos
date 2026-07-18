@@ -53,6 +53,13 @@
     inputs@{ self, flake-parts, ... }:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ (inputs.import-tree ./modules) ];
+
+      systems = [ "x86_64-linux" ];
+
+      perSystem = { pkgs, ... }: {
+        packages.orbolay = pkgs.callPackage ./packages/orbolay.nix { };
+      };
+
       flake =
         let
           # 1. System Builder (No Home Manager)

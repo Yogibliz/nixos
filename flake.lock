@@ -78,11 +78,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1778781969,
-        "narHash": "sha256-Jjuz5CmSkur8KvLDoGa+vylEp+RkQtv4mt/qcMznpH0=",
+        "lastModified": 1784254960,
+        "narHash": "sha256-iI88R3wHz8wTKQb5orvpc51L/Xr64AJyxid/0MKa/b8=",
         "owner": "vic",
         "repo": "import-tree",
-        "rev": "d321337efd0f23a9eb14a42adb7b2c29313ab274",
+        "rev": "4ebb10ae17d5f1ad366e7aef5b92cb8eecf24f69",
         "type": "github"
       },
       "original": {
@@ -179,11 +179,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1784115452,
-        "narHash": "sha256-BoYPdqk6jlKXy+DyUzyGV/CtRGfAhk2MmIgBhsemTGI=",
+        "lastModified": 1784210874,
+        "narHash": "sha256-x8i+HYAulduMlM63oxWJj5tAm+Sc/W756wUzcV5p24w=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "35d3407a3816f3b341d8cf1d60abaf2b7b8166ac",
+        "rev": "59682e0069f0ed0a452e2179a7f4c1f247027b9e",
         "type": "github"
       },
       "original": {
@@ -300,11 +300,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784228267,
-        "narHash": "sha256-h05DrwpzaUnxSc09F8p+VVzITzcbiorB6dmGjjQLzyU=",
+        "lastModified": 1784305004,
+        "narHash": "sha256-lcoJr40GzSAHlCYOAv016IJSBQ5P69OFP8sK1uE29WU=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "b86e4a0964744915ed2970d28fc86580b6332696",
+        "rev": "365544d881b73c5c61ad0c36fcd9d42b20eb1c27",
         "type": "github"
       },
       "original": {
@@ -320,11 +320,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783960545,
-        "narHash": "sha256-1hZOdPubaYy57amOjOzR5rMA4TZKXYGG2zbzHsS1r+0=",
+        "lastModified": 1784248874,
+        "narHash": "sha256-bDwWO3htFoWqDu4T8d7jeGZOeBCNMeX/RyrBus1qcF4=",
         "owner": "noctalia-dev",
         "repo": "noctalia-greeter",
-        "rev": "b07359813e7a0cb85469c79617a25258ddc1497d",
+        "rev": "f46e83f6992c4bade22522f911a6f005e732ce80",
         "type": "github"
       },
       "original": {
@@ -353,11 +353,11 @@
     "samsung-fixes": {
       "flake": false,
       "locked": {
-        "lastModified": 1784227739,
-        "narHash": "sha256-0OnkmKj6QUjFwTPhauP8E0s+BVT+90GcLzDZ7+zI4d8=",
+        "lastModified": 1784246252,
+        "narHash": "sha256-41hqv3c90wYL8H3XvOKXzxxZXZsJxuuyYBTQrijId84=",
         "owner": "Andycodeman",
         "repo": "samsung-galaxy-book-linux-fixes",
-        "rev": "6a27859130a4619193590096c147f153b5e13e28",
+        "rev": "f138d95548c3078f619ad74e1e13d21f1936dea8",
         "type": "github"
       },
       "original": {
@@ -438,11 +438,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1784226203,
-        "narHash": "sha256-wyjmwA0i0t0KBH/LPNFh/NMvMYsHgflkQMn+JOWGd4k=",
+        "lastModified": 1784294085,
+        "narHash": "sha256-UEsQ+ujWcdgQnsrYY8849s5yoUwLcPV8RMQ23md9UF4=",
         "owner": "vicinaehq",
         "repo": "vicinae",
-        "rev": "6ff786a409d440015a94456d9583b9e60d979aa3",
+        "rev": "7af67e64714e96171300478114b72e75b8c1e755",
         "type": "github"
       },
       "original": {
