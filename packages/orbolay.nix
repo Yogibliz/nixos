@@ -3,13 +3,20 @@
   stdenv,
   fetchurl,
   autoPatchelfHook,
+  makeWrapper,
   fontconfig,
   freetype,
+  libGL,
+  libglvnd,
+  libxcursor,
+  libxi,
+  libxrandr,
+  libxinerama,
   libx11,
   libxtst,
   libxcb,
-  libGL,
-  libglvnd,
+  wayland,
+  libxkbcommon,
 }:
 
 stdenv.mkDerivation rec {
@@ -23,7 +30,10 @@ stdenv.mkDerivation rec {
 
   dontUnpack = true;
 
-  nativeBuildInputs = [ autoPatchelfHook ];
+  nativeBuildInputs = [
+    autoPatchelfHook
+    makeWrapper
+  ];
 
   buildInputs = [
     stdenv.cc.cc.lib
@@ -36,10 +46,24 @@ stdenv.mkDerivation rec {
     libglvnd
   ];
 
+  runtimeLibs = [
+    libxcursor
+    libxi
+    libxrandr
+    libxinerama
+    wayland
+    libxkbcommon
+  ];
+
   installPhase = ''
     runHook preInstall
     install -Dm755 $src $out/bin/orbolay
     runHook postInstall
+  '';
+
+  postFixup = ''
+    wrapProgram $out/bin/orbolay \
+      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath runtimeLibs}
   '';
 
   meta = {

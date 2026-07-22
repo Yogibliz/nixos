@@ -94,6 +94,30 @@
           };
           tile = true;
         }
+        {
+          match = {
+            title = "^(orbolay)$";
+          };
+          no_initial_focus = true;
+          # suppress_event = "activatefocus";
+          float = true;
+          pin = true;
+          center = true;
+          no_blur = true;
+          no_dim = true;
+          no_follow_mouse = true;
+          no_shadow = true;
+          border_size = 0;
+          # no_focus = true;
+          move = [
+            "monitor_w"
+            "monitor_h"
+          ];
+          size = [
+            "monitor_w - 5"
+            "monitor_h - 5"
+          ];
+        }
       ];
 
       on = {
