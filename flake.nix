@@ -16,12 +16,17 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     vicinae.url = "github:vicinaehq/vicinae";
     vicinae-extensions.url = "github:vicinaehq/extensions";
-
     import-tree.url = "github:vic/import-tree";
     flake-parts.url = "github:hercules-ci/flake-parts";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
     nixvim.url = "github:nix-community/nixvim";
+    hyprland.url = "github:hyprwm/Hyprland?submodules=1&ref=v0.56.0";
+
+    hy3 = {
+      url = "github:outfoxxed/hy3?ref=hl0.56.0";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     noctalia = {
       url = "github:noctalia-dev/noctalia";

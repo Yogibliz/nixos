@@ -44,6 +44,7 @@
       proton-pass
       protonmail-desktop
       sone
+      vesktop
       vscode
       qmk
       zathura

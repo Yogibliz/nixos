@@ -9,10 +9,14 @@
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "lua";
-    plugins = [ pkgs.hyprlandPlugins.hy3 ];
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
+    # plugins = [ pkgs.hyprlandPlugins.hy3 ];
+    plugins = [ inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3 ];
+
+    # hl.plugin.load("${pkgs.hyprlandPlugins.hy3}/lib/libhy3.so")
     extraConfig = ''
-      hl.plugin.load("${pkgs.hyprlandPlugins.hy3}/lib/libhy3.so")
+      hl.plugin.load("${inputs.hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3}/lib/libhy3.so")
       local hy3 = hl.plugin.hy3
       local config_dir = os.getenv("XDG_CONFIG_HOME") or (os.getenv("HOME") .. "/.config")
       dofile(config_dir .. "/hypr/colors.lua")
