@@ -121,7 +121,7 @@ in
       # ----- Wallpaper Settings -----
       wallpaper = {
         enabled = true;
-        directory = "$HOME/dotfiles/Wallpapers";
+        directory = "${config.home.homeDirectory}/dotfiles/Wallpapers";
       };
 
       # ----- Theme Settings -----
@@ -165,6 +165,7 @@ in
 
       # ----- Desktop Widget Settings -----
       desktop_widgets = {
+        enabled = true;
         schema_version = 2;
 
         grid = {
@@ -185,8 +186,8 @@ in
           desktop-widget-media-player = {
             box_height = 224.0;
             box_width = 512.0;
-            # cx = 0.0;
-            # cy = 0.0;
+            cx = 0.0;
+            cy = 0.0;
             output = "DP-2";
             type = "media_player";
             settings = {
@@ -198,8 +199,8 @@ in
           desktop-widget-weather = {
             box_height = 224.0;
             box_width = 512.0;
-            # cx = 0.0;
-            # cy = 0.0;
+            cx = 0.0;
+            cy = 0.0;
             output = "DP-2";
             type = "weather";
             settings = {
@@ -211,8 +212,8 @@ in
           desktop-widget-clock = {
             box_height = 144.0;
             box_width = 304.0;
-            # cx = 0.0;
-            # cy = 0.0;
+            cx = 0.0;
+            cy = 0.0;
             output = "DP-2";
             type = "clock";
             settings = {
@@ -226,8 +227,8 @@ in
           desktop-widget-audio-visualizer = {
             box_height = 176.0;
             box_width = 512.0;
-            # cx = 0.0;
-            # cy = 0.0;
+            cx = 0.0;
+            cy = 0.0;
             output = "DP-2";
             type = "audio_visualizer";
             settings = {
@@ -244,8 +245,8 @@ in
           desktop-widget-sticker = {
             box_height = 720.0;
             box_width = 688.0;
-            # cx = 0.0;
-            # cy = 0.0;
+            cx = 0.0;
+            cy = 0.0;
             output = "DP-2";
             type = "sticker";
             settings = {

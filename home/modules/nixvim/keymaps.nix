@@ -61,6 +61,26 @@
 
     # --------------------------------------------------- Function Keybinds ---------------------------------------------------
 
+    # Invert True/False
+    {
+      mode = "n";
+      key = "<leader>t";
+      action.__raw = ''
+        function()
+          local cword = vim.fn.expand("<cword>"):lower()
+          if cword == "true" then
+            vim.cmd("normal! ciwfalse")
+          elseif cword == "false" then
+            vim.cmd("normal! ciwtrue")
+          end
+        end
+      '';
+      options = {
+        silent = true;
+        desc = "Invert true/false under cursor";
+      };
+    }
+
     # Hover documentation
     { 
       mode = "n"; 
