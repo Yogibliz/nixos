@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.nixvim.plugins.lsp = {
     enable = true;
@@ -6,20 +6,17 @@
       clangd.enable = true;
       nixd.enable = true;
       lua_ls.enable = true;
+      pyright.enable = true;
+      ruby_lsp.enable = true;
+      html.enable = true;
+      cssls.enable = true;
+      ts_ls.enable = true;
+      qmlls.enable = true;
       rust_analyzer = {
         enable = true;
         installCargo = false;
         installRustc = false;
       };
-      qmlls = {
-        enable = true;
-        cmd = [ "${pkgs.kdePackages.qtdeclarative}/bin/qmlls" ];
-      };
     };
   };
-
-  programs.nixvim.extraPackages = with pkgs; [
-    nixd
-    kdePackages.qtdeclarative
-  ];
 }

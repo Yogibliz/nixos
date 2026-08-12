@@ -62,7 +62,7 @@
       systems = [ "x86_64-linux" ];
 
       perSystem = { pkgs, ... }: {
-        packages.orbolay = pkgs.callPackage ./packages/orbolay.nix { };
+        packages.icat = pkgs.callPackage ./packages/icat.nix { };
       };
 
       flake =

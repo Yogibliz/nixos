@@ -47,10 +47,6 @@ in
             action = "hl.dsp.exec_cmd('${noctalia} session lock')";
           }
           {
-            key = "${mod} + S";
-            action = "hl.dsp.exec_cmd('${noctalia} settings-toggle')";
-          }
-          {
             key = "${mod} + W";
             action = "hl.dsp.exec_cmd('${noctalia} panel-toggle wallpaper')";
           }

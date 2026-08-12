@@ -29,20 +29,28 @@
       cargo
       gnumake
       statix
+      nix-index
       python3
       texliveFull
       quickshell
+
+      # LSPs
+      nixd
+      qt6.qtdeclarative
+      clang-tools
+      lua-language-server
+      rust-analyzer
+      pyright
+      ruby-lsp
+      vscode-langservers-extracted
+      typescript-language-server
 
       # Desktop apps
       ghostty
       google-chrome
       heroic
-      legcord
       nautilus
       pavucontrol
-      proton-vpn
-      proton-pass
-      protonmail-desktop
       sone
       vesktop
       vscode

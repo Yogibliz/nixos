@@ -48,7 +48,7 @@ in
 
       # ----- Shell Settings -----
       shell = {
-        settings_show_advanced = true;
+        avatar_path = "${config.home.homeDirectory}/dotfiles/.face";
         screenshot = {
           save_to_file = false;
           copy_to_clipboard = true;
@@ -87,7 +87,6 @@ in
           members = [
             "wallpaper"
             "wallhaven"
-            "mpvpaper"
           ];
           enabled = true;
         };
