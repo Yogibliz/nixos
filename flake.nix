@@ -90,7 +90,6 @@
               modules = [
                 ./home/home.nix
                 ./home/hosts/${hostname}.nix
-
               ];
             };
         in
