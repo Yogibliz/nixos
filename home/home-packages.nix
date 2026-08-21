@@ -20,6 +20,7 @@
       mesa-demos
       mmv
       ripgrep
+      steam-run
       tree
       time
 
