@@ -10,8 +10,10 @@
     (with pkgs; [
       # CLI utilities
       appimage-run
+      awww
       bat
       cachix
+      caelestia-cli
       calc
       eza
       fastfetch
@@ -51,7 +53,7 @@
       google-chrome
       heroic
       nautilus
-      pavucontrol
+      pwvucontrol
       sone
       vesktop
       vscode
@@ -67,7 +69,6 @@
       ani-cli
       ani-skip
       mpv
-      mpvpaper
 
       # System
       adwaita-icon-theme

@@ -43,16 +43,36 @@ in
             action = "hl.dsp.exec_cmd('vicinae toggle')";
           }
           {
+            key = "${mod} + Super_L";
+            action = "hl.dsp.global('caelestia:launcher')";
+          }
+          {
             key = "${mod} + Escape";
             action = "hl.dsp.exec_cmd('${noctalia} session lock')";
+          }
+          {
+            key = "${mod} + Escape";
+            action = "hl.dsp.global('caelestia:lock')";
           }
           {
             key = "${mod} + W";
             action = "hl.dsp.exec_cmd('${noctalia} panel-toggle wallpaper')";
           }
           {
+            key = "${mod} + W";
+            action = "hl.dsp.global('caelestia:wallpaper')";
+          }
+          {
             key = "${mod} + C";
             action = "hl.dsp.exec_cmd('${noctalia} panel-toggle control-center')";
+          }
+          {
+            key = "${mod} + D";
+            action = "hl.dsp.global('caelestia:dashboard')";
+          }
+          {
+            key = "${mod} + S";
+            action = "hl.dsp.global('caelestia:showall')";
           }
           {
             key = "${mod} + T";
@@ -70,6 +90,10 @@ in
             key = "${modS} + S";
             action = "hl.dsp.exec_cmd('${noctalia} screenshot-region')";
           }
+          {
+            key = "${modS} + S";
+            action = "hl.dsp.global('caelestia:screenshotFreezeClip')";
+          }
 
           # =======================[ Window management ]======================= #
           {
@@ -83,10 +107,6 @@ in
           {
             key = "${mod} + V";
             action = "hl.dsp.window.float({ action = 'toggle' })";
-          }
-          {
-            key = "ALT + TAB";
-            action = "hl.dsp.exec_cmd('${noctalia} window-switcher')";
           }
 
           # ==========================[ hy3: focus ]=========================== #
@@ -197,6 +217,14 @@ in
             options = {
               repeating = true;
             };
+          }
+          {
+            key = "${mod} + mouse_up";
+            action = "hl.dsp.exec_cmd('wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+')";
+          }
+          {
+            key = "${mod} + mouse_down";
+            action = "hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-')";
           }
           {
             key = "${mod} + mouse_up";

@@ -130,7 +130,6 @@
           (lib.generators.mkLuaInline ''
             	    function()
             	      hl.exec_cmd("noctalia")
-            	      hl.exec_cmd("caelestia-shell")
             	      hl.exec_cmd("hypridle")
             	    end
           '')
