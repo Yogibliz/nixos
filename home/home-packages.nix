@@ -16,12 +16,12 @@
       caelestia-cli
       calc
       eza
-      fastfetch
       fd
       fzf
       mesa-demos
       mmv
       ripgrep
+      secretspec
       steam-run
       tree
       time
@@ -53,6 +53,7 @@
       google-chrome
       heroic
       nautilus
+      proton-pass
       pwvucontrol
       sone
       vesktop
