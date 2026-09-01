@@ -5,6 +5,56 @@
   ...
 }:
 {
+  programs.umbriel.settings = {
+    layout = {
+      mode = "dwindle";
+    };
+
+    workspace = [
+      {
+        index = 1;
+        output = "DP-2";
+        layout = {
+          mode = "scrolling";
+        };
+      }
+    ];
+
+    output = {
+      DP-3 = {
+        mode = "1920x1080@144";
+        position = [
+          0
+          0
+        ];
+        transform = "270";
+      };
+      DP-2 = {
+        mode = "3440x1440@175";
+        position = [
+          1080
+          0
+        ];
+      };
+      DP-1 = {
+        mode = "1920x1080@144";
+        position = [
+          4520
+          0
+        ];
+      };
+      HDMI-A-1 = {
+        mode = "3840x2160@120";
+        position = [
+          6440
+          0
+        ];
+        scale = 1.5;
+        enabled = true;
+      };
+    };
+  };
+
   wayland.windowManager.hyprland.settings.monitor = [
     {
       output = "DP-3";
@@ -30,7 +80,7 @@
       mode = "3840x2160@120";
       position = "6440x0";
       scale = 1.5;
-      disabled = true;
+      disabled = false;
     }
   ];
 

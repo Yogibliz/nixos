@@ -30,6 +30,7 @@
 
     # Features
     self.nixosModules.hyprland
+    self.nixosModules.umbriel
     self.nixosModules.steam
     self.nixosModules.jellyfin
     self.nixosModules.vicinae
