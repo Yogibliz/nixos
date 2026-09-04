@@ -37,7 +37,6 @@
       statix
       nix-index
       python3
-      texliveFull
       quickshell
 
       # LSPs

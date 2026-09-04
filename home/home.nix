@@ -7,9 +7,23 @@
 
   nixpkgs.overlays = [
     (final: prev: {
-      asymptote = prev.asymptote.override {
-        python3 = prev.python312;
-      };
+      pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+        (pyFinal: pyPrev: {
+          pyqt5-sip = pyPrev.pyqt5-sip.overridePythonAttrs (old: {
+            version = "12.13.0";
+            src = pyFinal.fetchPypi {
+              pname = "PyQt5_sip";
+              version = "12.13.0";
+              hash = "sha256-fzIdr4S5ydvKYbgOHvN72v/A6TMS7a4s19oluVOXHZE=";
+            };
+            env = (old.env or { }) // {
+              NIX_CFLAGS_COMPILE =
+                (old.env.NIX_CFLAGS_COMPILE or "")
+                + " -Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration -Wno-error=implicit-int";
+            };
+          });
+        })
+      ];
     })
   ];
 
