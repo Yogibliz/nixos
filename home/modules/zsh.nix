@@ -17,6 +17,7 @@
       hms = "home-manager switch --flake ~/dotfiles#iris@$(hostname)";
       err = "steam-run gamescope -w 3440 -h 1440 -W 3440 -H 1440 -f -r 175 -- '/mnt/games/SteamLibrary/steamapps/common/ELDEN\ RING/ERRv2.2.9.6/4\ -\ Launch\ ELDEN\ RING\ Reforged\ -\ Offline\ or\ Seamless\ \(Linux\).sh'";
       pi = "ssh -p 2222 dietpi@192.168.1.100";
+      gpp20 = "g++ -std=c++20 -Wall -Wextra -pedantic -Weffc++ -Wsuggest-attribute=const";
     };
 
     oh-my-zsh = {

@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
 
@@ -20,9 +19,6 @@ let
   '';
 in
 {
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
 
   programs.noctalia = {
     enable = true;

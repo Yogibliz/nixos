@@ -3,7 +3,14 @@
   programs.nixvim.plugins.lsp = {
     enable = true;
     servers = {
-      clangd.enable = true;
+      clangd = {
+        enable = true;
+        extraOptions = {
+          init_options = {
+            fallbackFlags = [ "-std=c++20" ];
+          };
+        };
+      };
       nixd.enable = true;
       lua_ls.enable = true;
       pyright.enable = true;

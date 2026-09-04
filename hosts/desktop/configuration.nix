@@ -29,7 +29,6 @@
     self.nixosModules.xdg
 
     # Features
-    self.nixosModules.hyprland
     self.nixosModules.umbriel
     self.nixosModules.steam
     self.nixosModules.jellyfin
@@ -46,8 +45,6 @@
     "nix-command"
     "flakes"
   ];
-
-  programs.noctalia-greeter.settings.output.name = "DP-2";
 
   hardware.graphics = {
     enable = true;

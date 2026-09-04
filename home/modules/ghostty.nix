@@ -4,6 +4,6 @@
     enable = true;
     enableZshIntegration = true;
     installVimSyntax = true;
-    settings.background-opacity = 0.8;
+    settings.background-opacity = 0.7;
   };
 }

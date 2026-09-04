@@ -27,7 +27,7 @@
     self.nixosModules.xdg
 
     # Features
-    self.nixosModules.hyprland
+    self.nixosModules.umbriel
     self.nixosModules.samsungAudio
     self.nixosModules.steam
     self.nixosModules.vicinae

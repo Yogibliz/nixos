@@ -21,27 +21,6 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
     nixvim.url = "github:nix-community/nixvim";
-    hyprland.url = "github:hyprwm/Hyprland?submodules=1&ref=v0.56.0";
-
-    hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.56.0";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     home-manager = {
       url = "github:nix-community/home-manager/master";

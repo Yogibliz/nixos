@@ -25,7 +25,7 @@
     self.nixosModules.users
 
     # Features
-    self.nixosModules.hyprland
+    self.nixosModules.umbriel
     self.nixosModules.noctalia
     self.nixosModules.vicinae
   ];

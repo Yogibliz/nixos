@@ -1,30 +1,13 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.services =
-    { pkgs, ... }:
     {
-      imports = [
-        inputs.noctalia-greeter.nixosModules.default
-      ];
-
-      programs.noctalia-greeter = {
-        enable = true;
-        package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
-
-        settings = {
-          cursor = {
-            theme = "Bibata-Modern-Ice";
-            size = 24;
-          };
-          keyboard = {
-            layout = "us";
-          };
-          appearance = {
-            password_style = "random";
-          };
-        };
-      };
-
+      config,
+      pkgs,
+      lib,
+      ...
+    }:
+    {
       services = {
         blueman.enable = true;
         upower.enable = true;
@@ -46,6 +29,24 @@
         resolved = {
           enable = true;
           settings.Resolve.DNSSEC = "false";
+        };
+
+        displayManager.noctalia-greeter = {
+          enable = true;
+
+          settings = {
+            output.name = "DP-2";
+            cursor = {
+              theme = "Bibata-Modern-Ice";
+              size = 24;
+            };
+            keyboard = {
+              layout = "us";
+            };
+            appearance = {
+              password_style = "random";
+            };
+          };
         };
 
         udev.packages = with pkgs; [

@@ -6,6 +6,7 @@
       general = {
         mod_key = "Super";
         xwayland = true;
+        show_cheatsheet = false;
         autostart = [ "noctalia" ];
       };
 

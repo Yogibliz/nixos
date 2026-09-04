@@ -21,10 +21,13 @@
       mesa-demos
       mmv
       ripgrep
-      secretspec
       steam-run
       tree
       time
+      qmk
+
+      # Desktop Environment
+      noctalia
 
       # Development
       gcc
@@ -50,7 +53,6 @@
 
       # Desktop apps
       ghostty
-      google-chrome
       heroic
       nautilus
       proton-pass
@@ -58,18 +60,14 @@
       sone
       vesktop
       vscode
-      qmk
       zathura
       zotero
-
-      # Hyprland
-      hyprshot
-      hypridle
 
       # Media
       ani-cli
       ani-skip
       mpv
+      mpvpaper
 
       # System
       adwaita-icon-theme
@@ -77,8 +75,8 @@
       networkmanagerapplet
       wl-clipboard
       zsh-autopair
-      zsh-syntax-highlighting
       zsh-completions
+      zsh-vi-mode
     ])
     ++ (builtins.attrValues self.packages.${pkgs.stdenv.hostPlatform.system});
 

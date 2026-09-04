@@ -5,10 +5,18 @@
     ./home-packages.nix
   ];
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      asymptote = prev.asymptote.override {
+        python3 = prev.python312;
+      };
+    })
+  ];
+
   home = {
     username = "iris";
     homeDirectory = "/home/iris";
-    stateVersion = "25.11";
+    stateVersion = "26.05";
 
     pointerCursor = {
       enable = true;
@@ -21,10 +29,6 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
-  };
-
-  services.udiskie = {
-    enable = true;
   };
 
   programs.home-manager.enable = true;
