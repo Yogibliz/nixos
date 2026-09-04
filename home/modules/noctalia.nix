@@ -78,14 +78,16 @@ in
         };
 
         # ----- Capsule Group(s) -----
-        capsule_group = {
-          id = "wp";
-          members = [
-            "wallpaper"
-            "wallhaven"
-          ];
-          enabled = true;
-        };
+        capsule_group = [
+          {
+            id = "wp";
+            members = [
+              "wallpaper"
+              "wallhaven"
+            ];
+            enabled = true;
+          }
+        ];
 
         # ----- Bar Widgets -----
         start = [
@@ -144,6 +146,12 @@ in
         enabled = [
           "noctalia/wallhaven"
           "noctalia/mpvpaper"
+          "0lucasmatheus/awwwall"
+          "frai3mega/battery-graph"
+          "y/ocraft/battery-widget"
+          "raycursive/discord-voice"
+          "avivbintangaringga/nix-monitor"
+          "tmelik/system-monitor"
         ];
       };
 
@@ -155,6 +163,16 @@ in
         # No one would still a little api_key for wallhaven, since it's free, surely :)
         "noctalia/wallhaven" = {
           api_key = "l83Zzc2Ti34fOKCTYLDHyIhmjNby17sD";
+        };
+
+        "tmelik/system-monitor" = {
+          show_download = false;
+          show_upload = false;
+          disk_display_mode = "used";
+        };
+
+        "raycursive/discord-voice" = {
+          discord_binary = "${pkgs.discord}/bin/discord";
         };
       };
 

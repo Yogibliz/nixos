@@ -29,12 +29,8 @@ in
       "Mod+MouseMiddle" = "overview-toggle";
       "Mod+1" = "workspace-switch:1";
       "Mod+2" = "workspace-switch:2";
-      "Mod+3" = "workspace-switch:3";
-      "Mod+4" = "workspace-switch:4";
       "Mod+Shift+1" = "window-move-to-workspace:1";
       "Mod+Shift+2" = "window-move-to-workspace:2";
-      "Mod+Shift+3" = "window-move-to-workspace:3";
-      "Mod+Shift+4" = "window-move-to-workspace:4";
 
       # ==============================[ Apps ]============================== #
       "Mod" = "spawn:${launcher}";
@@ -46,7 +42,8 @@ in
       "Mod+Shift+S" = "spawn:${noctalia} screenshot-region";
       "Mod+Escape" = "spawn:${noctalia} session lock";
       "Mod+W" = "spawn:${noctalia} panel-toggle wallpaper";
-      "Mod+D" = "spawn:${noctalia} panel-toggle control-center";
+      "Mod+C" = "spawn:${noctalia} panel-toggle control-center";
+      "Mod+D" = "spawn:${noctalia} panel-toggle raycursive/discord-voice:panel";
 
       # ==========================[ Media Buttons ]========================== #
       "XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";

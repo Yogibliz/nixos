@@ -24,10 +24,20 @@
       steam-run
       tree
       time
-      qmk
 
       # Desktop Environment
       noctalia
+
+      # Desktop apps
+      ghostty
+      heroic
+      nautilus
+      proton-pass
+      pwvucontrol
+      sone
+      vscode
+      zathura
+      zotero
 
       # Development
       gcc
@@ -36,7 +46,7 @@
       gnumake
       statix
       nix-index
-      python3
+      python313
       quickshell
 
       # LSPs
@@ -49,18 +59,6 @@
       ruby-lsp
       vscode-langservers-extracted
       typescript-language-server
-
-      # Desktop apps
-      ghostty
-      heroic
-      nautilus
-      proton-pass
-      pwvucontrol
-      sone
-      vesktop
-      vscode
-      zathura
-      zotero
 
       # Media
       ani-cli

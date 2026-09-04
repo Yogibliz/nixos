@@ -22,6 +22,8 @@
     millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
     nixvim.url = "github:nix-community/nixvim";
 
+    nixcord.url = "github:4evy/nixcord";
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
