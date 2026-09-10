@@ -6,7 +6,7 @@
     enable = true;
     discord.vencord.enable = true;
     config = {
-      frameless = true;
+      frameless = false;
 
       plugins = {
         fakeNitro.enable = true;

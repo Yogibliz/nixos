@@ -31,7 +31,6 @@
       };
       DP-2 = {
         mode = "3440x1440@175";
-        hdr = "auto";
         position = [
           1080
           0

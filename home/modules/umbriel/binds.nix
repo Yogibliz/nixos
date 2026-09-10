@@ -42,8 +42,11 @@ in
       "Mod+Shift+S" = "spawn:${noctalia} screenshot-region";
       "Mod+Escape" = "spawn:${noctalia} session lock";
       "Mod+W" = "spawn:${noctalia} panel-toggle wallpaper";
+      "Mod+Shift+W" = "spawn:${noctalia} panel-toggle noctalia/wallhaven:browser";
+      "Mod+Alt+W" = "spawn:${noctalia} panel-toggle noctalia/mpvpaper:picker";
       "Mod+C" = "spawn:${noctalia} panel-toggle control-center";
       "Mod+D" = "spawn:${noctalia} panel-toggle raycursive/discord-voice:panel";
+      "Mod+R" = "spawn:${noctalia} panel-toggle avivbintangaringga/nix-monitor:panel";
 
       # ==========================[ Media Buttons ]========================== #
       "XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";

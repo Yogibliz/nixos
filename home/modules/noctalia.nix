@@ -30,6 +30,14 @@ in
           title_scroll = "always";
           max_length = 450;
         };
+
+        tray = {
+          hidden = [
+            "nm-applet"
+            "blueman"
+            "vicinae"
+          ];
+        };
       };
 
       # ----- Control Center Settings -----
@@ -44,6 +52,7 @@ in
 
       # ----- Shell Settings -----
       shell = {
+        lang = "en-US";
         avatar_path = "${config.home.homeDirectory}/dotfiles/.face";
         screenshot = {
           save_to_file = false;
@@ -59,8 +68,7 @@ in
       # ----- Bar Settings -----
       bar.main = {
         position = "top";
-        capsule = "true";
-        thickness = 46;
+        thickness = 48;
         background_opacity = 0.8;
         margin_ends = 360;
 
@@ -80,19 +88,19 @@ in
         # ----- Capsule Group(s) -----
         capsule_group = [
           {
-            id = "wp";
-            members = [
-              "wallpaper"
-              "wallhaven"
-            ];
+            id = "test";
+            members = [ ];
             enabled = true;
           }
         ];
 
         # ----- Bar Widgets -----
         start = [
-          "group:wp"
           "workspaces"
+          "wallhaven"
+          "mpvpaper"
+          "bar"
+          "summary"
         ];
         center = [ "clock" ];
         end = [
@@ -146,7 +154,6 @@ in
         enabled = [
           "noctalia/wallhaven"
           "noctalia/mpvpaper"
-          "0lucasmatheus/awwwall"
           "frai3mega/battery-graph"
           "y/ocraft/battery-widget"
           "raycursive/discord-voice"
@@ -160,7 +167,6 @@ in
           video_directory = "${config.home.homeDirectory}/dotfiles/Wallpapers/Video";
         };
 
-        # No one would still a little api_key for wallhaven, since it's free, surely :)
         "noctalia/wallhaven" = {
           api_key = "l83Zzc2Ti34fOKCTYLDHyIhmjNby17sD";
         };
@@ -173,12 +179,19 @@ in
 
         "raycursive/discord-voice" = {
           discord_binary = "${pkgs.discord}/bin/discord";
+          hide_when_disconnect = true;
+        };
+
+        "avivbintangaringga/nix-monitor" = {
+          update_check_interval = 1;
+          generation_check_interval = 1;
+          update_command = "cd ~/dotfiles && nix flake update && home-manager switch --flake ~/dotfiles#iris@$(hostname) && sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname)";
         };
       };
 
       # ----- Desktop Widget Settings -----
       desktop_widgets = {
-        enabled = true;
+        enabled = false;
         schema_version = 2;
 
         grid = {

@@ -30,6 +30,7 @@
 
       # Desktop apps
       ghostty
+      google-chrome
       heroic
       nautilus
       proton-pass
@@ -65,12 +66,14 @@
       ani-skip
       mpv
       mpvpaper
+      ffmpeg
 
       # System
       adwaita-icon-theme
       btop
       networkmanagerapplet
       wl-clipboard
+      xwayland-satellite
       zsh-autopair
       zsh-completions
       zsh-vi-mode

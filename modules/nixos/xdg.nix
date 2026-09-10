@@ -5,7 +5,11 @@
     {
       xdg.portal = {
         enable = true;
-        config.common.default = [ "hyprland" ];
+        config.common.default = [
+          "umbriel"
+          "gtk"
+        ];
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       };
     };
 }

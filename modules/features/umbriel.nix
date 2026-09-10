@@ -6,7 +6,8 @@
       programs.umbriel = {
         enable = true;
         package = inputs.umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default;
-        portalPackage = pkgs.xdg-desktop-portal-umbriel;
+        portalPackage =
+          inputs.umbriel.inputs.xdg-desktop-portal-umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default;
       };
     };
 }
