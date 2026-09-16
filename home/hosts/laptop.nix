@@ -2,7 +2,7 @@
 {
   programs.umbriel.settings = {
     layout = {
-      mode = "scrolling";
+      mode = "dwindle";
     };
 
     output = {
