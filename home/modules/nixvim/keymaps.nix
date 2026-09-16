@@ -59,6 +59,10 @@
     { mode = "n"; key = "gd"; action = "<cmd>Telescope lsp_definitions<cr>"; options.desc = "Go to definition"; }
     { mode = "n"; key = "gr"; action = "<cmd>Telescope lsp_references<cr>"; options.desc = "Go to references"; }
 
+    # Markview
+    { mode = "n"; key = "<leader>mw"; action = "<cmd>Markview toggle<cr>"; options.desc = "Toggle Markview"; }
+    { mode = "n"; key = "<leader>ms"; action = "<cmd>Markview splitToggle<cr>"; options.desc = "Toggle split Markview"; }
+
     # --------------------------------------------------- Function Keybinds ---------------------------------------------------
 
     # Invert True/False

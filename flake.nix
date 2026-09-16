@@ -21,15 +21,13 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
     nixvim.url = "github:nix-community/nixvim";
-
     nixcord.url = "github:4evy/nixcord";
+    umbriel.url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    umbriel.url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
 
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";

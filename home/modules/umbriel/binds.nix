@@ -45,6 +45,7 @@ in
       "Mod+Shift+W" = "spawn:${noctalia} panel-toggle noctalia/wallhaven:browser";
       "Mod+Alt+W" = "spawn:${noctalia} panel-toggle noctalia/mpvpaper:picker";
       "Mod+C" = "spawn:${noctalia} panel-toggle control-center";
+      "Mod+N" = "spawn:${noctalia} panel-toggle control-center notifications";
       "Mod+D" = "spawn:${noctalia} panel-toggle raycursive/discord-voice:panel";
       "Mod+R" = "spawn:${noctalia} panel-toggle avivbintangaringga/nix-monitor:panel";
 

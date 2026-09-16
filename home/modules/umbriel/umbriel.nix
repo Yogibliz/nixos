@@ -9,6 +9,22 @@
         autostart = [ "noctalia" ];
       };
 
+      window_rule = [
+        {
+          match = {
+            app_id = "^steam$";
+          };
+          default_floating = true;
+        }
+        {
+          match = {
+            app_id = "^steam$";
+            title = "^Steam$";
+          };
+          default_floating = false;
+        }
+      ];
+
       input = {
         focus = {
           follows_mouse = true;
