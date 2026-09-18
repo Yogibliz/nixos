@@ -10,13 +10,11 @@ let
     (
       export PATH="${config.home.profileDirectory}/bin:/run/current-system/sw/bin:$PATH"
       
-      ${pkgs.hyprland}/bin/hyprctl eval "$(${pkgs.coreutils}/bin/cat ${config.xdg.configHome}/hypr/colors.lua)"
-      
       systemctl --user restart vicinae
       ${pkgs.coreutils}/bin/sleep 1
       vicinae theme set palette
     ) >/dev/null 2>&1 &
-  '';
+/  '';
 in
 {
 
@@ -139,11 +137,6 @@ in
           vicinae = {
             input_path = "$XDG_CONFIG_HOME/noctalia/templates/vicinae.toml";
             output_path = "$XDG_DATA_HOME/vicinae/themes/palette.toml";
-            post_hook = "${lib.getExe reloadHook}";
-          };
-          hyprland_colors = {
-            input_path = "$XDG_CONFIG_HOME/noctalia/templates/colors.lua";
-            output_path = "$XDG_CONFIG_HOME/hypr/colors.lua";
             post_hook = "${lib.getExe reloadHook}";
           };
         };
@@ -403,14 +396,6 @@ in
         } 
       } 
     })
-  '';
-
-  # Generates a mutable fallback file for Hyprland to read on first launch
-  home.activation.hyprlandColors = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -f "${config.xdg.configHome}/hypr/colors.lua" ]; then
-      echo 'hl.config({ general = { ["col.active_border"] = { colors = { "rgb(ffffff)", "rgb(ffffff)" }, angle = 45 } } })' \
-        > "${config.xdg.configHome}/hypr/colors.lua"
-    fi
   '';
 
   # Ensures Vicinae's directory exists for Noctalia to write the theme output
