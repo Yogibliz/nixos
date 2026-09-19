@@ -23,10 +23,12 @@ Each host needs a hardware file at `~/dotfiles/hosts/<host>/hardware.nix` with t
 }
 ```
 
+> Valid `<host>` values: `laptop`, `desktop`, `school`.
+
 Run the generator to make sure one is available:
 
 ```bash
-nixos-generate-config --show-hardware-config >> ~/dotfiles/hosts/$(hostanme)/hardware.nix
+nixos-generate-config --show-hardware-config >> ~/dotfiles/hosts/<host>/hardware.nix
 ```
 
 3. System rebuild (NixOS only — this does **not** apply Home Manager)
@@ -40,8 +42,6 @@ nix run home-manager/master -- switch -b backup --flake ~/dotfiles#iris@<host>
 ```
 
 > `-b backup` is required on a machine with pre-existing dotfiles — activation aborts entirely if it would clobber an existing file like `~/.zshrc`, and renames it to `.backup` instead.
->
-> Valid `<host>` values: `laptop`, `desktop`, `school`. Must match `hostname`.
 
 5. Then for future updates use the aliases (available after step 4):
 ```bash
