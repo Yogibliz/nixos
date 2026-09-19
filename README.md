@@ -10,7 +10,7 @@ git clone git@github.com:Yogibliz/nixos.git ~/dotfiles
 
 2. Generate hardware config for this machine and fill it into the host hardware file
 
-Each host has a placeholder hardware file at `~/dotfiles/hosts/<host>/hardware.nix` with the following structure:
+Each host needs a hardware file at `~/dotfiles/hosts/<host>/hardware.nix` with the following structure:
 
 ```nix
 { config, lib, pkgs, modulesPath, ... }:
@@ -19,31 +19,34 @@ Each host has a placeholder hardware file at `~/dotfiles/hosts/<host>/hardware.n
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  # (CPU microcode settings may be here)
-
-  # --- FILL BELOW WITH GENERATED HARDWARE CONFIG ---
+   # ...
 }
 ```
 
-Run the generator and copy the relevant fields into the inner block:
+Run the generator to make sure one is available:
 
 ```bash
-nixos-generate-config --show-hardware-config >> temp.nix
+nixos-generate-config --show-hardware-config >> ~/dotfiles/hosts/$(hostanme)/hardware.nix
 ```
 
-The fields to copy over are things like `boot` `fileSystems`, `hardware` and `nixpkgs.hostPlatform`. These files are gitignored since they are machine-specific.
-
-3. First rebuild (picks up NixOS + Home Manager + Flakes)
+3. System rebuild (NixOS only — this does **not** apply Home Manager)
 ```bash
 sudo nixos-rebuild switch --flake ~/dotfiles#<host>
 ```
-After updating the `hardware.nix` file and rebuilding for the first time, make sure to run `git update-index --skip-worktree ~/dotfiles/hosts/$(hostname)/hardware.nix` so it's not updated on GitHub and the placeholder remains.
 
-4. Then for future updates use the alias:
+4. Home Manager (separate `homeConfigurations` output — this is what provides programs, keybinds and dotfiles)
 ```bash
-nrs
+nix run home-manager/master -- switch -b backup --flake ~/dotfiles#iris@<host>
 ```
 
-### If there are any Hyprland errors, relog to make sure plugins are loaded: `hyprctl dispatch exit`
+> `-b backup` is required on a machine with pre-existing dotfiles — activation aborts entirely if it would clobber an existing file like `~/.zshrc`, and renames it to `.backup` instead.
+>
+> Valid `<host>` values: `laptop`, `desktop`, `school`. Must match `hostname`.
+
+5. Then for future updates use the aliases (available after step 4):
+```bash
+nrs   # nixos-rebuild switch
+hms   # home-manager switch
+```
 
 ## Enjoy!
