@@ -25,6 +25,11 @@
         }
       ];
 
+      appearance = {
+        border_width = 4;
+        corner_radius = 15;
+      };
+
       input = {
         focus = {
           follows_mouse = true;

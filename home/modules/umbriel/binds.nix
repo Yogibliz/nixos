@@ -14,18 +14,18 @@ in
       "Mod+Q" = "window-close";
       "Mod+F" = "window-toggle-fullscreen";
       "Mod+V" = "window-toggle-floating";
-      "Mod+H" = "window-focus-left";
-      "Mod+L" = "window-focus-right";
-      "Mod+K" = "window-focus-up";
-      "Mod+J" = "window-focus-down";
-      "Mod+Shift+H" = "window-consume-or-expel-left";
-      "Mod+Shift+L" = "window-consume-or-expel-right";
-      "Mod+Shift+K" = "window-move-up";
-      "Mod+Shift+J" = "window-move-down";
-      "Mod+WheelUp" = "window-focus-left";
-      "Mod+WheelDown" = "window-focus-right";
-      "Mod+Shift+WheelUp" = "column-move-left";
-      "Mod+Shift+WheelDown" = "column-move-right";
+      "Mod+H" = "window-focus-or-output-left";
+      "Mod+L" = "window-focus-or-output-right";
+      "Mod+K" = "window-focus-or-output-up";
+      "Mod+J" = "window-focus-or-output-down";
+      "Mod+Shift+H" = "window-move-or-output-left";
+      "Mod+Shift+L" = "window-move-or-output-right";
+      "Mod+Shift+K" = "window-move-or-output-up";
+      "Mod+Shift+J" = "window-move-or-output-down";
+      "Mod+WheelUp" = "window-focus-or-output-left";
+      "Mod+WheelDown" = "window-focus-or-output-right";
+      "Mod+Shift+WheelUp" = "window-move-or-output-left";
+      "Mod+Shift+WheelDown" = "window-move-or-output-right";
       "Mod+MouseMiddle" = "overview-toggle";
       "Mod+1" = "workspace-switch:1";
       "Mod+2" = "workspace-switch:2";
@@ -52,6 +52,10 @@ in
       # ==========================[ Media Buttons ]========================== #
       "XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
       "XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+      "XF86AudioMute" = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+      "XF86AudioPlay" = "spawn:playerctl play-pause";
+      "XF86AudioNext" = "spawn:playerctl next";
+      "XF86AudioPrev" = "spawn:playerctl previous";
       "XF86MonBrightnessUp" = "spawn:brightnessctl set +5%";
       "XF86MonBrightnessDown" = "spawn:brightnessctl set 5%-";
 
