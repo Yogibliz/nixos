@@ -23,10 +23,10 @@
     self.nixosModules.system
     self.nixosModules.time
     self.nixosModules.users
+    self.nixosModules.xdg
 
     # Features
     self.nixosModules.umbriel
-    self.nixosModules.noctalia
     self.nixosModules.vicinae
   ];
 
