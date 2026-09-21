@@ -20,8 +20,8 @@ in
       "Mod+J" = "window-focus-or-output-down";
       "Mod+Shift+H" = "window-move-or-output-left";
       "Mod+Shift+L" = "window-move-or-output-right";
-      "Mod+Shift+K" = "window-move-or-output-up";
-      "Mod+Shift+J" = "window-move-or-output-down";
+      "Mod+Shift+K" = "window-move-or-workspace-up";
+      "Mod+Shift+J" = "window-move-or-workspace-down";
       "Mod+WheelUp" = "window-focus-or-output-left";
       "Mod+WheelDown" = "window-focus-or-output-right";
       "Mod+Shift+WheelUp" = "window-move-or-output-left";
