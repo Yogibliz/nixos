@@ -7,7 +7,11 @@
         enable = true;
         extraOptions = {
           init_options = {
-            fallbackFlags = [ "-std=c++20" ];
+            fallbackFlags = [
+              "-std=c++20"
+              "-xc++"
+              "-I."
+            ];
           };
         };
       };

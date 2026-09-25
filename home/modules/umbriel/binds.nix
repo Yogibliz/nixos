@@ -1,6 +1,6 @@
 { ... }:
 let
-  browser = "zen-beta";
+  browser = "zen-twilight";
   terminal = "ghostty";
   explorer = "nautilus";
   launcher = "vicinae toggle";
