@@ -30,7 +30,6 @@
 
       # Desktop apps
       ghostty
-      google-chrome
       heroic
       nautilus
       proton-pass
