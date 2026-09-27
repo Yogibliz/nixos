@@ -24,6 +24,41 @@
           alsa.enable = true;
           alsa.support32Bit = true;
           pulse.enable = true;
+          jack.enable = true;
+
+          extraConfig.pipewire."99-input-denoising" = {
+            "context.properties" = {
+              "default.clock.rate" = 44100;
+              "default.clock.allowed-rates" = [
+                44100
+                48000
+                88200
+                96000
+                176400
+                192000
+              ];
+            };
+          };
+
+          wireplumber.extraConfig."99-volume-fix" = {
+            "monitor.alsa.rules" = [
+              {
+                matches = [
+                  {
+                    "node.name" = "~alsa_output.*Scarlett.*";
+                  }
+                ];
+                actions = {
+                  update-props = {
+                    # No more eardrums blowing up due to tidal (SONE) bit-perfect
+                    "volume.max" = 0.5;
+                    "api.alsa.soft-volume" = true;
+                    "channelmix.upmix" = false;
+                  };
+                };
+              }
+            ];
+          };
         };
 
         resolved = {
