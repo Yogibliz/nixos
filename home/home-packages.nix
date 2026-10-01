@@ -37,7 +37,7 @@
       sone
       vscode
       zathura
-      zotero
+      # zotero
 
       # Development
       gcc
