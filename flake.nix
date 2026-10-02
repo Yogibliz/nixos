@@ -21,14 +21,6 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     nixvim.url = "github:nix-community/nixvim";
     vicinae.url = "github:vicinaehq/vicinae";
-    vicinae-extensions.url = "github:vicinaehq/extensions";
-
-    elephant.url = "github:abenz1267/elephant";
-
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
-    };
 
     umbriel = {
       url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
