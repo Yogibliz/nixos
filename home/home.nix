@@ -20,6 +20,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
+      PROTON_PASS_LINUX_KEYRING = "dbus";
     };
   };
 

@@ -3,11 +3,14 @@
   flake.nixosModules.systemd =
     { lib, ... }:
     {
-      systemd.services = {
-        NetworkManager-wait-online.enable = false;
-        jellyfin = {
-          wants = lib.mkForce [ ];
-          after = lib.mkForce [ "network.target" ];
+      systemd = {
+        user.sessionVariables.PROTON_PASS_LINUX_KEYRING = "dbus";
+        services = {
+          NetworkManager-wait-online.enable = false;
+          jellyfin = {
+            wants = lib.mkForce [ ];
+            after = lib.mkForce [ "network.target" ];
+          };
         };
       };
     };

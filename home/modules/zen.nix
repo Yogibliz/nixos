@@ -19,6 +19,29 @@ in
     };
 
     profiles.default = {
+      search = {
+        force = true;
+        default = "google";
+        engines = {
+          nixpkgs = {
+            name = "Nix Packages";
+            urls = [
+              {
+                template = "https://search.nixos.org/packages?channel=unstable&query={searchTerm}";
+                params = [
+                  {
+                    name = "query";
+                    value = "searchTerm";
+                  }
+                ];
+              }
+            ];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@np" ];
+          };
+        };
+      };
+
       presets = {
         betterfox.enable = true;
         catppuccin = {
