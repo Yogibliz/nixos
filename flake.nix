@@ -2,11 +2,13 @@
   nixConfig = {
     extra-substituters = [
       "https://vicinae.cachix.org"
+      "https://walker.cachix.org"
       "https://noctalia.cachix.org"
       "https://nix-community.cachix.org"
     ];
     extra-trusted-public-keys = [
       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
+      "walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
@@ -14,18 +16,37 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    vicinae.url = "github:vicinaehq/vicinae";
-    vicinae-extensions.url = "github:vicinaehq/extensions";
     import-tree.url = "github:vic/import-tree";
     flake-parts.url = "github:hercules-ci/flake-parts";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-    millennium.url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
     nixvim.url = "github:nix-community/nixvim";
-    nixcord.url = "github:4evy/nixcord";
-    umbriel.url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
+    vicinae.url = "github:vicinaehq/vicinae";
+    vicinae-extensions.url = "github:vicinaehq/extensions";
+
+    elephant.url = "github:abenz1267/elephant";
+
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
+    };
+
+    umbriel = {
+      url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixcord = {
+      url = "github:4evy/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    millennium = {
+      url = "github:SteamClientHomebrew/Millennium/next?dir=packages/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -20,6 +20,7 @@
       fzf
       mesa-demos
       mmv
+      proton-pass-cli
       ripgrep
       steam-run
       tree
@@ -32,7 +33,6 @@
       ghostty
       heroic
       nautilus
-      proton-pass
       pwvucontrol
       sone
       vscode

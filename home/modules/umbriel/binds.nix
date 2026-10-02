@@ -3,7 +3,7 @@ let
   browser = "zen-twilight";
   terminal = "ghostty";
   explorer = "nautilus";
-  launcher = "vicinae toggle";
+  launcher = "walker"; # "vicinae toggle";
   noctalia = "noctalia msg";
 in
 {
