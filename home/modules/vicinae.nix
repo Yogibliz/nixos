@@ -35,14 +35,6 @@ in
 {
   imports = [ inputs.vicinae.homeManagerModules.default ];
 
-  home.activation = {
-    linkProtonPassCli = inputs.home-manager.lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      $DRY_RUN_CMD mkdir -p $HOME/.local/share/vicinae/support/proton-pass/cli/2.3.3/
-      $DRY_RUN_CMD rm -f $HOME/.local/share/vicinae/support/proton-pass/cli/2.3.3/pass-cli
-      $DRY_RUN_CMD ln -sf ${pkgs.lib.getExe pkgs.proton-pass-cli} $HOME/.local/share/vicinae/support/proton-pass/cli/2.3.3/pass-cli
-    '';
-  };
-
   programs.vicinae = {
     enable = true;
     package = pkgs.vicinae;
@@ -63,6 +55,17 @@ in
 
       providers = {
         "@izyuumi/proton-pass" = {
+          preferences = {
+            "cacheExpiration" = "5";
+            "cliPath" = "${pkgs.lib.getExe pkgs.proton-pass-cli}";
+            "copyPasswordTransient" = true;
+            "defaultPasswordLength" = "20";
+            "defaultPasswordType" = "random";
+            "enableBackgroundRefresh" = true;
+            "enableWebIntegration" = true;
+            "primaryAction" = "copy";
+            "showWebsiteIcons" = true;
+          };
           entrypoints = {
             "search-items" = {
               alias = "pp";
