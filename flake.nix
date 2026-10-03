@@ -92,7 +92,10 @@
             inputs.home-manager.lib.homeManagerConfiguration {
               pkgs = import inputs.nixpkgs {
                 inherit system;
-                config.allowUnfree = true;
+                config = {
+                  allowUnfree = true;
+                  permittedInsecurePackages = [ "ventoy-gtk3-1.1.17" ];
+                };
               };
               extraSpecialArgs = { inherit inputs hostname self; };
               modules = [

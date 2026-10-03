@@ -3,10 +3,14 @@
   flake.nixosModules.boot =
     { pkgs, ... }:
     {
-      # Boot settings
       boot = {
         loader = {
-          systemd-boot.enable = true;
+          systemd-boot = {
+            enable = true;
+            extraFiles = {
+              "EFI/Microsoft/Boot/bootmgfw.efi" = "";
+            };
+          };
           efi.canTouchEfiVariables = true;
           systemd-boot.configurationLimit = 3;
         };

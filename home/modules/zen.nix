@@ -27,11 +27,15 @@ in
             name = "Nix Packages";
             urls = [
               {
-                template = "https://search.nixos.org/packages?channel=unstable&query={searchTerm}";
+                template = "https://search.nixos.org/packages";
                 params = [
                   {
+                    name = "channel";
+                    value = "unstable";
+                  }
+                  {
                     name = "query";
-                    value = "searchTerm";
+                    value = "{searchTerms}";
                   }
                 ];
               }
