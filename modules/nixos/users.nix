@@ -14,6 +14,8 @@
           "wheel"
           "gamemode"
           "video"
+          "i2c"
+          "greeter"
           "input"
           "plugdev"
           "ydotool"

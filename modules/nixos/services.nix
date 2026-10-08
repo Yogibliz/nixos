@@ -99,6 +99,7 @@
         };
 
         udev.packages = with pkgs; [
+          ddcutil
           qmk-udev-rules
         ];
 

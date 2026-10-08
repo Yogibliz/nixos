@@ -4,18 +4,6 @@
   config,
   ...
 }:
-
-let
-  reloadHook = pkgs.writeShellScriptBin "noctalia-reload-hook" ''
-        (
-          export PATH="${config.home.profileDirectory}/bin:/run/current-system/sw/bin:$PATH"
-          
-          systemctl --user restart vicinae
-          ${pkgs.coreutils}/bin/sleep 1
-          vicinae theme set palette
-        ) >/dev/null 2>&1 &
-    /  '';
-in
 {
 
   programs.noctalia = {
@@ -72,11 +60,55 @@ in
         auto_locate = true;
       };
 
+      # ----- Brightness -----
+      brightness = {
+        enable_ddcutil = true;
+      };
+
+      # ----- Calendar -----
+      calendar = {
+        enabled = true;
+        account.lesson_schedule = {
+          color = "primary";
+          name = "Lesson Schedule";
+          server_url = "https://cloud.timeedit.net/liu/web/schema/ri67QQ89Y38Z4nQ5Y882X3X5y5Z661Z16041549Q6974011.ics";
+          type = "ics";
+        };
+      };
+
+      # ----- Idle -----
+      idle = {
+        behavior_order = [
+          "screen-off"
+          "lock"
+          "lock-and-suspend"
+        ];
+        behavior = {
+          screen-off = {
+            action = "screen_off";
+            enabled = true;
+            timeout = 120.0;
+          };
+          lock = {
+            action = "lock";
+            enabled = true;
+            timeout = 180.0;
+          };
+          lock-and-suspend = {
+            action = "lock_and_suspend";
+            enabled = true;
+            timeout = 300.0;
+          };
+        };
+      };
+
       # ----- Shell Settings -----
       shell = {
         lang = "en-US";
         avatar_path = "${config.home.homeDirectory}/dotfiles/.face";
         settings_window_translucent = true;
+        screen_time_enabled = true;
+        polkit_agent = true;
         screen_corners = {
           enabled = true;
         };
@@ -85,7 +117,9 @@ in
           copy_to_clipboard = true;
           freeze_screen = true;
         };
-
+        greeter_sync = {
+          auto_sync = true;
+        };
         panel = {
           transparency_mode = "glass";
         };
@@ -167,7 +201,7 @@ in
             vicinae = {
               input_path = "$XDG_CONFIG_HOME/noctalia/templates/vicinae.toml";
               output_path = "$XDG_DATA_HOME/vicinae/themes/palette.toml";
-              post_hook = "${lib.getExe reloadHook}";
+              post_hook = "systemctl --user restart vicinae && vicinae theme set palette";
             };
           };
           builtin_ids = [ "umbriel" ];
