@@ -7,14 +7,14 @@
 
 let
   reloadHook = pkgs.writeShellScriptBin "noctalia-reload-hook" ''
-    (
-      export PATH="${config.home.profileDirectory}/bin:/run/current-system/sw/bin:$PATH"
-      
-      systemctl --user restart vicinae
-      ${pkgs.coreutils}/bin/sleep 1
-      vicinae theme set palette
-    ) >/dev/null 2>&1 &
-/  '';
+        (
+          export PATH="${config.home.profileDirectory}/bin:/run/current-system/sw/bin:$PATH"
+          
+          systemctl --user restart vicinae
+          ${pkgs.coreutils}/bin/sleep 1
+          vicinae theme set palette
+        ) >/dev/null 2>&1 &
+    /  '';
 in
 {
 
@@ -40,7 +40,31 @@ in
 
       # ----- Control Center Settings -----
       control_center = {
+        sidebar = "full";
+        sidebar_section = "full";
         width = 1200;
+      };
+
+      # ----- Dock -----
+      dock = {
+        enabled = true;
+        monitors = [ "DP-2" ];
+        reserve_space = false;
+        show_dots = true;
+        show_instance_count = false;
+        smart_auto_hide = true;
+        pinned = [
+          "zen-twilight"
+          "org.gnome.Nautilus"
+          "com.mitchellh.ghostty"
+          "SONE"
+          "root"
+        ];
+      };
+
+      # ----- Notification -----
+      notification = {
+        history_retention_hours = 1;
       };
 
       # ----- Location Service Settings -----
@@ -52,6 +76,10 @@ in
       shell = {
         lang = "en-US";
         avatar_path = "${config.home.homeDirectory}/dotfiles/.face";
+        settings_window_translucent = true;
+        screen_corners = {
+          enabled = true;
+        };
         screenshot = {
           save_to_file = false;
           copy_to_clipboard = true;
@@ -132,13 +160,17 @@ in
         mode = "dark";
         source = "wallpaper";
         wallpaper_scheme = "m3-content";
+        pure_black_dark = true;
 
-        templates.user = {
-          vicinae = {
-            input_path = "$XDG_CONFIG_HOME/noctalia/templates/vicinae.toml";
-            output_path = "$XDG_DATA_HOME/vicinae/themes/palette.toml";
-            post_hook = "${lib.getExe reloadHook}";
+        templates = {
+          user = {
+            vicinae = {
+              input_path = "$XDG_CONFIG_HOME/noctalia/templates/vicinae.toml";
+              output_path = "$XDG_DATA_HOME/vicinae/themes/palette.toml";
+              post_hook = "${lib.getExe reloadHook}";
+            };
           };
+          builtin_ids = [ "umbriel" ];
         };
       };
 

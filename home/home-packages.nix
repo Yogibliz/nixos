@@ -18,6 +18,7 @@
       eza
       fd
       fzf
+      gnupg
       imv
       mesa-demos
       mmv
@@ -36,7 +37,6 @@
       nautilus
       pwvucontrol
       sone
-      ventoy-full-gtk
       vscode
       zathura
 

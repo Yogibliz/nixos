@@ -23,6 +23,13 @@
           };
           default_floating = false;
         }
+        {
+          match = {
+            app_id = "^warframe$";
+            title = "^Warframe$";
+          };
+          default_output = "DP-2";
+        }
       ];
 
       appearance = {

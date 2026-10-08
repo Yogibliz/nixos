@@ -3,6 +3,11 @@
   flake.nixosModules.security =
     { pkgs, ... }:
     {
+      programs.gnupg.agent = {
+        enable = true;
+        enableSSHSupport = false;
+        pinentryPackage = pkgs.pinentry-curses;
+      };
       security = {
         rtkit.enable = true;
         wrappers.fusermount3 = {

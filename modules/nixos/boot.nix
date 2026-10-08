@@ -5,12 +5,7 @@
     {
       boot = {
         loader = {
-          systemd-boot = {
-            enable = true;
-            extraFiles = {
-              "EFI/Microsoft/Boot/bootmgfw.efi" = "";
-            };
-          };
+          systemd-boot.enable = true;
           efi.canTouchEfiVariables = true;
           systemd-boot.configurationLimit = 3;
         };
