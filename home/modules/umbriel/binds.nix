@@ -16,8 +16,8 @@ in
       "Mod+V" = "window-toggle-floating";
       "Mod+H" = "window-focus-or-output-left";
       "Mod+L" = "window-focus-or-output-right";
-      "Mod+K" = "window-focus-or-output-up";
-      "Mod+J" = "window-focus-or-output-down";
+      "Mod+K" = "window-focus-or-workspace-up";
+      "Mod+J" = "window-focus-or-workspace-down";
       "Mod+Shift+H" = "window-move-or-output-left";
       "Mod+Shift+L" = "window-move-or-output-right";
       "Mod+Shift+K" = "window-move-or-workspace-up";

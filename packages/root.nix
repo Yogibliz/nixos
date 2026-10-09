@@ -8,7 +8,7 @@ let
 
   src = fetchurl {
     url = "https://installer.rootapp.com/installer/Linux/X64/Root.AppImage";
-    hash = "sha256-vtUbpy4RDJR8xpfaTt4F3eCnKvkriZks+YzgNhGKbzY=";
+    hash = "sha256-6Sy5bgylIntzlGp+GBwRzj9Lp/LnK4ZKhLoDhBBl3dY=";
   };
 
   appimageContents = appimageTools.extract {
