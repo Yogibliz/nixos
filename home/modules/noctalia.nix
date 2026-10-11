@@ -60,11 +60,6 @@
         auto_locate = true;
       };
 
-      # ----- Brightness -----
-      brightness = {
-        enable_ddcutil = true;
-      };
-
       # ----- Calendar -----
       calendar = {
         enabled = true;

@@ -15,7 +15,6 @@
       cachix
       caelestia-cli
       calc
-      ddcutil
       eza
       fd
       fzf

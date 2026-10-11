@@ -3,6 +3,8 @@
   programs.umbriel = {
     enable = true;
     settings = {
+      include.optional.files = [ "noctalia.toml" ];
+
       general = {
         mod_key = "Super";
         show_cheatsheet = false;
