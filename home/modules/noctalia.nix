@@ -15,6 +15,7 @@
         media = {
           title_scroll = "always";
           max_length = 450;
+          hide_when_idle = true;
         };
 
         tray = {
@@ -34,9 +35,8 @@
       };
 
       # ----- Dock -----
-      dock = {
+      dock.monitor."DP-2" = {
         enabled = true;
-        monitors = [ "DP-2" ];
         reserve_space = false;
         show_dots = true;
         show_instance_count = false;
@@ -104,6 +104,27 @@
         settings_window_translucent = true;
         screen_time_enabled = true;
         polkit_agent = true;
+        launcher = {
+          layout = "full";
+          width = "800";
+          search_position = "top";
+          default_view = "pinned";
+          categories = false;
+          show_settings_button = true;
+          show_session_button = false;
+          app_grid = false;
+          track_usage = false;
+          pinned = [
+            "zen-twilight"
+            "com.mitchellh.ghostty"
+            "SONE"
+            "root"
+          ];
+          providers = {
+            session.global = true;
+            calculator.global = true;
+          };
+        };
         screen_corners = {
           enabled = true;
         };
@@ -152,10 +173,6 @@
         # ----- Bar Widgets -----
         start = [
           "workspaces"
-          "wallhaven"
-          "mpvpaper"
-          "bar"
-          "summary"
         ];
         center = [ "clock" ];
         end = [
@@ -213,6 +230,7 @@
           "raycursive/discord-voice"
           "avivbintangaringga/nix-monitor"
           "tmelik/system-monitor"
+          "nilsonlinux/rss-notifier"
         ];
       };
 
@@ -240,6 +258,13 @@
           update_check_interval = 1;
           generation_check_interval = 1;
           update_command = "cd ~/dotfiles && nix flake update && home-manager switch --flake ~/dotfiles#iris@$(hostname) && sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname)";
+        };
+
+        "nilsonlinux/rss-notifier" = {
+          refresh_minutes = 1;
+          feeds = [
+            "https://diyhrt.coffee/api/v1/feed/stock.rss?only=restocks&region=EU"
+          ];
         };
       };
 

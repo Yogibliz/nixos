@@ -27,8 +27,7 @@
         }
         {
           match = {
-            app_id = "^warframe$";
-            title = "^Warframe$";
+            app_id = "^steam_app_230410$";
           };
           default_output = "DP-2";
         }

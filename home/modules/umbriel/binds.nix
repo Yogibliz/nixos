@@ -3,8 +3,8 @@ let
   browser = "zen-twilight";
   terminal = "ghostty";
   explorer = "nautilus";
-  launcher = "vicinae toggle";
   noctalia = "noctalia msg";
+  noctalia-panel = "noctalia msg panel-toggle";
 in
 {
   programs.umbriel = {
@@ -33,7 +33,7 @@ in
       "Mod+Shift+2" = "window-move-to-workspace:2";
 
       # ==============================[ Apps ]============================== #
-      "Mod" = "spawn:${launcher}";
+      "Mod" = "spawn:${noctalia-panel} launcher";
       "Mod+T" = "spawn:${terminal}";
       "Mod+B" = "spawn:${browser}";
       "Mod+E" = "spawn:${explorer}";
@@ -41,13 +41,14 @@ in
       # ============================[ Noctalia ]============================ #
       "Mod+Shift+S" = "spawn:${noctalia} screenshot-region";
       "Mod+Escape" = "spawn:${noctalia} session lock";
-      "Mod+W" = "spawn:${noctalia} panel-toggle wallpaper";
-      "Mod+Shift+W" = "spawn:${noctalia} panel-toggle noctalia/wallhaven:browser";
-      "Mod+Alt+W" = "spawn:${noctalia} panel-toggle noctalia/mpvpaper:picker";
-      "Mod+C" = "spawn:${noctalia} panel-toggle control-center";
-      "Mod+N" = "spawn:${noctalia} panel-toggle control-center notifications";
-      "Mod+D" = "spawn:${noctalia} panel-toggle raycursive/discord-voice:panel";
-      "Mod+R" = "spawn:${noctalia} panel-toggle avivbintangaringga/nix-monitor:panel";
+      "Mod+W" = "spawn:${noctalia-panel} wallpaper";
+      "Mod+Shift+W" = "spawn:${noctalia-panel} noctalia/wallhaven:browser";
+      "Mod+Alt+W" = "spawn:${noctalia-panel} noctalia/mpvpaper:picker";
+      "Mod+C" = "spawn:${noctalia-panel} control-center";
+      "Mod+N" = "spawn:${noctalia-panel} control-center notifications";
+      "Mod+D" = "spawn:${noctalia-panel} raycursive/discord-voice:panel";
+      "Mod+R" = "spawn:${noctalia-panel} avivbintangaringga/nix-monitor:panel";
+      "Mod+A" = "spawn:${noctalia-panel} nilsonlinux/rss-notifier:Panel";
 
       # ==========================[ Media Buttons ]========================== #
       "XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";

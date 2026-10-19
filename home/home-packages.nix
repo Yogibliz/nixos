@@ -9,6 +9,7 @@
   home.packages =
     (with pkgs; [
       # CLI utilities
+      antigravity-cli
       appimage-run
       awww
       bat

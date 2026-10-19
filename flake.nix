@@ -4,11 +4,13 @@
       "https://vicinae.cachix.org"
       "https://noctalia.cachix.org"
       "https://nix-community.cachix.org"
+      "https://umbriel.cachix.org"
     ];
     extra-trusted-public-keys = [
       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "umbriel.cachix.org-1:JfNq/2yg2S6D6z4Z2dVSZrZlDPQTKtexB6GAVLD98nw="
     ];
   };
 
@@ -19,11 +21,7 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     nixvim.url = "github:nix-community/nixvim";
     vicinae.url = "github:vicinaehq/vicinae";
-
-    umbriel = {
-      url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    umbriel.url = "github:noctalia-dev/umbriel";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
