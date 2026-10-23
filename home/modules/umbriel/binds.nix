@@ -1,6 +1,6 @@
 { ... }:
 let
-  browser = "zen-twilight";
+  browser = "firefox"; # "zen-twilight";
   terminal = "ghostty";
   explorer = "nautilus";
   noctalia = "noctalia msg";

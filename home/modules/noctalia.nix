@@ -42,7 +42,7 @@
         show_instance_count = false;
         smart_auto_hide = true;
         pinned = [
-          "zen-twilight"
+          "firefox" # "zen-twilight"
           "org.gnome.Nautilus"
           "com.mitchellh.ghostty"
           "SONE"
@@ -115,7 +115,7 @@
           app_grid = false;
           track_usage = false;
           pinned = [
-            "zen-twilight"
+            "firefox" # "zen-twilight"
             "com.mitchellh.ghostty"
             "SONE"
             "root"
