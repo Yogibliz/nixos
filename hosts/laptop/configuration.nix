@@ -29,8 +29,8 @@
     # Features
     self.nixosModules.umbriel
     self.nixosModules.samsungAudio
+    self.nixosModules.skwdWall
     self.nixosModules.steam
-    self.nixosModules.vicinae
   ];
 
   nix.settings.experimental-features = [

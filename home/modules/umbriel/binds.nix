@@ -27,38 +27,38 @@ in
       "Mod+Shift+WheelUp" = "window-move-or-output-left";
       "Mod+Shift+WheelDown" = "window-move-or-output-right";
       "Mod+MouseMiddle" = "overview-toggle";
-      "Mod+1" = "workspace-switch:1";
-      "Mod+2" = "workspace-switch:2";
-      "Mod+Shift+1" = "window-move-to-workspace:1";
-      "Mod+Shift+2" = "window-move-to-workspace:2";
+      "Mod+1" = "workspace-switch 1";
+      "Mod+2" = "workspace-switch 2";
+      "Mod+Shift+1" = "window-move-to-workspace 1";
+      "Mod+Shift+2" = "window-move-to-workspace 2";
 
       # ==============================[ Apps ]============================== #
-      "Mod" = "spawn:${noctalia-panel} launcher";
-      "Mod+T" = "spawn:${terminal}";
-      "Mod+B" = "spawn:${browser}";
-      "Mod+E" = "spawn:${explorer}";
+      "Mod" = "spawn ${noctalia-panel} launcher";
+      "Mod+B" = "spawn ${browser}";
+      "Mod+E" = "spawn ${explorer}";
+      "Mod+T" = "spawn ${terminal}";
+      "Mod+W" = "spawn skwd-wall-v2";
 
       # ============================[ Noctalia ]============================ #
-      "Mod+Shift+S" = "spawn:${noctalia} screenshot-region";
-      "Mod+Escape" = "spawn:${noctalia} session lock";
-      "Mod+W" = "spawn:${noctalia-panel} wallpaper";
-      "Mod+Shift+W" = "spawn:${noctalia-panel} noctalia/wallhaven:browser";
-      "Mod+Alt+W" = "spawn:${noctalia-panel} noctalia/mpvpaper:picker";
-      "Mod+C" = "spawn:${noctalia-panel} control-center";
-      "Mod+N" = "spawn:${noctalia-panel} control-center notifications";
-      "Mod+D" = "spawn:${noctalia-panel} raycursive/discord-voice:panel";
-      "Mod+R" = "spawn:${noctalia-panel} avivbintangaringga/nix-monitor:panel";
-      "Mod+A" = "spawn:${noctalia-panel} nilsonlinux/rss-notifier:Panel";
+      "Mod+Shift+S" = "spawn ${noctalia} screenshot-region";
+      "Mod+Escape" = "spawn ${noctalia} session lock";
+      "Mod+Shift+W" = "spawn ${noctalia-panel} noctalia/wallhaven browser";
+      "Mod+Alt+W" = "spawn ${noctalia-panel} noctalia/mpvpaper picker";
+      "Mod+C" = "spawn ${noctalia-panel} control-center";
+      "Mod+N" = "spawn ${noctalia-panel} control-center notifications";
+      "Mod+D" = "spawn ${noctalia-panel} raycursive/discord-voice panel";
+      "Mod+R" = "spawn ${noctalia-panel} avivbintangaringga/nix-monitor panel";
+      "Mod+A" = "spawn ${noctalia-panel} nilsonlinux/rss-notifier Panel";
 
       # ==========================[ Media Buttons ]========================== #
-      "XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
-      "XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-      "XF86AudioMute" = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-      "XF86AudioPlay" = "spawn:playerctl play-pause";
-      "XF86AudioNext" = "spawn:playerctl next";
-      "XF86AudioPrev" = "spawn:playerctl previous";
-      "XF86MonBrightnessUp" = "spawn:brightnessctl set +5%";
-      "XF86MonBrightnessDown" = "spawn:brightnessctl set 5%-";
+      "XF86AudioRaiseVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+      "XF86AudioLowerVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+      "XF86AudioMute" = "spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+      "XF86AudioPlay" = "spawn playerctl play-pause";
+      "XF86AudioNext" = "spawn playerctl next";
+      "XF86AudioPrev" = "spawn playerctl previous";
+      "XF86MonBrightnessUp" = "spawn brightnessctl set +5%";
+      "XF86MonBrightnessDown" = "spawn brightnessctl set 5%-";
 
     };
   };

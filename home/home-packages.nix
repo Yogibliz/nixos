@@ -19,12 +19,14 @@
       eza
       fd
       fzf
+      github-cli
       gnupg
       imv
       mesa-demos
       mmv
       proton-pass-cli
       ripgrep
+      sops
       steam-run
       tree
       time

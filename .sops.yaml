@@ -1,0 +1,7 @@
+keys:
+  - &iris age1rphrestmxnk7fyzgtve9pl8gde5x235t8ahrvtmngfwwtw5n3cgs8e556y
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml$
+    key_groups:
+      - age:
+          - *iris

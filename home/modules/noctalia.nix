@@ -22,7 +22,6 @@
           hidden = [
             "nm-applet"
             "blueman"
-            "vicinae"
           ];
         };
       };
@@ -134,7 +133,7 @@
           freeze_screen = true;
         };
         greeter_sync = {
-          auto_sync = true;
+          auto_sync = false;
         };
         panel = {
           transparency_mode = "glass";
@@ -195,12 +194,6 @@
         effects = true;
       };
 
-      # ----- Wallpaper Settings -----
-      wallpaper = {
-        enabled = true;
-        directory = "${config.home.homeDirectory}/dotfiles/Wallpapers";
-      };
-
       # ----- Theme Settings -----
       theme = {
         mode = "dark";
@@ -209,13 +202,6 @@
         pure_black_dark = true;
 
         templates = {
-          user = {
-            vicinae = {
-              input_path = "$XDG_CONFIG_HOME/noctalia/templates/vicinae.toml";
-              output_path = "$XDG_DATA_HOME/vicinae/themes/palette.toml";
-              post_hook = "systemctl --user restart vicinae && vicinae theme set palette";
-            };
-          };
           builtin_ids = [ "umbriel" ];
         };
       };
@@ -223,8 +209,6 @@
       # ----- Plugin Settings -----
       plugins = {
         enabled = [
-          "noctalia/wallhaven"
-          "noctalia/mpvpaper"
           "frai3mega/battery-graph"
           "y/ocraft/battery-widget"
           "raycursive/discord-voice"
@@ -235,14 +219,6 @@
       };
 
       plugin_settings = {
-        "noctalia/mpvpaper" = {
-          video_directory = "${config.home.homeDirectory}/dotfiles/Wallpapers/Video";
-        };
-
-        "noctalia/wallhaven" = {
-          api_key = "l83Zzc2Ti34fOKCTYLDHyIhmjNby17sD";
-        };
-
         "tmelik/system-monitor" = {
           show_download = false;
           show_upload = false;
@@ -364,126 +340,4 @@
       };
     };
   };
-
-  # --- Noctalia color switching and Vicinae re-theming alongside wallpaper changes ---
-
-  xdg.configFile."noctalia/templates/vicinae.toml".text = ''
-    [meta]
-    version = 1
-    name = "Palette"
-    description = "Wallpaper based theme colors"
-    variant = "dark"
-    inherits = "vicinae-dark"
-
-    [colors.core]
-    accent = "{{colors.primary.default.hex}}"
-    accent_foreground = "{{colors.on_primary.default.hex}}"
-    background = "{{colors.surface.default.hex}}"
-    foreground = "{{colors.on_surface.default.hex}}"
-    secondary_background = "{{colors.surface_container.default.hex}}"
-    border = "{{colors.outline_variant.default.hex}}"
-
-    [colors.main_window]
-    border = "{{colors.outline_variant.default.hex}}"
-
-    [colors.settings_window]
-    border = "{{colors.outline.default.hex}}"
-
-    [colors.accents]
-    blue = "{{colors.primary.default.hex}}"
-    green = "{{colors.tertiary.default.hex}}"
-    magenta = "{{colors.secondary.default.hex}}"
-    red = "{{colors.error.default.hex}}"
-    purple = "{{colors.secondary.default.hex}}"
-
-    [colors.accents.orange]
-    name = "{{colors.error.default.hex}}"
-    lighter = 40
-
-    [colors.accents.yellow]
-    name = "{{colors.tertiary.default.hex}}"
-    lighter = 80
-
-    [colors.accents.cyan]
-    name = "{{colors.primary.default.hex}}"
-    lighter = 50
-
-    [colors.text]
-    default = "{{colors.on_surface.default.hex}}"
-    muted = "{{colors.on_surface_variant.default.hex}}"
-    danger = "{{colors.error.default.hex}}"
-    success = "{{colors.tertiary.default.hex}}"
-
-    [colors.text.placeholder]
-    name = "{{colors.on_surface_variant.default.hex}}"
-    opacity = 0.6
-
-    [colors.text.selection]
-    background = "{{colors.primary.default.hex}}"
-    foreground = "{{colors.on_primary.default.hex}}"
-
-    [colors.text.links]
-    default = "{{colors.primary.default.hex}}"
-
-    [colors.text.links.visited]
-    name = "{{colors.tertiary.default.hex}}"
-    darker = 20
-
-    [colors.input]
-    border = "{{colors.outline.default.hex}}"
-    border_focus = "{{colors.primary.default.hex}}"
-    border_error = "{{colors.error.default.hex}}"
-
-    [colors.button.primary]
-    background = "{{colors.surface_container_high.default.hex}}"
-    foreground = "{{colors.on_surface.default.hex}}"
-
-    [colors.button.primary.hover]
-    background = "{{colors.surface_container_highest.default.hex}}"
-
-    [colors.button.primary.focus]
-    outline = "{{colors.primary.default.hex}}"
-
-    [colors.list.item.hover]
-    background = { name = "{{colors.primary_container.default.hex}}", opacity = 0.25 }
-    foreground = "{{colors.on_surface.default.hex}}"
-
-    [colors.list.item.selection]
-    background = { name = "{{colors.primary_container.default.hex}}", opacity = 0.50 }
-    foreground = "{{colors.on_primary_container.default.hex}}"
-    secondary_background = "{{colors.primary_container.default.hex}}"
-    secondary_foreground = "{{colors.on_primary_container.default.hex}}"
-
-    [colors.grid.item]
-    background = "{{colors.surface_container.default.hex}}"
-
-    [colors.grid.item.hover.outline]
-    name = "{{colors.secondary.default.hex}}"
-    opacity = 0.8
-
-    [colors.grid.item.selection.outline]
-    name = "{{colors.primary.default.hex}}"
-
-    [colors.scrollbars.background]
-    name = "{{colors.primary.default.hex}}"
-    opacity = 0.2
-
-    [colors.loading]
-    bar = "{{colors.primary.default.hex}}"
-    spinner = "{{colors.primary.default.hex}}"
-  '';
-
-  xdg.configFile."noctalia/templates/colors.lua".text = ''
-    hl.config({ 
-      general = { 
-        ["col.active_border"] = { 
-          colors = { "rgb({{colors.primary.default.hex_stripped}})", "rgb({{colors.primary.default.hex_stripped}})" }, 
-          angle = 45 
-        } 
-      } 
-    })
-  '';
-
-  # Ensures Vicinae's directory exists for Noctalia to write the theme output
-  home.file.".local/share/vicinae/themes/.keep".text = "";
 }

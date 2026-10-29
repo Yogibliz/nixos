@@ -27,7 +27,7 @@
 
     # Features
     self.nixosModules.umbriel
-    self.nixosModules.vicinae
+    self.nixosModules.skwdWall
   ];
 
   nix.settings.experimental-features = [

@@ -29,10 +29,10 @@
     self.nixosModules.xdg
 
     # Features
+    self.nixosModules.jellyfin
     self.nixosModules.umbriel
     self.nixosModules.steam
-    self.nixosModules.jellyfin
-    self.nixosModules.vicinae
+    self.nixosModules.skwdWall
   ];
 
   services.gnome.gnome-keyring.enable = true;
