@@ -22,7 +22,7 @@
       # Gamescope
       programs.gamescope = {
         enable = true;
-        capSysNice = false;
+        capSysNice = true;
       };
 
       # XWayland for Steam

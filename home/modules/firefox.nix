@@ -38,6 +38,7 @@ in
       settings = {
         "browser.startup.page" = 3;
         "sidebar.verticalTabs" = true;
+        "sidebar.visibility" = "expand-on-hover";
       };
 
       bookmarks = {
