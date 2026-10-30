@@ -33,6 +33,11 @@
         randomRotate = false;
       };
 
+      paths = {
+        steam = "${config.home.homeDirectory}/.local/share/Steam";
+        steamWorkshop = "/mnt/games/SteamLibrary/steamapps/workshop/content/431960";
+      };
+
       library.folders = [
         "${config.home.homeDirectory}/dotfiles/Wallpapers"
       ];
@@ -50,9 +55,8 @@
         longitude = "15.62157";
       };
 
-      sources = {
-        pexels.enabled = true;
-        unsplash.enabled = true;
+      steam = {
+        backend = "steam";
       };
 
       theme = {

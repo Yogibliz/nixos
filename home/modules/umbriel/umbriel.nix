@@ -8,7 +8,10 @@
       general = {
         mod_key = "Super";
         show_cheatsheet = false;
-        autostart = [ "noctalia" ];
+        autostart = [
+          "noctalia"
+          "skwd-walld"
+        ];
       };
 
       window_rule = [
