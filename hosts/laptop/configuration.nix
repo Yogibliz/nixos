@@ -19,6 +19,7 @@
     self.nixosModules.i18n
     self.nixosModules.networking
     self.nixosModules.nix
+    self.nixosModules.openssh
     self.nixosModules.security
     self.nixosModules.services
     self.nixosModules.system

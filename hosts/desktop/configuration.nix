@@ -20,6 +20,7 @@
     self.nixosModules.i18n
     self.nixosModules.networking
     self.nixosModules.nix
+    self.nixosModules.openssh
     self.nixosModules.security
     self.nixosModules.services
     self.nixosModules.system
@@ -33,9 +34,11 @@
     self.nixosModules.umbriel
     self.nixosModules.steam
     self.nixosModules.skwdWall
+    self.nixosModules.sunshine
   ];
 
   services.gnome.gnome-keyring.enable = true;
+  networking.interfaces.enp9s0.wakeOnLan.enable = true;
 
   programs = {
     ydotool.enable = true;
