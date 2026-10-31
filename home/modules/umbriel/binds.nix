@@ -42,12 +42,8 @@ in
       # ============================[ Noctalia ]============================ #
       "Mod+Shift+S" = "spawn ${noctalia} screenshot-region";
       "Mod+Escape" = "spawn ${noctalia} session lock";
-      "Mod+Shift+W" = "spawn ${noctalia-panel} noctalia/wallhaven browser";
-      "Mod+Alt+W" = "spawn ${noctalia-panel} noctalia/mpvpaper picker";
       "Mod+C" = "spawn ${noctalia-panel} control-center";
       "Mod+N" = "spawn ${noctalia-panel} control-center notifications";
-      "Mod+D" = "spawn ${noctalia-panel} raycursive/discord-voice panel";
-      "Mod+R" = "spawn ${noctalia-panel} avivbintangaringga/nix-monitor panel";
       "Mod+A" = "spawn ${noctalia-panel} nilsonlinux/rss-notifier Panel";
 
       # ==========================[ Media Buttons ]========================== #

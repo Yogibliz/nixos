@@ -209,10 +209,6 @@
       # ----- Plugin Settings -----
       plugins = {
         enabled = [
-          "frai3mega/battery-graph"
-          "y/ocraft/battery-widget"
-          "raycursive/discord-voice"
-          "avivbintangaringga/nix-monitor"
           "tmelik/system-monitor"
           "nilsonlinux/rss-notifier"
         ];
@@ -223,17 +219,6 @@
           show_download = false;
           show_upload = false;
           disk_display_mode = "used";
-        };
-
-        "raycursive/discord-voice" = {
-          discord_binary = "${pkgs.discord}/bin/discord";
-          hide_when_disconnect = true;
-        };
-
-        "avivbintangaringga/nix-monitor" = {
-          update_check_interval = 1;
-          generation_check_interval = 1;
-          update_command = "cd ~/dotfiles && nix flake update && home-manager switch --flake ~/dotfiles#iris@$(hostname) && sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname)";
         };
 
         "nilsonlinux/rss-notifier" = {

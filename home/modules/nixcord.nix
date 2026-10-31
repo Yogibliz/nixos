@@ -13,10 +13,9 @@
       plugins = {
         fakeNitro.enable = true;
         alwaysTrust.enable = true;
-        copyStickerLinks.enable = true;
         crashHandler.enable = true;
         disableDeepLinks.enable = true;
-        expressionCloner.enable = true;
+        expressionManager.enable = true;
         fakeProfileThemes.enable = true;
         fixCodeblockGap.enable = true;
         fixSpotifyEmbeds.enable = true;
