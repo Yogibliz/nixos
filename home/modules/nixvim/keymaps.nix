@@ -26,6 +26,15 @@
 
     # Close Window
     { mode = "n"; key = "<leader>wd"; action = "<C-w>c"; options.desc = "Close window"; }
+    { mode = "n"; key = "<leader>wt"; action = "<cmd>belowright split | terminal<cr>i"; options.desc = "Terminal (horizontal split)"; }
+    { mode = "n"; key = "<leader>wT"; action = "<cmd>belowright vsplit | terminal<cr>i"; options.desc = "Terminal (vertical split)"; }
+
+    # Terminal-mode escapes and window movement
+    { mode = "t"; key = "<Esc><Esc>"; action = "<C-\\><C-n>"; options.desc = "Exit terminal mode"; }
+    { mode = "t"; key = "<C-h>"; action = "<C-\\><C-n><C-w>h"; options.desc = "Move to left window"; }
+    { mode = "t"; key = "<C-j>"; action = "<C-\\><C-n><C-w>j"; options.desc = "Move to window below"; }
+    { mode = "t"; key = "<C-k>"; action = "<C-\\><C-n><C-w>k"; options.desc = "Move to window above"; }
+    { mode = "t"; key = "<C-l>"; action = "<C-\\><C-n><C-w>l"; options.desc = "Move to right window"; }
 
     # Window Movement
     { mode = "n"; key = "<C-h>"; action = "<C-w>h"; options.desc = "Move to left window"; }
