@@ -39,7 +39,7 @@
       # Desktop apps
       ghostty
       heroic
-      moonlight
+      moonlight-qt
       nautilus
       pwvucontrol
       sone
