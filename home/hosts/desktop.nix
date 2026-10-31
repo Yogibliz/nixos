@@ -9,6 +9,7 @@
     layout = {
       mode = "dwindle";
     };
+    general.autostart = [ "sunshine" ];
 
     workspace = [
       {

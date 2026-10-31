@@ -45,7 +45,8 @@
           "org.gnome.Nautilus"
           "com.mitchellh.ghostty"
           "SONE"
-          "root"
+          # "root"
+          "vesktop"
         ];
       };
 
@@ -117,6 +118,7 @@
             "firefox" # "zen-twilight"
             "com.mitchellh.ghostty"
             "SONE"
+            "vesktop"
             "root"
           ];
           providers = {
@@ -163,7 +165,7 @@
         # ----- Capsule Group(s) -----
         capsule_group = [
           {
-            id = "test";
+            id = "";
             members = [ ];
             enabled = true;
           }
@@ -226,101 +228,6 @@
           feeds = [
             "https://diyhrt.coffee/api/v1/feed/stock.rss?only=restocks&region=EU"
           ];
-        };
-      };
-
-      # ----- Desktop Widget Settings -----
-      desktop_widgets = {
-        enabled = false;
-        schema_version = 2;
-
-        grid = {
-          cell_size = 16;
-          major_interval = 4;
-          visible = true;
-        };
-
-        widget_order = [
-          "desktop-widget-media-player"
-          "desktop-widget-weather"
-          "desktop-widget-clock"
-          "desktop-widget-audio-visualizer"
-          "desktop-widget-sticker"
-        ];
-
-        widget = {
-          desktop-widget-media-player = {
-            box_height = 224.0;
-            box_width = 512.0;
-            cx = 3072.0;
-            cy = 256.0;
-            output = "DP-2";
-            type = "media_player";
-            settings = {
-              background = false;
-              layout = "horizontal";
-            };
-          };
-
-          desktop-widget-weather = {
-            box_height = 224.0;
-            box_width = 512.0;
-            cx = 512.0;
-            cy = 256.0;
-            output = "DP-2";
-            type = "weather";
-            settings = {
-              background = false;
-              show_forecast = true;
-            };
-          };
-
-          desktop-widget-clock = {
-            box_height = 144.0;
-            box_width = 304.0;
-            cx = 1720.0;
-            cy = 128.0;
-            output = "DP-2";
-            type = "clock";
-            settings = {
-              background = false;
-              center_text = true;
-              clock_style = "digital";
-              shadow = true;
-            };
-          };
-
-          desktop-widget-audio-visualizer = {
-            box_height = 176.0;
-            box_width = 512.0;
-            cx = 3072.0;
-            cy = 432.0;
-            output = "DP-2";
-            type = "audio_visualizer";
-            settings = {
-              background = false;
-              bands = 48;
-              centered = true;
-              color_1 = "primary";
-              color_2 = "on_primary";
-              mirrored = true;
-              show_when_idle = true;
-            };
-          };
-
-          desktop-widget-sticker = {
-            box_height = 720.0;
-            box_width = 688.0;
-            cx = 3096.0;
-            cy = 1080.0;
-            output = "DP-2";
-            type = "sticker";
-            settings = {
-              background = false;
-              image_path = "${config.home.homeDirectory}/dotfiles/Stickers/mahiro.png";
-              opacity = 1.0;
-            };
-          };
         };
       };
     };

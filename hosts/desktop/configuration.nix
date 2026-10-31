@@ -60,7 +60,6 @@
     AMD_VULKAN_ICD = "RADV";
     ENABLE_LAYER_MESA_ANTI_LAG = "1";
     RADV_PERFTEST = "sam, nircache, ngcc";
-    PROTON_ENABLE_WAYLAND = "1";
   };
 
   # Using the hostname passed down from mkHost

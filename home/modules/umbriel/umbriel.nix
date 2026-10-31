@@ -34,6 +34,19 @@
           };
           default_output = "DP-2";
         }
+        {
+          match = {
+            app_id = "^steam$";
+            title = "[Bb]ig [Pp]icture";
+          };
+          default_output = "sunshine";
+          default_fullscreen = true;
+          default_floating = false;
+        }
+        {
+          match.app_id = "^steam_app_";
+          default_output = "sunshine";
+        }
       ];
 
       appearance = {

@@ -16,12 +16,14 @@
       cachix
       caelestia-cli
       calc
+      ethtool
       eza
       fd
       fzf
       github-cli
       gnupg
       imv
+      jq
       mesa-demos
       mmv
       proton-pass-cli
@@ -37,6 +39,7 @@
       # Desktop apps
       ghostty
       heroic
+      moonlight
       nautilus
       pwvucontrol
       sone
