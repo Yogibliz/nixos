@@ -1,5 +1,12 @@
 { pkgs, ... }:
 {
+  programs.nixvim.filetype.extension = {
+    cc = "cpp";
+    cpp = "cpp";
+    h = "cpp";
+    tcc = "cpp";
+  };
+
   programs.nixvim.plugins.conform-nvim = {
     enable = true;
     settings = {
@@ -21,6 +28,8 @@
         rust = [ "rustfmt" ];
         python = [ "black" ];
         qml = [ "qmlformat" ];
+        c = [ "clang_format" ];
+        cpp = [ "clang_format" ];
         "_" = [ "trim_whitespace" ];
       };
 
@@ -33,6 +42,12 @@
           ];
           stdin = false;
         };
+
+        clang_format = {
+          prepend_args = [
+            "--style={BasedOnStyle: LLVM, IndentWidth: 2, BreakBeforeBraces: Allman, BreakTemplateDeclarations: Yes}"
+          ];
+        };
       };
     };
   };
@@ -42,6 +57,7 @@
     nixfmt
     stylua
     rustfmt
+    clang-tools
     kdePackages.qtdeclarative
   ];
 }
