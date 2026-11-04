@@ -12,7 +12,10 @@
         supportedFilesystems = [ "fuse" ];
         kernelPackages = pkgs.linuxPackages_latest;
         kernelParams = [ "amdgpu.sg_display=0" ];
-        kernelModules = [ "i2c-dev" ];
+        kernelModules = [
+          "i2c-dev"
+          "uinput"
+        ];
       };
     };
 }

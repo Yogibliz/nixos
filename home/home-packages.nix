@@ -41,6 +41,7 @@
       heroic
       moonlight-qt
       nautilus
+      parted
       pwvucontrol
       sone
       vscode

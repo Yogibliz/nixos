@@ -4,7 +4,7 @@
 }:
 let
   pname = "root";
-  version = "0.9.142";
+  version = "latest";
 
   src = fetchurl {
     url = "https://installer.rootapp.com/installer/Linux/X64/Root.AppImage";

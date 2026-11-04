@@ -57,9 +57,10 @@
   };
 
   home.packages = with pkgs; [
-    openssl_3_5
     artix-games-launcher
     mission-center
+    openssl_3_5
+    opentabletdriver
   ];
 
   home.activation = {

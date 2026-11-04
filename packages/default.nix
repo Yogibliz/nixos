@@ -9,4 +9,5 @@ in
   # hello = pkgs.callPackage ./hello.nix { };
   icat = pkgs.callPackage ./icat.nix { };
   root = pkgs.callPackage ./root.nix { };
+  osu = pkgs.callPackage ./osu.nix { };
 }

@@ -75,6 +75,7 @@
       perSystem = { pkgs, ... }: {
         packages.icat = pkgs.callPackage ./packages/icat.nix { };
         packages.root = pkgs.callPackage ./packages/root.nix { };
+        packages.osu = pkgs.callPackage ./packages/osu.nix { };
       };
 
       flake =
