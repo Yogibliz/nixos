@@ -45,8 +45,8 @@
           "org.gnome.Nautilus"
           "com.mitchellh.ghostty"
           "SONE"
-          # "root"
           "vesktop"
+          "stoat-desktop"
         ];
       };
 
@@ -119,7 +119,7 @@
             "com.mitchellh.ghostty"
             "SONE"
             "vesktop"
-            "root"
+            "stoat-desktop"
           ];
           providers = {
             session.global = true;

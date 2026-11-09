@@ -32,6 +32,7 @@
       steam-run
       tree
       time
+      valgrind
 
       # Desktop Environment
       noctalia
@@ -44,7 +45,9 @@
       parted
       pwvucontrol
       sone
+      stoat-desktop
       vscode
+      qbittorrent
       zathura
 
       # Development

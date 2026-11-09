@@ -45,7 +45,14 @@
 
         clang_format = {
           prepend_args = [
-            "--style={BasedOnStyle: LLVM, IndentWidth: 2, BreakBeforeBraces: Allman, BreakTemplateDeclarations: Yes}"
+            "--style={
+	      BasedOnStyle: LLVM,
+	      IndentWidth: 2,
+	      BreakBeforeBraces: Allman,
+	      BreakTemplateDeclarations: Yes,
+	      SpaceBeforeAssignmentOperators: true,
+	      RequiresClausePosition: WithPreceding
+	    }"
           ];
         };
       };
