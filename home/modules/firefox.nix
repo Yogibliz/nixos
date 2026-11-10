@@ -105,6 +105,10 @@ in
                 name = "Pi-Hole";
                 url = "http://192.168.1.100:8089/admin/";
               }
+              {
+                name = "EEn";
+                url = "https://docs.proton.me/sheet?mode=open&volumeId=AEfJf_q9pmmuXlwU_d5tO8dWtg-aEcJ7kmyLJTMyQId_a9TW-uSye9Zz9YOhhuFzclbCUEoDWyXhpKPOfP0yPg%3D%3D&linkId=zHr9By7JgkN7EbmHuo0j7jQ80_36ni8g1dp7VhziGg_5qw3u7wvKCSlc77k1aJL9-IK1n50LmJm8ViAq7GGmFQ%3D%3D";
+              }
             ];
           }
         ];

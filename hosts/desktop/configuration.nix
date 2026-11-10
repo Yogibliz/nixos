@@ -1,5 +1,6 @@
 {
   self,
+  config,
   inputs,
   hostname,
   pkgs,
@@ -37,7 +38,14 @@
     self.nixosModules.sunshine
   ];
 
-  services.gnome.gnome-keyring.enable = true;
+  services = {
+    gnome.gnome-keyring.enable = true;
+    greetd.settings.initial_session = {
+      user = "iris";
+      command = "${config.programs.umbriel.package}/bin/start-umbriel";
+    };
+  };
+
   networking.interfaces.enp9s0.wakeOnLan.enable = true;
 
   programs = {
