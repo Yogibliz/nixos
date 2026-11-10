@@ -29,6 +29,7 @@
     # Features
     self.nixosModules.umbriel
     self.nixosModules.skwdWall
+    self.nixosModules.steam
   ];
 
   nix.settings.experimental-features = [
