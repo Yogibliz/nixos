@@ -227,6 +227,7 @@
           refresh_minutes = 1;
           feeds = [
             "https://diyhrt.coffee/api/v1/feed/stock.rss?only=restocks&region=EU"
+            "https://diyhrt.coffee/api/v1/feed/stock.rss?only=restocks&shop=9"
           ];
         };
       };

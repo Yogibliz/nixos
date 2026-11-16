@@ -65,7 +65,7 @@ in
                   }
                   {
                     name = "IP3";
-                    url = "https://cloud.timeedit.net/liu/web/schema/ri1f7XYQ50ZZ1YQvQQ077810y6Y9957.html";
+                    url = "https://cloud.timeedit.net/liu/web/schema/ri1f1XYX45ZZ28Qv4Y0X3460y1Y58546314Q143Q8Y76Y6444589X1776Y6540Q7.html";
                   }
                   {
                     name = "PaperCut";

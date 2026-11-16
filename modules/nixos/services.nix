@@ -24,9 +24,8 @@
           alsa.enable = true;
           alsa.support32Bit = true;
           pulse.enable = true;
-          jack.enable = true;
 
-          extraConfig.pipewire."99-input-denoising" = {
+          extraConfig.pipewire."99-clock-rates" = {
             "context.properties" = {
               "default.clock.rate" = 44100;
               "default.clock.allowed-rates" = [
@@ -58,20 +57,6 @@
                 };
               }
             ];
-          };
-
-          wireplumber.extraConfig."99-clock-rates" = {
-            "context.properties" = {
-              "default.clock.rate" = 44100;
-              "default.clock.allowed-rates" = [
-                44100
-                48000
-                88200
-                96000
-                176400
-                192000
-              ];
-            };
           };
         };
 
@@ -105,6 +90,8 @@
 
         udev.extraRules = ''
           KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl"
+          KERNEL=="hidraw*", ATTRS{idVendor}=="056a", TAG+="uaccess"
+          SUBSYSTEM=="usb", ATTR{idVendor}=="0ac3", TAG+="uaccess"
         '';
       };
     };

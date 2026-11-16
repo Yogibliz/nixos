@@ -39,6 +39,7 @@
 
       # Desktop apps
       ghostty
+      google-chrome
       heroic
       moonlight-qt
       nautilus

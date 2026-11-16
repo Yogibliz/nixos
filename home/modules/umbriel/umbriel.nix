@@ -56,7 +56,7 @@
 
       input = {
         focus = {
-          follows_mouse = true;
+          follows_mouse = "always";
         };
 
         cursor = {
