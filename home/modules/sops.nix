@@ -8,6 +8,7 @@
 
     secrets = {
       wallhaven_api_key = { };
+      github_token = { };
     };
   };
 }

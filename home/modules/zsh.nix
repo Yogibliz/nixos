@@ -1,5 +1,5 @@
 # ── Zsh ───────────────────────────────────────────────────
-{ pkgs, ... }:
+{ config, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -15,6 +15,7 @@
       nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#$(hostname)";
       nrb = "sudo nixos-rebuild boot --flake ~/dotfiles#$(hostname)";
       hms = "home-manager switch --flake ~/dotfiles#iris@$(hostname)";
+      nfu = ''NIX_CONFIG="access-tokens = github.com=$(cat ${config.sops.secrets.github_token.path})" nix flake update'';
       err = "steam-run '/mnt/games/SteamLibrary/steamapps/common/ELDEN\ RING/ERRv2.3.7.1/4\ -\ Launch\ ELDEN\ RING\ Reforged\ -\ Offline\ or\ Seamless\ \(Linux\).sh'";
       pi = "ssh -p 2222 dietpi@192.168.1.100";
       wake = "ssh -p 2222 dietpi@pihole wakeonlan 9c:6b:00:4a:33:bf";

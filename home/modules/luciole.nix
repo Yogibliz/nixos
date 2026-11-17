@@ -3,7 +3,7 @@
   imports = [ inputs.luciole.homeModules.default ];
 
   programs.luciole = {
-    enable = true;
+    enable = false;
     settings = {
 
     };
