@@ -8,7 +8,7 @@ let
 
   src = fetchurl {
     url = "https://github.com/ppy/osu/releases/latest/download/osu.AppImage";
-    hash = "sha256-KEEI5lNzqDOb7spA4sFLFSjBd71s4eshQHY5+OUI2i4=";
+    hash = "sha256-TrvLW1gcA28WeFUAr1yNE60ebZMZb9Nr6PJFwqDqHS0=";
   };
 
   appimageContents = appimageTools.extract {

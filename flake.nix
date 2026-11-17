@@ -18,6 +18,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixvim.url = "github:nix-community/nixvim";
     umbriel.url = "github:noctalia-dev/umbriel";
+    luciole.url = "github:noctalia-dev/luciole";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     firefox-addons = {
