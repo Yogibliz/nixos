@@ -12,7 +12,7 @@
         continuous = 1;
         executable = "latexmk";
         hooks = [ ];
-        engine = "-xelatex";
+        engine = "-pdflatex";
         options = [
           "-verbose"
           "-file-line-error"

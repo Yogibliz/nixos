@@ -30,6 +30,7 @@
       ripgrep
       sops
       steam-run
+      texliveFull
       tree
       time
       valgrind
@@ -41,6 +42,7 @@
       ghostty
       google-chrome
       heroic
+      inkscape
       moonlight-qt
       nautilus
       parted
