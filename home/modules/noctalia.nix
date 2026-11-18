@@ -208,6 +208,11 @@
         };
       };
 
+      # ----- Wallpaper Settings -----
+      wallpaper = {
+        enabled = false;
+      };
+
       # ----- Plugin Settings -----
       plugins = {
         enabled = [

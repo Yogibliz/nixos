@@ -29,7 +29,6 @@
 
       general = {
         applyOnPickerMonitor = true;
-        locale = "Linköping";
         randomRotate = false;
       };
 

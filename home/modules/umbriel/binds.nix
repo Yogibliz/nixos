@@ -2,7 +2,7 @@
 let
   browser = "firefox"; # "zen-twilight";
   terminal = "ghostty";
-  explorer = "nautilus";
+  explorer = "luciole";
   noctalia = "noctalia msg";
   noctalia-panel = "noctalia msg panel-toggle";
 in
