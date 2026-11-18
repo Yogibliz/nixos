@@ -42,11 +42,10 @@
         smart_auto_hide = true;
         pinned = [
           "firefox" # "zen-twilight"
-          "org.gnome.Nautilus"
+          "dev.noctalia.luciole"
           "com.mitchellh.ghostty"
           "SONE"
           "vesktop"
-          "stoat-desktop"
         ];
       };
 
@@ -115,11 +114,12 @@
           app_grid = false;
           track_usage = false;
           pinned = [
-            "firefox" # "zen-twilight"
+            "firefox"
+            # "zen-twilight"
+            "dev.noctalia.luciole"
             "com.mitchellh.ghostty"
             "SONE"
             "vesktop"
-            "stoat-desktop"
           ];
           providers = {
             session.global = true;

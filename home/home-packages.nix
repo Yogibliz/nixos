@@ -44,7 +44,6 @@
       heroic
       inkscape
       moonlight-qt
-      nautilus
       parted
       pwvucontrol
       sone
