@@ -1,10 +1,16 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.sunshine =
-    { pkgs, lib, ... }:
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     let
       # Direct port of the script from the Umbriel docs
       umbrielOutput = pkgs.writeShellScript "umbriel-output" ''
+        export PATH=${lib.makeBinPath [ pkgs.jq ]}:$PATH
         set -eu
 
         name=sunshine
@@ -46,8 +52,8 @@
         enable = true;
         openFirewall = true;
         capSysAdmin = false;
-        # Started from Umbriel instead (see below) so it inherits the compositor's
-        # Wayland/IPC environment, which the session script needs.
+        # Not started by systemd: Umbriel autostarts it via `sunshine-session`
+        # (below) so it inherits the compositor's Wayland/IPC environment.
         autoStart = false;
 
         settings = {
@@ -75,5 +81,14 @@
           }
         ];
       };
+
+      # Launches Sunshine with the generated config (output_name, prep script, apps).
+      # A bare `sunshine` ignores these settings, which is what caused the
+      # "streams a physical monitor" problem.
+      environment.systemPackages = [
+        (pkgs.writeShellScriptBin "sunshine-session" ''
+          exec ${config.systemd.user.services.sunshine.serviceConfig.ExecStart}
+        '')
+      ];
     };
 }
