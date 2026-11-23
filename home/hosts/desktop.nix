@@ -61,6 +61,7 @@
     mission-center
     openssl_3_5
     opentabletdriver
+    wootility
   ];
 
   home.activation = {

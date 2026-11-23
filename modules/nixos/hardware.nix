@@ -9,6 +9,7 @@
         keyboard.qmk.enable = true;
         opentabletdriver.enable = true;
         uinput.enable = true;
+        wooting.enable = true;
       };
     };
 }

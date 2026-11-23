@@ -44,6 +44,7 @@
       heroic
       inkscape
       moonlight-qt
+      osu-lazer-bin
       parted
       pwvucontrol
       sone
